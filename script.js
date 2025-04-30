@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Detectar scroll para cambiar el estilo del header
+  const header = document.querySelector('.main-header');
+  const topBarHeight = document.querySelector('.top-bar').offsetHeight;
+  
+  function checkScroll() {
+    if (window.scrollY > topBarHeight) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  
+  // Ejecutar al cargar la página
+  checkScroll();
+  
+  // Ejecutar cuando se hace scroll
+  window.addEventListener('scroll', checkScroll);
   // Variables
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const navMenu = document.getElementById('navMenu');
