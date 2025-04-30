@@ -56,6 +56,10 @@ nav {
   color: var(--color-green-primary);
   text-decoration: none;
 }
+.logo img {
+  height: 40px;
+  display: block;
+}
 
 .nav-links {
   display: flex;
