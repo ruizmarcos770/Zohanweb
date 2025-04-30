@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZOHAN - Importación de Packaging y Maquinaria Industrial</title>
+  <title>ZOHAN - Soluciones en Packaging Agroindustrial y Maquinaria</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@400;500&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -17,77 +17,175 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Barra superior de contacto -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="contact-info">
+        <a href="tel:+598123456789"><i class="fas fa-phone"></i> +598 12 345 6789</a>
+        <a href="mailto:info@zohan.com.uy"><i class="fas fa-envelope"></i> info@zohan.com.uy</a>
+        <span><i class="fas fa-map-marker-alt"></i> Av. Principal 1234, Montevideo, Uruguay</span>
+      </div>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
 
   <!-- Header / Navbar -->
-  <header>
+  <header class="main-header">
     <div class="container">
-      <nav class="nav-fana">
-  <a href="#" class="logo">
-    <img src="assets/ZOHAN_LOGO.png" alt="Logo ZOHAN" />
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#productos">Productos</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-  <button class="mobile-menu-btn" id="mobileMenuBtn">
-    <i class="fas fa-bars"></i>
-  </button>
-</nav>
+      <nav class="main-nav">
+        <a href="index.html" class="logo">
+          <img src="assets/ZOHAN_LOGO.png" alt="Logo ZOHAN" />
+        </a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Empresa <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#nosotros">Quiénes Somos</a></li>
+              <li><a href="#mision">Misión y Visión</a></li>
+              <li><a href="#historia">Historia</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Productos <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#packaging">Packaging Agroindustrial</a></li>
+              <li><a href="#maquinaria">Maquinaria de Construcción</a></li>
+              <li><a href="#equipos">Equipos Industriales</a></li>
+              <li><a href="#accesorios">Accesorios y Repuestos</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Servicios <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#importacion">Importación</a></li>
+              <li><a href="#logistica">Logística Internacional</a></li>
+              <li><a href="#asesoria">Asesoría Técnica</a></li>
+              <li><a href="#mantenimiento">Mantenimiento</a></li>
+            </ul>
+          </li>
+          <li><a href="#clientes">Clientes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="inicio">
-    <div class="container">
-      <h1>Soluciones de Packaging e Importación Industrial</h1>
-      <p>Conectamos su empresa con lo mejor en maquinaria industrial y soluciones de packaging a nivel global con más de 15 años de experiencia en importación.</p>
-      <div>
-        <a href="#contacto" class="btn">Consulta con un asesor</a>
-        <a href="#productos" class="btn btn-outline">Ver productos</a>
+  <!-- Hero Section / Slider -->
+  <section class="hero-slider" id="inicio">
+    <div class="slider-container">
+      <div class="slide active">
+        <img src="assets/banner1.jpg" alt="Soluciones de Packaging" />
+        <div class="slide-content">
+          <h2>Soluciones integrales en Packaging Agroindustrial</h2>
+          <p>Conectamos su empresa con productos de calidad internacional</p>
+          <a href="#contacto" class="btn btn-primary">Solicitar asesoramiento</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="assets/banner2.jpg" alt="Maquinaria de Construcción" />
+        <div class="slide-content">
+          <h2>Maquinaria de Construcción de Alto Rendimiento</h2>
+          <p>Equipos que optimizan sus proyectos y aumentan la productividad</p>
+          <a href="#maquinaria" class="btn btn-primary">Ver catálogo</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="assets/banner3.jpg" alt="Logística Internacional" />
+        <div class="slide-content">
+          <h2>Gestión Logística Internacional</h2>
+          <p>Su socio estratégico en importación y distribución</p>
+          <a href="#logistica" class="btn btn-primary">Conocer servicios</a>
+        </div>
+      </div>
+      <button class="slider-arrow prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+      <button class="slider-arrow next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+      <div class="slider-dots">
+        <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="dot" data-slide="2" aria-label="Slide 3"></button>
       </div>
     </div>
   </section>
 
-  <!-- Servicios -->
-  <section class="section" id="servicios">
+  <!-- Sección de servicios destacados -->
+  <section class="section services-section" id="servicios">
     <div class="container">
-      <h2 class="section-title">Nuestros Servicios</h2>
-      <p class="section-subtitle">Ofrecemos soluciones integrales en maquinaria industrial y packaging para optimizar sus procesos productivos.</p>
-      <div class="services">
+      <div class="section-header">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p class="section-subtitle">Ofrecemos soluciones integrales para optimizar sus procesos industriales</p>
+      </div>
+      <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-box"></i></div>
-          <h3>Packaging Industrial</h3>
-          <p>Importación de materiales y soluciones de packaging de alta calidad para diversas industrias.</p>
+          <div class="service-icon"><i class="fas fa-box-open"></i></div>
+          <h3>Packaging Agroindustrial</h3>
+          <p>Soluciones de embalaje específicas para el sector agroindustrial, garantizando la conservación y protección adecuada de sus productos.</p>
+          <a href="#packaging" class="btn btn-secondary">Más información</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-truck"></i></div>
+          <h3>Importación y Logística</h3>
+          <p>Gestión integral de importaciones y distribución internacional con trámites aduaneros simplificados y seguimiento en tiempo real.</p>
+          <a href="#importacion" class="btn btn-secondary">Más información</a>
         </div>
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-cogs"></i></div>
-          <h3>Maquinaria Industrial</h3>
-          <p>Equipamiento especializado de última generación para procesos industriales y manufactura.</p>
+          <h3>Maquinaria de Construcción</h3>
+          <p>Equipos de última generación para optimizar procesos constructivos, aumentando la eficiencia y reduciendo costos operativos.</p>
+          <a href="#maquinaria" class="btn btn-secondary">Más información</a>
         </div>
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-ship"></i></div>
-          <h3>Logística Internacional</h3>
-          <p>Gestión completa de importaciones, trámites aduaneros y entrega puerta a puerta.</p>
+          <div class="service-icon"><i class="fas fa-tools"></i></div>
+          <h3>Servicio Técnico</h3>
+          <p>Mantenimiento preventivo y correctivo realizado por técnicos especializados, asegurando el óptimo funcionamiento de su equipamiento.</p>
+          <a href="#mantenimiento" class="btn btn-secondary">Más información</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Nosotros -->
+  <!-- Sección Acerca de Nosotros -->
   <section class="section about-section" id="nosotros">
-    <div class="container about">
-      <div class="about-content">
-        <h2>Sobre ZOHAN</h2>
-        <p>Somos una empresa especializada en la importación de maquinaria industrial y soluciones de packaging con más de 15 años de experiencia en el mercado global.</p>
-        <p>Nuestro equipo de profesionales está comprometido en ofrecer productos de alta calidad y servicios personalizados que se adapten a las necesidades específicas de cada cliente.</p>
-        <p>En ZOHAN, nos esforzamos por establecer relaciones duraderas con nuestros clientes, basadas en la confianza, el conocimiento técnico y la excelencia en el servicio.</p>
-        <p>Contamos con una amplia red de proveedores internacionales que nos permite acceder a las mejores soluciones del mercado a precios competitivos.</p>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Quiénes Somos</h2>
+        <p class="section-subtitle">Más de 15 años de experiencia en el mercado internacional</p>
       </div>
-      <div class="about-image">
-        <img src="/api/placeholder/600/400" alt="Equipo ZOHAN" />
+      <div class="about">
+        <div class="about-content">
+          <p>En <strong>ZOHAN</strong>, nos especializamos en la importación y comercialización de soluciones para packaging agroindustrial y maquinaria de construcción, ofreciendo productos de alta calidad y servicios personalizados a empresas de diversos sectores.</p>
+          <p>Contamos con un equipo de profesionales especializados y una red global de proveedores que nos permite ofrecer las mejores soluciones del mercado a precios competitivos.</p>
+          <p>Nuestro compromiso es establecer relaciones duraderas con nuestros clientes, basadas en la confianza y la excelencia en el servicio, apoyando su crecimiento y desarrollo mediante soluciones adaptadas a sus necesidades específicas.</p>
+          
+          <div class="company-values">
+            <div class="value-item">
+              <div class="value-icon"><i class="fas fa-handshake"></i></div>
+              <h4>Compromiso</h4>
+              <p>Asumimos como propias las necesidades de nuestros clientes.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon"><i class="fas fa-chart-line"></i></div>
+              <h4>Excelencia</h4>
+              <p>Buscamos constantemente superar expectativas y mejorar nuestros servicios.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon"><i class="fas fa-globe-americas"></i></div>
+              <h4>Visión Global</h4>
+              <p>Conectamos mercados internacionales con soluciones locales.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="assets/nosotros.jpg" alt="Equipo ZOHAN" />
+        </div>
       </div>
     </div>
   </section>
@@ -96,48 +194,127 @@
   <section class="stats-section">
     <div class="container">
       <div class="stats-container">
-        <div class="stat-item"><h3>15+</h3><p>Años de experiencia</p></div>
-        <div class="stat-item"><h3>500+</h3><p>Clientes satisfechos</p></div>
-        <div class="stat-item"><h3>20+</h3><p>Países proveedores</p></div>
-        <div class="stat-item"><h3>1000+</h3><p>Proyectos completados</p></div>
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <p>Años de experiencia</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <p>Clientes satisfechos</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">20+</div>
+          <p>Países proveedores</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1000+</div>
+          <p>Proyectos completados</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Productos -->
-  <section class="section" id="productos">
+  <!-- Productos destacados -->
+  <section class="section products-section" id="productos">
     <div class="container">
-      <h2 class="section-title">Nuestros Productos</h2>
-      <p class="section-subtitle">Ofrecemos una amplia gama de productos de alta calidad para diversas industrias.</p>
-      <div class="products-grid">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="/api/placeholder/300/200" alt="Máquinas de embalaje" />
+      <div class="section-header">
+        <h2 class="section-title">Productos Destacados</h2>
+        <p class="section-subtitle">Soluciones de calidad para diversos sectores industriales</p>
+      </div>
+      <div class="product-categories">
+        <div class="category-tabs">
+          <button class="tab-btn active" data-category="packaging">Packaging</button>
+          <button class="tab-btn" data-category="maquinaria">Maquinaria</button>
+          <button class="tab-btn" data-category="equipos">Equipos</button>
+          <button class="tab-btn" data-category="accesorios">Accesorios</button>
+        </div>
+        
+        <!-- Contenido de pestañas -->
+        <div class="tab-content">
+          <!-- Packaging -->
+          <div class="category-content active" id="packaging-content">
+            <div class="products-grid">
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="assets/producto1.jpg" alt="Film stretch" />
+                </div>
+                <div class="product-info">
+                  <h3>Film Stretch Industrial</h3>
+                  <p>Film de alta resistencia para embalaje y protección de productos agroindustriales.</p>
+                  <a href="#contacto" class="btn btn-outline">Consultar</a>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="assets/producto2.jpg" alt="Cajas apilables" />
+                </div>
+                <div class="product-info">
+                  <h3>Cajas Apilables</h3>
+                  <p>Sistema de almacenamiento modular para productos agrícolas con distintas configuraciones.</p>
+                  <a href="#contacto" class="btn btn-outline">Consultar</a>
+                </div>
+              </div>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="assets/producto3.jpg" alt="Bolsas industriales" />
+                </div>
+                <div class="product-info">
+                  <h3>Bolsas Industriales</h3>
+                  <p>Soluciones de envasado para granos y productos a granel con protección UV.</p>
+                  <a href="#contacto" class="btn btn-outline">Consultar</a>
+                </div>
+              </div>
+            </div>
+            <div class="view-all">
+              <a href="#packaging" class="btn btn-secondary">Ver todos los productos <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="product-content">
-            <h3>Máquinas de Embalaje</h3>
-            <p>Soluciones automatizadas para optimizar sus procesos de empaque y embalaje.</p>
-            <a href="#contacto" class="btn">Consultar</a>
+          
+          <!-- Maquinaria (inicialmente oculto) -->
+          <div class="category-content" id="maquinaria-content">
+            <!-- Contenido de maquinaria -->
+          </div>
+          
+          <!-- Equipos (inicialmente oculto) -->
+          <div class="category-content" id="equipos-content">
+            <!-- Contenido de equipos -->
+          </div>
+          
+          <!-- Accesorios (inicialmente oculto) -->
+          <div class="category-content" id="accesorios-content">
+            <!-- Contenido de accesorios -->
           </div>
         </div>
-        <div class="product-card">
-          <div class="product-image">
-            <img src="/api/placeholder/300/200" alt="Materiales de packaging" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Clientes / Marcas -->
+  <section class="section clients-section" id="clientes">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestros Clientes</h2>
+        <p class="section-subtitle">Empresas que confían en nuestros productos y servicios</p>
+      </div>
+      <div class="clients-slider">
+        <div class="client-logo"><img src="assets/cliente1.png" alt="Cliente 1" /></div>
+        <div class="client-logo"><img src="assets/cliente2.png" alt="Cliente 2" /></div>
+        <div class="client-logo"><img src="assets/cliente3.png" alt="Cliente 3" /></div>
+        <div class="client-logo"><img src="assets/cliente4.png" alt="Cliente 4" /></div>
+        <div class="client-logo"><img src="assets/cliente5.png" alt="Cliente 5" /></div>
+        <div class="client-logo"><img src="assets/cliente6.png" alt="Cliente 6" /></div>
+      </div>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"ZOHAN ha sido un socio estratégico clave para nuestra empresa. Sus soluciones de packaging nos han permitido optimizar nuestros procesos de exportación de productos agrícolas."</p>
           </div>
-          <div class="product-content">
-            <h3>Materiales de Packaging</h3>
-            <p>Gran variedad de materiales para packaging industrial de diferentes sectores.</p>
-            <a href="#contacto" class="btn">Consultar</a>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-image">
-            <img src="/api/placeholder/300/200" alt="Maquinaria especializada" />
-          </div>
-          <div class="product-content">
-            <h3>Maquinaria Especializada</h3>
-            <p>Equipamiento industrial de última generación para aumentar la productividad.</p>
-            <a href="#contacto" class="btn">Consultar</a>
+          <div class="testimonial-author">
+            <img src="assets/testimonio1.jpg" alt="Testimonio 1" />
+            <div>
+              <h4>Carlos Rodríguez</h4>
+              <span>Gerente de Operaciones, AgriExport S.A.</span>
+            </div>
           </div>
         </div>
       </div>
@@ -147,76 +324,107 @@
   <!-- Contacto -->
   <section class="section contact-section" id="contacto">
     <div class="container">
-      <h2 class="section-title">Contáctenos</h2>
-      <p class="section-subtitle">Estamos listos para ayudarle con sus necesidades de importación de maquinaria y packaging.</p>
+      <div class="section-header">
+        <h2 class="section-title">Contáctenos</h2>
+        <p class="section-subtitle">Estamos listos para ayudarle con soluciones personalizadas</p>
+      </div>
       <div class="contact-container">
         <!-- Formulario -->
         <div class="contact-form">
-          <form action="#" method="POST">
-            <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" name="name" required />
+          <form action="#" method="POST" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nombre *</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="company">Empresa *</label>
+                <input type="text" id="company" name="company" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Correo Electrónico *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Teléfono *</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
             </div>
             <div class="form-group">
-              <label for="email">Correo Electrónico</label>
-              <input type="email" id="email" name="email" required />
+              <label for="subject">Asunto</label>
+              <input type="text" id="subject" name="subject" />
             </div>
             <div class="form-group">
-              <label for="phone">Teléfono</label>
-              <input type="tel" id="phone" name="phone" />
+              <label for="message">Mensaje *</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <div class="form-group">
-              <label for="service">Servicio de Interés</label>
-              <select id="service" name="service">
-                <option value="">Seleccione un servicio</option>
-                <option value="packaging">Packaging Industrial</option>
-                <option value="maquinaria">Maquinaria Industrial</option>
-                <option value="logistica">Logística Internacional</option>
-                <option value="otro">Otro</option>
-              </select>
+            <div class="form-group form-check">
+              <input type="checkbox" id="privacy" name="privacy" required />
+              <label for="privacy">Acepto la política de privacidad</label>
             </div>
-            <div class="form-group">
-              <label for="message">Mensaje</label>
-              <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="btn">Enviar Mensaje</button>
+            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
           </form>
         </div>
 
-        <!-- Información -->
+        <!-- Información de contacto -->
         <div class="contact-info">
           <div class="contact-card">
             <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div><h3>Dirección</h3><p>Av. Principal 1234, Ciudad</p></div>
+            <div>
+              <h3>Dirección</h3>
+              <p>Av. Principal 1234<br>Montevideo, Uruguay</p>
+            </div>
           </div>
           <div class="contact-card">
             <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-            <div><h3>Teléfono</h3><p>+123 456 7890</p></div>
+            <div>
+              <h3>Teléfono</h3>
+              <p>+598 12 345 6789<br>+598 98 765 4321</p>
+            </div>
           </div>
           <div class="contact-card">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div><h3>Email</h3><p>info@zohan.com</p></div>
+            <div>
+              <h3>Email</h3>
+              <p>info@zohan.com.uy<br>ventas@zohan.com.uy</p>
+            </div>
           </div>
           <div class="contact-card">
             <div class="contact-icon"><i class="fas fa-clock"></i></div>
-            <div><h3>Horario de Atención</h3><p>Lunes a Viernes: 9:00 - 18:00</p></div>
+            <div>
+              <h3>Horario de Atención</h3>
+              <p>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 9:00 - 13:00</p>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Mapa -->
       <div class="map-container">
-        <img src="/api/placeholder/1200/400" alt="Mapa de ubicación" style="width:100%; height:100%; object-fit:cover;" />
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.5760430763736!2d-56.19003692345005!3d-34.90364697324882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f81cb61841db3%3A0x57c5e39eb8c94ea0!2sPlaza%20Independencia%2C%2011000%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses!2suy!4v1681234567890!5m2!1ses!2suy" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="main-footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3>ZOHAN</h3>
-          <p>Soluciones de packaging e importación industrial, conectando su empresa con los mejores proveedores a nivel global.</p>
+          <div class="footer-logo">
+            <img src="assets/ZOHAN_LOGO.png" alt="Logo ZOHAN" />
+          </div>
+          <p>Soluciones de packaging agroindustrial e importación de maquinaria, conectando su empresa con los mejores proveedores a nivel global.</p>
           <div class="social-icons">
             <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
@@ -228,38 +436,50 @@
           <h3>Enlaces Rápidos</h3>
           <ul class="footer-links">
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#productos">Productos</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#clientes">Clientes</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h3>Servicios</h3>
+          <h3>Productos</h3>
           <ul class="footer-links">
-            <li><a href="#">Packaging Industrial</a></li>
-            <li><a href="#">Maquinaria Industrial</a></li>
-            <li><a href="#">Logística Internacional</a></li>
-            <li><a href="#">Asesoramiento Técnico</a></li>
-            <li><a href="#">Servicio Post-venta</a></li>
+            <li><a href="#packaging">Packaging Agroindustrial</a></li>
+            <li><a href="#maquinaria">Maquinaria de Construcción</a></li>
+            <li><a href="#equipos">Equipos Industriales</a></li>
+            <li><a href="#accesorios">Accesorios y Repuestos</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h3>Newsletter</h3>
-          <p>Suscríbase para recibir las últimas noticias y ofertas.</p>
+          <p>Suscríbase para recibir las últimas novedades y ofertas.</p>
           <form class="footer-form">
             <div class="form-group">
-              <input type="email" placeholder="Su correo electrónico" />
+              <input type="email" placeholder="Su correo electrónico" required />
+              <button type="submit" class="btn">Suscribirse</button>
             </div>
-            <button type="submit" class="btn">Suscribirse</button>
           </form>
         </div>
       </div>
-      <div class="copyright">
-        <p>&copy; 2025 ZOHAN. Todos los derechos reservados.</p>
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; 2025 ZOHAN. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos y Condiciones</a>
+          <a href="#">Mapa del Sitio</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- Botón de WhatsApp -->
+  <a href="https://wa.me/598123456789" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <!-- JS -->
   <script src="script.js"></script>
