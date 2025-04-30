@@ -48,6 +48,39 @@ nav {
   align-items: center;
   padding: 15px 0;
 }
+.nav-fana {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-fana img {
+  height: 50px;
+}
+
+.nav-fana .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-fana .nav-links a {
+  text-decoration: none;
+  color: var(--color-charcoal);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-fana .nav-links a:hover {
+  color: var(--color-green-accent);
+}
 
 .logo {
   font-family: 'Montserrat', sans-serif;
