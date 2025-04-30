@@ -83,13 +83,49 @@ body {
    HEADER & NAVBAR
 ============================== */
 .main-header {
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  background-color: transparent;
+  box-shadow: none;
+  position: fixed; /* Cambiado de sticky a fixed para cubrir toda la pantalla */
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
+  transition: all 0.3s ease;
 }
 
+.main-header.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.main-header:not(.scrolled) .nav-menu a {
+  color: var(--color-warm-white);
+}
+
+.main-header:not(.scrolled) .nav-menu a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.main-header:not(.scrolled) .mobile-menu-btn i,
+.main-header:not(.scrolled) .bar {
+  color: var(--color-warm-white);
+  background-color: var(--color-warm-white);
+}
+
+/* Ajuste para la barra superior */
+.top-bar {
+  position: relative;
+  z-index: 101; /* Debe estar por encima del header */
+}
+
+/* Añadir padding-top al contenido principal para compensar el header fijo */
+.main-content {
+  padding-top: 80px; /* Ajustar según la altura del header + top-bar */
+}
+
+/* Ocultar el dropdown menu hasta que se haga hover */
+.dropdown-menu {
+  display: block;
+}
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -106,8 +142,9 @@ body {
 }
 
 .logo img {
-  height: 40px;
+  height: 60px;
   display: block;
+   transition: height 0.3s ease;
 }
 
 .nav-menu {
@@ -215,7 +252,10 @@ body {
   height: 600px;
   overflow: hidden;
 }
-
+.hero-slider {
+  margin-top: -80px; /* Compensar el padding-top del main-content */
+  padding-top: 80px; /* Añadir espacio para el header transparente */
+}
 .slider-container {
   height: 100%;
   position: relative;
