@@ -1,24 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Detectar scroll para cambiar el estilo del header
+  // Variables globales
   const header = document.querySelector('.main-header');
-  const topBarHeight = document.querySelector('.top-bar').offsetHeight;
-  
-  function checkScroll() {
-    if (window.scrollY > topBarHeight) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  }
-  
-  // Ejecutar al cargar la página
-  checkScroll();
-  
-  // Ejecutar cuando se hace scroll
-  window.addEventListener('scroll', checkScroll);
-  // Variables
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const navMenu = document.getElementById('navMenu');
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const dropdowns = document.querySelectorAll('.dropdown');
   const sliderContainer = document.querySelector('.slider-container');
   const slides = document.querySelectorAll('.slide');
@@ -28,7 +12,41 @@ document.addEventListener('DOMContentLoaded', function() {
   const categoryTabs = document.querySelectorAll('.tab-btn');
   const categoryContents = document.querySelectorAll('.category-content');
   const contactForm = document.getElementById('contactForm');
+  const newsletterForm = document.getElementById('newsletterForm');
+  const statNumbers = document.querySelectorAll('.stat-number');
+  const animatedElements = document.querySelectorAll('.service-card, .product-card, .about-image, .mission-card, .contact-card');
+  
+  // Actualizar año en el footer
+  const currentYearElement = document.getElementById('currentYear');
+  if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+  }
 
+  // Detectar scroll para cambiar el estilo del header
+  function checkScroll() {
+    const topBarHeight = document.querySelector('.top-bar') ? document.querySelector('.top-bar').offsetHeight : 0;
+    
+    if (window.scrollY > topBarHeight) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    // Comprobar elementos para animación al scroll
+    animateOnScroll();
+  }
+  
+  // Ejecutar al cargar la página
+  checkScroll();
+  
+  // Ejecutar cuando se hace scroll
+  window.addEventListener('scroll', function() {
+    checkScroll();
+    
+    // Comprobar cuando los números estadísticos son visibles
+    checkStatsVisibility();
+  });
+  
   // Menú móvil
   if (mobileMenuBtn && navMenu) {
     mobileMenuBtn.addEventListener('click', function() {
@@ -49,16 +67,30 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdowns.forEach(dropdown => {
       const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
       
-      dropdownToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        dropdown.classList.toggle('active');
-      });
+      if (dropdownToggle) {
+        dropdownToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          dropdown.classList.toggle('active');
+        });
+      }
     });
   }
-
+  
+  // Función para animar elementos al hacer scroll
+  function animateOnScroll() {
+    animatedElements.forEach(element => {
+      const elementPosition = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (elementPosition < windowHeight - 100) {
+        element.classList.add('show');
+      }
+    });
+  }
   // Hero Slider
   let currentSlide = 0;
   const slideCount = slides.length;
+  let slideInterval;
   
   function showSlide(index) {
     // Ocultar todas las diapositivas
@@ -72,8 +104,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Mostrar la diapositiva actual
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
+    if (slides[index]) {
+      slides[index].classList.add('active');
+    }
+    
+    if (dots[index]) {
+      dots[index].classList.add('active');
+    }
+    
     currentSlide = index;
   }
   
@@ -93,12 +131,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (prevBtn) {
       prevBtn.addEventListener('click', function() {
         prevSlide();
+        resetSliderInterval();
       });
     }
     
     if (nextBtn) {
       nextBtn.addEventListener('click', function() {
         nextSlide();
+        resetSliderInterval();
       });
     }
     
@@ -106,13 +146,22 @@ document.addEventListener('DOMContentLoaded', function() {
     dots.forEach((dot, index) => {
       dot.addEventListener('click', function() {
         showSlide(index);
+        resetSliderInterval();
       });
     });
     
     // Autoplay del slider
-    setInterval(nextSlide, 6000);
+    startSliderInterval();
   }
-
+  
+  function startSliderInterval() {
+    slideInterval = setInterval(nextSlide, 6000);
+  }
+  
+  function resetSliderInterval() {
+    clearInterval(slideInterval);
+    startSliderInterval();
+  }
   // Pestañas de categorías de productos
   categoryTabs.forEach(tab => {
     tab.addEventListener('click', function() {
@@ -133,30 +182,47 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       
       // Mostrar el contenido seleccionado
-      document.getElementById(`${category}-content`).classList.add('active');
-    });
-  });
-
-  // Animación de elementos al hacer scroll
-  function animateOnScroll() {
-    const elements = document.querySelectorAll('.service-card, .product-card, .stat-item, .about-image, .contact-card');
-    
-    elements.forEach(element => {
-      const elementPosition = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      
-      if (elementPosition < windowHeight - 100) {
-        element.classList.add('animate');
+      const contentToShow = document.getElementById(`${category}-content`);
+      if (contentToShow) {
+        contentToShow.classList.add('active');
       }
     });
+  });
+  
+  // Animación de conteo para estadísticas
+  function animateCountUp(element) {
+    const target = parseInt(element.getAttribute('data-count'), 10);
+    const duration = 2000; // 2 segundos
+    const step = target / (duration / 16); // 16 ms es aproximadamente 60 fps
+    let current = 0;
+    
+    const timer = setInterval(function() {
+      current += step;
+      element.textContent = Math.round(current);
+      
+      if (current >= target) {
+        element.textContent = target;
+        clearInterval(timer);
+      }
+    }, 16);
   }
   
-  // Ejecutar cuando se hace scroll
-  window.addEventListener('scroll', animateOnScroll);
-  
-  // Ejecutar una vez al cargar la página
-  animateOnScroll();
-
+  function checkStatsVisibility() {
+    const statsSection = document.querySelector('.stats-section');
+    if (!statsSection) return;
+    
+    const statsSectionPosition = statsSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    
+    if (statsSectionPosition < windowHeight - 100) {
+      statNumbers.forEach(number => {
+        if (!number.classList.contains('counted')) {
+          animateCountUp(number);
+          number.classList.add('counted');
+        }
+      });
+    }
+  }
   // Validación del formulario de contacto
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -184,9 +250,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
       
+      // Validación de teléfono
+      const phoneField = contactForm.querySelector('input[type="tel"]');
+      if (phoneField && phoneField.value) {
+        const phonePattern = /^[0-9\+\s\-]+$/;
+        if (!phonePattern.test(phoneField.value)) {
+          isValid = false;
+          phoneField.classList.add('error');
+        }
+      }
+      
       if (isValid) {
-        // Aquí iría la lógica para enviar el formulario
-        alert('¡Gracias por su mensaje! Nos pondremos en contacto pronto.');
+        // En un caso real, aquí enviarías el formulario al servidor
+        showFormSuccess(contactForm);
         contactForm.reset();
       } else {
         alert('Por favor complete todos los campos requeridos correctamente.');
@@ -201,7 +277,42 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
-
+  
+  // Mostrar mensaje de éxito del formulario
+  function showFormSuccess(form) {
+    // Buscar si ya existe un mensaje de éxito
+    let successMessage = form.querySelector('.form-success');
+    
+    // Si no existe, crear uno nuevo
+    if (!successMessage) {
+      successMessage = document.createElement('div');
+      successMessage.classList.add('form-success');
+      successMessage.textContent = '¡Gracias por su mensaje! Nos pondremos en contacto pronto.';
+      form.prepend(successMessage);
+    }
+    
+    // Mostrar el mensaje
+    successMessage.classList.add('show');
+    
+    // Ocultar después de 5 segundos
+    setTimeout(() => {
+      successMessage.classList.remove('show');
+    }, 5000);
+  }
+  
+  // Formulario de newsletter
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const emailInput = newsletterForm.querySelector('input[type="email"]');
+      if (emailInput && emailInput.value.trim()) {
+        alert('¡Gracias por suscribirse a nuestro newsletter!');
+        newsletterForm.reset();
+      }
+    });
+  }
+  
   // Animación suave de scroll para los enlaces de navegación
   const navLinks = document.querySelectorAll('a[href^="#"]');
   
@@ -216,17 +327,20 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (targetElement) {
           // Cerrar menú móvil si está abierto
-          if (navMenu.classList.contains('active')) {
+          if (navMenu && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
           }
           
           // Scroll suave
+          const headerHeight = header.offsetHeight;
+          
           window.scrollTo({
-            top: targetElement.offsetTop - 80, // Ajustar para el header fijo
+            top: targetElement.offsetTop - headerHeight,
             behavior: 'smooth'
           });
         }
       }
     });
   });
-});
+
+}); // Fin de DOMContentLoaded
