@@ -1589,3 +1589,27 @@ img {
     right: 20px;
   }
 }
+/* Estilo para el enlace a Grupo Ruiz */
+.grupo-ruiz-link {
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--border-radius-small);
+}
+
+.grupo-ruiz-link p {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.grupo-ruiz-link a {
+  color: var(--color-green-primary);
+  font-weight: 600;
+  transition: var(--transition-fast);
+  text-decoration: underline;
+}
+
+.grupo-ruiz-link a:hover {
+  color: var(--color-green-accent);
+}
