@@ -224,81 +224,68 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   // Validación del formulario de contacto
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      let isValid = true;
-      const requiredFields = contactForm.querySelectorAll('[required]');
-      
-      requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-          isValid = false;
-          field.classList.add('error');
-        } else {
-          field.classList.remove('error');
-        }
-      });
-      
-      // Validación de email
-      const emailField = contactForm.querySelector('input[type="email"]');
-      if (emailField && emailField.value) {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(emailField.value)) {
-          isValid = false;
-          emailField.classList.add('error');
-        }
-      }
-      
-      // Validación de teléfono
-      const phoneField = contactForm.querySelector('input[type="tel"]');
-      if (phoneField && phoneField.value) {
-        const phonePattern = /^[0-9\+\s\-]+$/;
-        if (!phonePattern.test(phoneField.value)) {
-          isValid = false;
-          phoneField.classList.add('error');
-        }
-      }
-      
-      if (isValid) {
-        // En un caso real, aquí enviarías el formulario al servidor
-        showFormSuccess(contactForm);
-        contactForm.reset();
+  // Validación del formulario de contacto
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    // No uses e.preventDefault() - permite que el formulario se envíe normalmente a Formspree
+    
+    let isValid = true;
+    const requiredFields = contactForm.querySelectorAll('[required]');
+    
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        isValid = false;
+        field.classList.add('error');
       } else {
-        alert('Por favor complete todos los campos requeridos correctamente.');
+        field.classList.remove('error');
       }
     });
     
-    // Quitar clase de error cuando el usuario empieza a escribir
-    const formFields = contactForm.querySelectorAll('input, textarea, select');
-    formFields.forEach(field => {
-      field.addEventListener('input', function() {
-        this.classList.remove('error');
-      });
-    });
-  }
-  
-  // Mostrar mensaje de éxito del formulario
-  function showFormSuccess(form) {
-    // Buscar si ya existe un mensaje de éxito
-    let successMessage = form.querySelector('.form-success');
-    
-    // Si no existe, crear uno nuevo
-    if (!successMessage) {
-      successMessage = document.createElement('div');
-      successMessage.classList.add('form-success');
-      successMessage.textContent = '¡Gracias por su mensaje! Nos pondremos en contacto pronto.';
-      form.prepend(successMessage);
+    // Validación de email
+    const emailField = contactForm.querySelector('input[type="email"]');
+    if (emailField && emailField.value) {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(emailField.value)) {
+        isValid = false;
+        emailField.classList.add('error');
+      }
     }
     
-    // Mostrar el mensaje
-    successMessage.classList.add('show');
+    // Validación de teléfono
+    const phoneField = contactForm.querySelector('input[type="tel"]');
+    if (phoneField && phoneField.value) {
+      const phonePattern = /^[0-9\+\s\-]+$/;
+      if (!phonePattern.test(phoneField.value)) {
+        isValid = false;
+        phoneField.classList.add('error');
+      }
+    }
     
-    // Ocultar después de 5 segundos
-    setTimeout(() => {
-      successMessage.classList.remove('show');
-    }, 5000);
-  }
+    // Si no es válido, detén el envío
+    if (!isValid) {
+      e.preventDefault(); // Ahora sí prevenimos el envío solo si hay errores
+      alert('Por favor complete todos los campos requeridos correctamente.');
+    }
+    
+    // Ya no necesitas el bloque para mostrar el éxito, Formspree redirigirá 
+    // o mostrará su propio mensaje de confirmación
+  });
+  
+  // Mantén esto igual - Quitar clase de error cuando el usuario empieza a escribir
+  const formFields = contactForm.querySelectorAll('input, textarea, select');
+  formFields.forEach(field => {
+    field.addEventListener('input', function() {
+      this.classList.remove('error');
+    });
+  });
+}
+
+// Puedes eliminar o comentar esta función ya que Formspree manejará la confirmación
+/*
+function showFormSuccess(form) {
+  // Código de la función anterior...
+}
+*/
   
   // Formulario de newsletter
   if (newsletterForm) {
