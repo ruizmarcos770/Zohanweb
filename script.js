@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const categoryContents = document.querySelectorAll('.category-content');
   const contactForm = document.getElementById('contactForm');
   const newsletterForm = document.getElementById('newsletterForm');
-  const statNumbers = document.querySelectorAll('.stat-number');
   const animatedElements = document.querySelectorAll('.service-card, .product-card, .about-image, .mission-card, .contact-card');
   
   // Actualizar año en el footer
@@ -44,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
     checkScroll();
     
     // Comprobar cuando los números estadísticos son visibles
-    checkStatsVisibility();
   });
   
   // Menú móvil
@@ -189,40 +187,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Animación de conteo para estadísticas
-  function animateCountUp(element) {
-    const target = parseInt(element.getAttribute('data-count'), 10);
-    const duration = 2000; // 2 segundos
-    const step = target / (duration / 16); // 16 ms es aproximadamente 60 fps
-    let current = 0;
-    
-    const timer = setInterval(function() {
-      current += step;
-      element.textContent = Math.round(current);
-      
-      if (current >= target) {
-        element.textContent = target;
-        clearInterval(timer);
-      }
-    }, 16);
-  }
-  
-  function checkStatsVisibility() {
-    const statsSection = document.querySelector('.stats-section');
-    if (!statsSection) return;
-    
-    const statsSectionPosition = statsSection.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-    
-    if (statsSectionPosition < windowHeight - 100) {
-      statNumbers.forEach(number => {
-        if (!number.classList.contains('counted')) {
-          animateCountUp(number);
-          number.classList.add('counted');
-        }
-      });
-    }
-  }
+  // Animación de conteo para estadísticas (VACIO AHORA)
+
   // Validación del formulario de contacto
   // Validación del formulario de contacto
 if (contactForm) {
