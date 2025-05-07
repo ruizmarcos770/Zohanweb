@@ -189,11 +189,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Animación de conteo para estadísticas (VACIO AHORA)
 
-  // Validación del formulario de contacto
-  // Validación del formulario de contacto
+// Validación del formulario de contacto
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
-    // No uses e.preventDefault() - permite que el formulario se envíe normalmente a Formspree
+    e.preventDefault(); // Prevenir el envío normal del formulario
     
     let isValid = true;
     const requiredFields = contactForm.querySelectorAll('[required]');
@@ -227,17 +226,60 @@ if (contactForm) {
       }
     }
     
-    // Si no es válido, detén el envío
-    if (!isValid) {
-      e.preventDefault(); // Ahora sí prevenimos el envío solo si hay errores
+    // Si el formulario es válido, enviarlo mediante AJAX
+    if (isValid) {
+      const formData = new FormData(contactForm);
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      
+      // Cambiar el texto del botón para indicar que se está enviando
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Enviando...';
+      }
+      
+      // Envío mediante fetch API
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Ocultar sección de contacto
+          document.querySelector("#contacto").style.display = "none";
+          // Mostrar sección de gracias
+          document.querySelector("#gracias").style.display = "block";
+          // Scroll suave hacia la sección de gracias
+          document.querySelector("#gracias").scrollIntoView({ behavior: 'smooth' });
+          // Cambiar la URL para mantener el estado
+          window.location.hash = "#gracias";
+          
+          // Restablecer el formulario
+          contactForm.reset();
+        } else {
+          // Manejar error
+          throw new Error('Error al enviar el formulario');
+        }
+      })
+      .catch(error => {
+        alert('Hubo un problema al enviar su mensaje. Por favor intente nuevamente más tarde.');
+        console.error(error);
+      })
+      .finally(() => {
+        // Restaurar el botón de envío
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Enviar Mensaje';
+        }
+      });
+    } else {
       alert('Por favor complete todos los campos requeridos correctamente.');
     }
-    
-    // Ya no necesitas el bloque para mostrar el éxito, Formspree redirigirá 
-    // o mostrará su propio mensaje de confirmación
   });
   
-  // Mantén esto igual - Quitar clase de error cuando el usuario empieza a escribir
+  // Quitar clase de error cuando el usuario empieza a escribir
   const formFields = contactForm.querySelectorAll('input, textarea, select');
   formFields.forEach(field => {
     field.addEventListener('input', function() {
@@ -245,13 +287,6 @@ if (contactForm) {
     });
   });
 }
-
-// Puedes eliminar o comentar esta función ya que Formspree manejará la confirmación
-/*
-function showFormSuccess(form) {
-  // Código de la función anterior...
-}
-*/
   
   // Formulario de newsletter
   if (newsletterForm) {
@@ -297,3 +332,23 @@ function showFormSuccess(form) {
   });
 
 }); // Fin de DOMContentLoaded
+// Verificar si la URL tiene el hash #gracias al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+  checkThankYouHash();
+});
+
+// Verificar también si cambia el hash de la URL
+window.addEventListener('hashchange', function() {
+  checkThankYouHash();
+});
+
+function checkThankYouHash() {
+  if (window.location.hash === "#gracias") {
+    // Ocultar sección de contacto
+    document.querySelector("#contacto").style.display = "none";
+    // Mostrar sección de gracias
+    document.querySelector("#gracias").style.display = "block";
+    // Scroll suave hacia la sección de gracias
+    document.querySelector("#gracias").scrollIntoView({ behavior: 'smooth' });
+  }
+}
