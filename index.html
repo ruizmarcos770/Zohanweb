@@ -434,17 +434,28 @@
       <label for="privacy">Acepto la <a href="#" class="privacy-link">política de privacidad</a></label>
     </div>
     
-    <!-- Campo oculto para ayudar a prevenir spam -->
+    <!-- Campo oculto para evitar spam -->
     <input type="text" name="_gotcha" style="display:none" />
+    
+    <!-- Mensaje de éxito que estará oculto inicialmente -->
     <div class="form-success" id="formSuccess" style="display: none;">
       ¡Gracias por su mensaje! Nos pondremos en contacto pronto.
     </div>
-     <!-- Para mantener la página en el mismo sitio -->
-    <input type="hidden" name="_subject" value="Nuevo mensaje de contacto desde el sitio web">
-
+    
     <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
   </form>
 </div>
+      <!-- Sección de gracias, inicialmente oculta -->
+<section id="gracias" class="gracias" style="display: none; padding: 100px 0; background-color: var(--color-warm-white); text-align: center;">
+  <div class="container">
+    <div style="background-color: var(--color-green-primary); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; color: var(--color-warm-white); font-size: 40px;">
+      <i class="fas fa-check"></i>
+    </div>
+    <h2 style="color: var(--color-green-primary);">¡Gracias por tu mensaje!</h2>
+    <p>Hemos recibido tu consulta y nos pondremos en contacto lo antes posible.</p>
+    <a href="#inicio" class="btn btn-primary" style="margin-top: 30px;">Volver al inicio</a>
+  </div>
+</section>
       <!-- Información de contacto -->
       <div class="contact-info">
         <div class="contact-card">
