@@ -5,157 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ZOHAN | Importaciones inteligentes desde China a Argentina</title>
   <meta name="description" content="ZOHAN conecta fábricas en China con empresas argentinas. Gestión integral: búsqueda, negociación, control de calidad, logística y aduana hasta tu puerta. Especialistas en CTIT para exportadores y en importación de maquinaria." />
-  <meta property="og:title" content="ZOHAN | Importaciones inteligentes" />
-  <meta property="og:description" content="Importaciones seguras, rentables y sin complicaciones. Especialistas en CTIT y maquinaria." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://zohan.com.ar" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#f4f6f8" />
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: {
-              50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc',
-              400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca',
-              800: '#3730a3', 900: '#312e81'
-            }
+            brand: '#4a90e2', // Azul claro (AC)
+            ao: '#364154',    // Azul oscuro (AO)
+            bc: '#f4f6f8',    // Blanco cremita (BC)
+            bp: '#ffffff'     // Blanco puro (BP)
           }
         }
       }
     }
   </script>
-  <style>
-    .glass { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(0,0,0,.08); }
-  </style>
 </head>
-<body class="bg-white text-slate-900 antialiased">
-  <!-- Topbar -->
-  <div class="w-full bg-gray-100 border-b border-gray-200 text-sm">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-      <p class="text-gray-700">China → Argentina, de fábrica a tu puerta</p>
-      <div class="hidden md:flex gap-4 text-gray-700">
-        <a href="#contacto" class="hover:text-brand-600">Contacto</a>
-        <a href="#blog" class="hover:text-brand-600">Blog</a>
-      </div>
-    </div>
-  </div>
+<body class="bg-bc text-ao antialiased">
 
-  <!-- Header / Nav -->
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-bp border-b border-gray-200 shadow-sm">
     <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2">
-        <div class="w-9 h-9 rounded-xl bg-brand-600 grid place-content-center font-bold text-white">Z</div>
-        <span class="font-semibold tracking-wide">ZOHAN</span>
+      <a href="#" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="ZOHAN" class="h-10 w-auto">
+        <span class="font-semibold tracking-wide text-ao">ZOHAN</span>
       </a>
-      <div class="hidden md:flex items-center gap-8 text-gray-700">
-        <a href="#servicios" class="hover:text-brand-600">Servicios</a>
-        <a href="#proceso" class="hover:text-brand-600">Proceso</a>
-        <a href="#ctit" class="hover:text-brand-600">CTIT</a>
-        <a href="#nosotros" class="hover:text-brand-600">Nosotros</a>
-        <a href="#faq" class="hover:text-brand-600">FAQ</a>
-      </div>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="https://form.jotform.com/252525919342056" target="_blank" class="px-4 py-2 rounded-xl border border-gray-300 hover:border-brand-400">Soy exportador</a>
-        <a href="https://form.jotform.com/252526583647062" target="_blank" class="px-4 py-2 rounded-xl bg-brand-600 text-white hover:bg-brand-500">Importar maquinaria</a>
+      <div class="hidden md:flex items-center gap-8 text-ao">
+        <a href="#servicios" class="hover:text-brand">Servicios</a>
+        <a href="#proceso" class="hover:text-brand">Proceso</a>
+        <a href="#ctit" class="hover:text-brand">CTIT</a>
+        <a href="#nosotros" class="hover:text-brand">Nosotros</a>
+        <a href="#faq" class="hover:text-brand">FAQ</a>
       </div>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 pt-16 pb-24 relative">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
-            Importaciones inteligentes<br/>
-            <span class="text-brand-600">seguras, rentables y sin drama</span>
-          </h1>
-          <p class="mt-6 text-lg text-gray-700 max-w-xl">Conectamos tu negocio con fábricas en China. Buscamos, negociamos, controlamos calidad y entregamos en Argentina con todo en regla. Dominamos CTIT para exportadores y gestionamos importación de maquinaria end-to-end.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="https://form.jotform.com/252525919342056" target="_blank" class="px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-medium text-white">Cotizar insumos para exportar</a>
-            <a href="https://form.jotform.com/252526583647062" target="_blank" class="px-5 py-3 rounded-xl border border-gray-300 hover:border-brand-400">Traer maquinaria o bienes de uso</a>
-          </div>
-          <p class="mt-4 text-gray-500 text-sm">Precio final transparente. Sin fees ni comisiones ocultas.</p>
+  <section class="bg-bp py-20">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-ao">
+          Importaciones inteligentes<br/>
+          <span class="text-brand">seguras, rentables y sin drama</span>
+        </h1>
+        <p class="mt-6 text-lg text-ao/80 max-w-xl">
+          Conectamos tu negocio con fábricas en China. Buscamos, negociamos, controlamos calidad y entregamos en Argentina con todo en regla.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="https://form.jotform.com/252525919342056" target="_blank"
+             class="px-5 py-3 rounded-xl bg-brand text-white hover:bg-ao">Cotizar insumos</a>
+          <a href="https://form.jotform.com/252526583647062" target="_blank"
+             class="px-5 py-3 rounded-xl border border-brand text-brand hover:bg-brand hover:text-white">Importar maquinaria</a>
         </div>
-        <div class="glass p-6 rounded-2xl">
-          <h3 class="text-2xl font-semibold">3 viajes, 2 meses en China, alianzas reales</h3>
-          <p class="text-gray-700 mt-2">Estamos donde pasan las cosas: ferias, fábricas, controles de calidad. Trabajo de campo, no promesas.</p>
-        </div>
+      </div>
+      <div class="p-6 rounded-2xl bg-ao text-bp">
+        <h3 class="text-2xl font-semibold">3 viajes, 2 meses en China</h3>
+        <p class="mt-2">Ferias, fábricas, controles de calidad. Trabajo de campo, no promesas.</p>
       </div>
     </div>
   </section>
 
-  <!-- Servicios -->
-  <section id="servicios" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold">Servicios</h2>
-      <div class="grid md:grid-cols-2 gap-8 mt-8">
-        <div class="p-6 rounded-2xl border border-gray-200 bg-gray-50">
-          <h3 class="text-2xl font-semibold">Para exportadores</h3>
-          <p class="mt-2 text-gray-700">Insumos de packaging (bolsas, big bags, cajas, etc.), negociados en origen y entregados con ventajas del régimen de importación temporaria (CTIT).</p>
-          <a href="https://form.jotform.com/252525919342056" target="_blank" class="inline-block mt-6 px-4 py-2 rounded-xl bg-brand-600 text-white hover:bg-brand-500">Solicitar cotización</a>
-        </div>
-        <div class="p-6 rounded-2xl border border-gray-200 bg-gray-50">
-          <h3 class="text-2xl font-semibold">Importación de maquinaria</h3>
-          <p class="mt-2 text-gray-700">Traemos maquinaria industrial, bienes de uso e instalaciones: end-to-end, de la fábrica a tu planta en Argentina.</p>
-          <a href="https://form.jotform.com/252526583647062" target="_blank" class="inline-block mt-6 px-4 py-2 rounded-xl border border-gray-300 hover:border-brand-400">Pedir evaluación</a>
-        </div>
+  <!-- Servicios (sección clara/oscura alternadas) -->
+  <section id="servicios" class="py-20 bg-bc">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+      <div class="p-6 rounded-2xl bg-bp shadow">
+        <h3 class="text-2xl font-semibold text-ao">Para exportadores</h3>
+        <p class="mt-2 text-ao/80">Insumos de packaging con ventajas del régimen CTIT.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-ao text-bp shadow">
+        <h3 class="text-2xl font-semibold">Maquinaria</h3>
+        <p class="mt-2">Traemos maquinaria industrial, bienes de uso e instalaciones.</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA final -->
-  <section id="contacto" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
-        <h2 class="text-3xl font-bold">¿Listos para el próximo embarque?</h2>
-        <p class="mt-2 text-gray-700">Completá el formulario que corresponda a tu necesidad y te cotizamos con precio final, tiempos y recomendaciones.</p>
-        <div class="mt-8 grid md:grid-cols-2 gap-10">
-          <!-- Formulario Exportadores -->
-          <iframe src="https://form.jotform.com/252525919342056" width="100%" height="600" frameborder="0" style="border:none;" allowfullscreen></iframe>
-          <!-- Formulario Importadores de Maquinaria -->
-          <iframe src="https://form.jotform.com/252526583647062" width="100%" height="600" frameborder="0" style="border:none;" allowfullscreen></iframe>
-        </div>
+  <!-- CTA -->
+  <section id="contacto" class="py-20 bg-bp">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-ao">¿Listos para el próximo embarque?</h2>
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="https://form.jotform.com/252525919342056" target="_blank"
+           class="px-5 py-3 rounded-xl bg-brand text-white hover:bg-ao">Soy exportador</a>
+        <a href="https://form.jotform.com/252526583647062" target="_blank"
+           class="px-5 py-3 rounded-xl border border-brand text-brand hover:bg-brand hover:text-white">Importar maquinaria</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-4 gap-8 text-gray-700">
-      <div>
-        <div class="w-10 h-10 rounded-xl bg-brand-600 grid place-content-center font-bold text-white">Z</div>
-        <p class="mt-3">China → Argentina, importaciones inteligentes.</p>
-      </div>
-      <div>
-        <h5 class="font-semibold">Compañía</h5>
-        <ul class="mt-3 space-y-2">
-          <li><a href="#nosotros" class="hover:text-brand-600">Nosotros</a></li>
-          <li><a href="#servicios" class="hover:text-brand-600">Servicios</a></li>
-          <li><a href="#blog" class="hover:text-brand-600">Blog</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="font-semibold">Recursos</h5>
-        <ul class="mt-3 space-y-2">
-          <li><a href="#faq" class="hover:text-brand-600">FAQ</a></li>
-          <li><a href="#proceso" class="hover:text-brand-600">Proceso</a></li>
-          <li><a href="#ctit" class="hover:text-brand-600">CTIT</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="font-semibold">Contacto</h5>
-        <ul class="mt-3 space-y-2">
-          <li><a href="mailto:hola@zohan.com.ar" class="hover:text-brand-600">hola@zohan.com.ar</a></li>
-          <li><a href="https://zohan.com.ar" class="hover:text-brand-600">zohan.com.ar</a></li>
-        </ul>
-      </div>
+  <footer class="bg-ao text-bp py-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <img src="assets/logo.png" alt="ZOHAN" class="h-10 mx-auto">
+      <p class="mt-4 text-bp/80">© <span id="year"></span> ZOHAN. Todos los derechos reservados.</p>
     </div>
-    <div class="border-t border-gray-200 py-6 text-center text-gray-500 text-sm">© <span id="year"></span> ZOHAN. Todos los derechos reservados.</div>
   </footer>
 
   <script>
