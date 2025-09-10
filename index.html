@@ -242,11 +242,40 @@
         </div>
         <div class="grid grid-cols-2 gap-4">
           <!-- Carrusel de fotos en Nosotros -->
-          <div class="relative w-full h-40 rounded-2xl overflow-hidden">
-            <img id="nosotros-carousel-img" src="https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/foto1.jpg" alt="Foto 1" class="w-full h-full object-cover rounded-2xl transition-all duration-700" />
-            <button id="nosotros-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-ao/70 text-bp rounded-full px-2 py-1">‹</button>
-            <button id="nosotros-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-ao/70 text-bp rounded-full px-2 py-1">›</button>
+          <div class="relative w-full h-40 md:h-64 rounded-2xl overflow-hidden flex items-center justify-center bg-bp/5">
+            <img id="nosotros-carousel-img" src="https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/foto1.jpg" alt="Foto 1" class="max-h-full w-auto object-cover rounded-2xl transition-all duration-700 mx-auto" />
+            <button id="nosotros-prev" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 bg-ao/70 text-bp rounded-full px-3 py-2 text-xl">‹</button>
+            <button id="nosotros-next" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 bg-ao/70 text-bp rounded-full px-3 py-2 text-xl">›</button>
           </div>
+    // Carrusel de fotos en Nosotros
+    document.addEventListener('DOMContentLoaded', function() {
+      const nosotrosImages = [
+        'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/foto1.jpg',
+        'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/foto2.jpg',
+        'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/foto3.jpg',
+        'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/foto4.jpg',
+        'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/foto5.jpg'
+      ];
+      let nosotrosCurrent = 0;
+      const nosotrosImgEl = document.getElementById('nosotros-carousel-img');
+      const nosotrosPrevBtn = document.getElementById('nosotros-prev');
+      const nosotrosNextBtn = document.getElementById('nosotros-next');
+      function showNosotrosImg(idx) {
+        nosotrosImgEl.src = nosotrosImages[idx];
+      }
+      nosotrosPrevBtn.onclick = function() {
+        nosotrosCurrent = (nosotrosCurrent - 1 + nosotrosImages.length) % nosotrosImages.length;
+        showNosotrosImg(nosotrosCurrent);
+      };
+      nosotrosNextBtn.onclick = function() {
+        nosotrosCurrent = (nosotrosCurrent + 1) % nosotrosImages.length;
+        showNosotrosImg(nosotrosCurrent);
+      };
+      setInterval(function() {
+        nosotrosCurrent = (nosotrosCurrent + 1) % nosotrosImages.length;
+        showNosotrosImg(nosotrosCurrent);
+      }, 4000);
+    });
     // Carrusel de fotos en Nosotros
     const nosotrosImages = [
       'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/foto1.jpg',
@@ -389,7 +418,7 @@
       'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/carrousel1.jpg',
       'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/carrousel2.jpg',
       'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/carrousel3.jpg',
-      'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/carrousel4.jpg',
+      'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/carrouesel4.jpg',
       'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/carrousel5.jpg',
       'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/carrousel6.jpg',
       'https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/carrousel7.jpg',
