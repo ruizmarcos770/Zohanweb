@@ -9,7 +9,7 @@
   <meta property="og:description" content="Importaciones seguras, rentables y sin complicaciones. Especialistas en CTIT y maquinaria." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://zohan.com.ar" />
-  <meta name="theme-color" content="#f4f6f8" />
+  <meta name="theme-color" content="#364154" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,124 +18,320 @@
       theme: {
         extend: {
           colors: {
-            brand: '#4a90e2', // Azul claro
-            ao: '#364154',    // Azul oscuro
-            bc: '#f4f6f8',    // Blanco cremita
-            bp: '#ffffff'     // Blanco puro
+            brand: {
+              50: '#ffffff', 100: '#f4f6f8', 200: '#c7d2fe', 300: '#a5b4fc',
+              400: '#4a90e2', 500: '#4a90e2', 600: '#364154', 700: '#364154',
+              800: '#364154', 900: '#364154'
+            },
+            ink: '#364154',
+            paper: '#f4f6f8'
           }
         }
       }
     }
   </script>
   <style>
-    .glass {
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, .1);
-    }
+    /* Suaves gradientes y glassmorphism */
+    .glass { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255,255,255,.08); }
+    .prose p { color: #cbd5e1; }
   </style>
 </head>
-<body class="bg-bc text-ao antialiased">
+<body class="bg-paper text-ink antialiased">
   <!-- Topbar -->
-  <div class="w-full bg-ao text-bp text-sm">
+  <div class="w-full bg-ink/60 border-b border-white/5 text-sm">
     <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-      <p>China → Argentina, de fábrica a tu puerta</p>
-      <div class="hidden md:flex gap-4">
-        <a href="#contacto" class="hover:text-brand">Contacto</a>
-        <a href="#blog" class="hover:text-brand">Blog</a>
+      <p class="text-white">China → Argentina, de fábrica a tu puerta</p>
+      <div class="hidden md:flex gap-4 text-white">
+        <a href="#contacto" class="hover:text-white">Contacto</a>
+        <a href="#blog" class="hover:text-white">Blog</a>
       </div>
     </div>
   </div>
 
   <!-- Header / Nav -->
-  <header class="sticky top-0 z-40 bg-bp backdrop-blur border-b border-gray-200">
+  <header class="sticky top-0 z-40 bg-paper/80 backdrop-blur border-b border-white/5">
     <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="ZOHAN" class="h-10 w-auto">
-        <span class="font-semibold tracking-wide text-ao">ZOHAN</span>
+      <a href="#" class="flex items-center gap-2">
+        <img src="assets/logo.png" alt="ZOHAN" class="w-9 h-9 rounded-xl object-contain" />
+        <span class="font-semibold tracking-wide">ZOHAN</span>
       </a>
-      <div class="hidden md:flex items-center gap-8 text-ao">
-        <a href="#servicios" class="hover:text-brand">Servicios</a>
-        <a href="#proceso" class="hover:text-brand">Proceso</a>
-        <a href="#ctit" class="hover:text-brand">CTIT</a>
-        <a href="#nosotros" class="hover:text-brand">Nosotros</a>
-        <a href="#faq" class="hover:text-brand">FAQ</a>
+      <div class="hidden md:flex items-center gap-8 text-ink">
+        <a href="#servicios" class="hover:text-brand-400">Servicios</a>
+        <a href="#proceso" class="hover:text-brand-400">Proceso</a>
+        <a href="#ctit" class="hover:text-brand-400">CTIT</a>
+        <a href="#nosotros" class="hover:text-brand-400">Nosotros</a>
+        <a href="#faq" class="hover:text-brand-400">FAQ</a>
       </div>
       <div class="hidden md:flex items-center gap-3">
-        <a href="https://form.jotform.com/252525919342056" target="_blank"
-           class="px-4 py-2 rounded-xl border border-brand text-brand hover:bg-brand hover:text-bp">Soy exportador</a>
-        <a href="https://form.jotform.com/252526583647062" target="_blank"
-           class="px-4 py-2 rounded-xl bg-brand text-bp hover:bg-ao">Importar maquinaria</a>
+        <a href="https://form.jotform.com/252525919342056" target="_blank" class="px-4 py-2 rounded-xl border border-white/10 hover:border-brand-400 hover:text-brand-400">Soy exportador</a>
+        <a href="https://form.jotform.com/252526583647062" target="_blank" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white">Importar maquinaria</a>
       </div>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden bg-ao text-bp">
-    <div class="absolute inset-0 opacity-10 bg-gradient-to-br from-brand to-ao"></div>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-900/40 via-ink to-paper"></div>
     <div class="max-w-7xl mx-auto px-4 pt-16 pb-24 relative">
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
             Importaciones inteligentes<br/>
-            <span class="text-brand">seguras, rentables y sin drama</span>
+            <span class="text-brand-400">seguras, rentables y sin drama</span>
           </h1>
-          <p class="mt-6 text-lg max-w-xl">
-            Conectamos tu negocio con fábricas en China. Buscamos, negociamos, controlamos calidad y entregamos en Argentina con todo en regla. Dominamos CTIT para exportadores y gestionamos importación de maquinaria end-to-end.
-          </p>
+          <p class="mt-6 text-lg text-ink max-w-xl">Conectamos tu negocio con fábricas en China. Buscamos, negociamos, controlamos calidad y entregamos en Argentina con todo en regla. Dominamos CTIT para exportadores y gestionamos importación de maquinaria end-to-end.</p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="https://form.jotform.com/252525919342056" target="_blank"
-               class="px-5 py-3 rounded-xl bg-brand text-bp hover:bg-ao">Cotizar insumos para exportar</a>
-            <a href="https://form.jotform.com/252526583647062" target="_blank"
-               class="px-5 py-3 rounded-xl border border-bp text-bp hover:bg-brand hover:text-bp">Traer maquinaria o bienes de uso</a>
+            <a href="https://form.jotform.com/252525919342056" target="_blank" class="px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-medium text-white">Cotizar insumos para exportar</a>
+            <a href="https://form.jotform.com/252526583647062" target="_blank" class="px-5 py-3 rounded-xl border border-white/10 hover:border-brand-400">Traer maquinaria o bienes de uso</a>
           </div>
-          <p class="mt-4 text-sm opacity-80">Precio final transparente. Sin fees ni comisiones ocultas.</p>
+          <p class="mt-4 text-ink/60 text-sm">Precio final transparente. Sin fees ni comisiones ocultas.</p>
         </div>
-        <div class="glass p-6 rounded-2xl border border-bp/20">
-          <h3 class="text-2xl font-semibold">3 viajes, 2 meses en China, alianzas reales</h3>
-          <p class="mt-2">Ferias, fábricas, controles de calidad. Trabajo de campo, no promesas.</p>
+        <div class="glass p-6 rounded-2xl border border-white/5">
+          <div class="aspect-video rounded-xl bg-gradient-to-br from-brand-700/40 to-ink grid place-content-center text-center">
+            <div>
+              <p class="text-sm uppercase tracking-widest text-white">Confianza que se demuestra</p>
+              <h3 class="text-2xl font-semibold mt-2 text-white">3 viajes, 2 meses en China, alianzas reales</h3>
+              <p class="text-white mt-2">Estamos donde pasan las cosas: ferias, fábricas, controles de calidad. Trabajo de campo, no promesas.</p>
+            </div>
+          </div>
+          <div class="mt-4 grid grid-cols-3 gap-3 text-center">
+            <div class="p-3 rounded-xl bg-white/5">
+              <p class="text-2xl font-bold">+16</p><p class="text-xs text-ink/60">meses construyendo<br>proveedores</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5">
+              <p class="text-2xl font-bold">CTIT</p><p class="text-xs text-ink/60">Dominio operativo</p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5">
+              <p class="text-2xl font-bold">Door-to-door</p><p class="text-xs text-ink/60">China → AR</p>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strip confianza -->
+  <section class="py-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-80">
+        <div class="h-10 bg-white/5 rounded-xl"></div>
+        <div class="h-10 bg-white/5 rounded-xl"></div>
+        <div class="h-10 bg-white/5 rounded-xl"></div>
+        <div class="h-10 bg-white/5 rounded-xl"></div>
       </div>
     </div>
   </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="py-20 bg-bp text-ao">
-    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8">
-      <div class="p-6 rounded-2xl border border-gray-200 bg-bc">
-        <h3 class="text-2xl font-semibold">Para exportadores</h3>
-        <p class="mt-2">Insumos de packaging (bolsas, big bags, cajas, etc.), negociados en origen y entregados con ventajas del régimen de importación temporaria (CTIT).</p>
-        <a href="https://form.jotform.com/252525919342056" target="_blank"
-           class="inline-block mt-6 px-4 py-2 rounded-xl bg-brand text-bp hover:bg-ao">Solicitar cotización</a>
-      </div>
-      <div class="p-6 rounded-2xl border border-gray-200 bg-bc">
-        <h3 class="text-2xl font-semibold">Importación de maquinaria</h3>
-        <p class="mt-2">Traemos maquinaria industrial, bienes de uso e instalaciones: end-to-end, de la fábrica a tu planta en Argentina.</p>
-        <a href="https://form.jotform.com/252526583647062" target="_blank"
-           class="inline-block mt-6 px-4 py-2 rounded-xl border border-brand text-brand hover:bg-brand hover:text-bp">Pedir evaluación</a>
+  <section id="servicios" class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10">
+          <h3 class="text-2xl font-semibold">Para exportadores</h3>
+          <p class="mt-2 text-ink/80">Insumos de packaging (bolsas, big bags, cajas, etc.), negociados en origen y entregados con ventajas del régimen de importación temporaria (CTIT).</p>
+          <ul class="mt-4 space-y-2 text-ink/80 list-disc list-inside">
+            <li>Precio final, claro y sin sorpresas</li>
+            <li>Búsqueda, negociación y control de calidad</li>
+            <li>Gestión documental y aduanera completa</li>
+          </ul>
+          <a href="https://form.jotform.com/252525919342056" target="_blank" class="inline-block mt-6 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white">Solicitar cotización</a>
+        </div>
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10">
+          <h3 class="text-2xl font-semibold">Importación de maquinaria</h3>
+          <p class="mt-2 text-ink/80">Traemos maquinaria industrial, bienes de uso e instalaciones: end-to-end, de la fábrica a tu planta en Argentina.</p>
+          <ul class="mt-4 space-y-2 text-ink/80 list-disc list-inside">
+            <li>Selección de proveedores validados</li>
+            <li>Logística internacional y nacional door-to-door</li>
+            <li>Puesta en marcha y soporte postventa</li>
+          </ul>
+          <a href="https://form.jotform.com/252526583647062" target="_blank" class="inline-block mt-6 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20">Pedir evaluación</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section id="contacto" class="py-20 bg-ao text-bp">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold">¿Listos para el próximo embarque?</h2>
-      <div class="mt-6 flex justify-center gap-4">
-        <a href="https://form.jotform.com/252525919342056" target="_blank"
-           class="px-5 py-3 rounded-xl bg-brand text-bp hover:bg-bp hover:text-ao">Soy exportador</a>
-        <a href="https://form.jotform.com/252526583647062" target="_blank"
-           class="px-5 py-3 rounded-xl border border-brand text-brand hover:bg-brand hover:text-bp">Importar maquinaria</a>
+  <!-- Proceso -->
+  <section id="proceso" class="py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold">Cómo trabajamos</h2>
+      <p class="mt-2 text-ink/80 max-w-2xl">Proceso integral, documentado y transparente. Pequeñas mejoras constantes (KAIZEN) para que cada embarque sea mejor que el anterior.</p>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold">1) Relevamiento</h4>
+          <p class="text-ink/80">Necesidad, requisitos y factibilidad.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold">2) Marco legal</h4>
+          <p class="text-ink/80">Régimen más conveniente (CTIT u otros).</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold">3) Proveedores</h4>
+          <p class="text-ink/80">Selección y negociación en China.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold">4) Cotización</h4>
+          <p class="text-ink/80">Precio final transparente.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold">5) Documentación</h4>
+          <p class="text-ink/80">Gestión aduanera y compliance.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold">6) Logística</h4>
+          <p class="text-ink/80">Transporte, despacho y entrega.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTIT / Diferencial -->
+  <section id="ctit" class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold">Especialistas en CTIT</h2>
+          <p class="mt-3 text-ink/80">Aprovechamos el Certificado de Tipificación de Importación Temporaria para optimizar costos y tiempos en exportadores. Operación prolija, rentable y segura.</p>
+          <ul class="mt-6 grid grid-cols-1 gap-3">
+            <li class="glass p-4 rounded-xl">Asesoría integral y documentación al día</li>
+            <li class="glass p-4 rounded-xl">Control de calidad en origen</li>
+            <li class="glass p-4 rounded-xl">Relaciones directas con fábricas</li>
+          </ul>
+        </div>
+        <div class="glass p-6 rounded-2xl border border-white/5">
+          <h3 class="text-xl font-semibold">Precio final sin sorpresas</h3>
+          <p class="text-ink/80 mt-2">Nuestro margen está incluido en el producto y la gestión integral. No cobramos fees ni comisiones aparte.</p>
+          <a href="#faq" class="inline-block mt-4 text-brand-400 hover:text-brand-300">Ver preguntas frecuentes →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section id="nosotros" class="py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold">Jóvenes, reales y solucionadores</h2>
+          <p class="mt-3 text-ink/80">Somos Marcos y Gonzalo: emprendimos para hacer las cosas distintas, cercanas y honestas. Viajamos, negociamos y documentamos el proceso para que vos te enfoques en hacer crecer tu negocio.</p>
+          <ul class="mt-6 space-y-2 text-ink/80 list-disc list-inside">
+            <li>Historias reales: ferias, fábricas y clientes</li>
+            <li>Aprendizaje continuo: cada operación nos mejora</li>
+            <li>Win-win o nada</li>
+          </ul>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="h-40 rounded-2xl bg-white/5"></div>
+          <div class="h-40 rounded-2xl bg-white/5"></div>
+          <div class="h-40 rounded-2xl bg-white/5"></div>
+          <div class="h-40 rounded-2xl bg-white/5"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-end justify-between">
+        <h2 class="text-3xl md:text-4xl font-bold">Blog educativo</h2>
+        <a href="/blog" class="text-brand-400 hover:text-brand-300">Ver todos →</a>
+      </div>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <article class="glass p-5 rounded-2xl">
+          <p class="text-xs uppercase tracking-wider text-brand-400">CTIT</p>
+          <h3 class="mt-2 text-xl font-semibold">Qué es y cuándo conviene</h3>
+          <p class="mt-2 text-ink/80">Guía clara para exportadores sobre el régimen de importación temporaria.</p>
+        </article>
+        <article class="glass p-5 rounded-2xl">
+          <p class="text-xs uppercase tracking-wider text-brand-400">Calidad</p>
+          <h3 class="mt-2 text-xl font-semibold">Checklist de control en fábrica</h3>
+          <p class="mt-2 text-ink/80">Los básicos para recibir lo que pediste, sin sorpresas.</p>
+        </article>
+        <article class="glass p-5 rounded-2xl">
+          <p class="text-xs uppercase tracking-wider text-brand-400">Logística</p>
+          <h3 class="mt-2 text-xl font-semibold">Incoterms sin humo</h3>
+          <p class="mt-2 text-ink/80">FOB, CIF, DDP… cómo elegir lo que más te conviene.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold">Preguntas frecuentes</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold">¿Cómo ganan dinero?</h4>
+          <p class="text-ink/80 mt-2">Con un margen incluido en el precio final del producto y la gestión integral. No cobramos honorarios adicionales.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold">¿Trabajan solo con exportadores?</h4>
+          <p class="text-ink/80 mt-2">No. También importamos maquinaria, bienes de uso e instalaciones para industria.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold">¿Hacen control de calidad en China?</h4>
+          <p class="text-ink/80 mt-2">Sí, validamos proveedores, realizamos inspecciones y documentamos el proceso.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold">¿Pueden entregar en mi planta?</h4>
+          <p class="text-ink/80 mt-2">Coordinamos logística internacional y nacional para entrega door-to-door.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section id="contacto" class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="glass p-8 rounded-2xl grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl font-bold">¿Listos para el próximo embarque?</h2>
+          <p class="mt-2 text-ink/80">Contanos qué necesitás y te cotizamos con precio final, tiempos y recomendaciones.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://form.jotform.com/252525919342056" target="_blank" class="px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-medium text-white">Soy exportador</a>
+          <a href="https://form.jotform.com/252526583647062" target="_blank" class="px-5 py-3 rounded-xl border border-white/10 hover:border-brand-400">Importar maquinaria</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-bc text-ao py-10">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <img src="assets/logo.png" alt="ZOHAN" class="h-10 mx-auto">
-      <p class="mt-4 text-ao/80">© <span id="year"></span> ZOHAN. Todos los derechos reservados.</p>
+  <footer class="border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="assets/logo.png" alt="ZOHAN" class="w-10 h-10 rounded-xl object-contain" />
+          <span class="font-semibold tracking-wide">ZOHAN</span>
+        </div>
+        <p class="mt-3 text-ink/60">China → Argentina, importaciones inteligentes.</p>
+      </div>
+      <div>
+        <h5 class="font-semibold">Compañía</h5>
+        <ul class="mt-3 space-y-2 text-ink/80">
+          <li><a href="#nosotros" class="hover:text-brand-400">Nosotros</a></li>
+          <li><a href="#servicios" class="hover:text-brand-400">Servicios</a></li>
+          <li><a href="#blog" class="hover:text-brand-400">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-semibold">Recursos</h5>
+        <ul class="mt-3 space-y-2 text-ink/80">
+          <li><a href="#faq" class="hover:text-brand-400">FAQ</a></li>
+          <li><a href="#proceso" class="hover:text-brand-400">Proceso</a></li>
+          <li><a href="#ctit" class="hover:text-brand-400">CTIT</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-semibold">Contacto</h5>
+        <ul class="mt-3 space-y-2 text-ink/80">
+          <li><a href="mailto:hola@zohan.com.ar" class="hover:text-brand-400">hola@zohan.com.ar</a></li>
+          <li><a href="https://zohan.com.ar" class="hover:text-brand-400">zohan.com.ar</a></li>
+        </ul>
+      </div>
     </div>
+    <div class="border-t border-white/5 py-6 text-center text-ink/50 text-sm">© <span id="year"></span> ZOHAN. Todos los derechos reservados.</div>
   </footer>
 
   <script>
