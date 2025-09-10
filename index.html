@@ -100,12 +100,20 @@
           <p class="mt-4 text-bc/70 text-sm">Precio final transparente. Sin fees ni comisiones ocultas.</p>
         </div>
         <div class="glass p-6 rounded-2xl border border-white/5">
-          <div class="aspect-video rounded-xl bg-gradient-to-br from-brand-700/40 to-ao grid place-content-center text-center">
+          <div class="aspect-video rounded-xl bg-gradient-to-br from-brand-700/40 to-ao grid place-content-center text-center mb-4">
             <div>
               <p class="text-sm uppercase tracking-widest text-bc">Confianza que se demuestra</p>
               <h3 class="text-2xl font-semibold mt-2 text-bp">3 viajes, 2 meses en China, alianzas reales</h3>
               <p class="text-bc mt-2">Estamos donde pasan las cosas: ferias, fábricas, controles de calidad. Trabajo de campo, no promesas.</p>
             </div>
+          </div>
+          <!-- Carrusel de fotos de contenedores y viajes -->
+          <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-4">
+            <div id="carousel" class="w-full h-full">
+              <img id="carousel-img" src="https://github.com/zohan/assets/raw/main/carrousel1.jpg" alt="Viaje 1" class="w-full h-full object-cover rounded-xl transition-all duration-700" />
+            </div>
+            <button id="prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-ao/70 text-bp rounded-full px-2 py-1">‹</button>
+            <button id="next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-ao/70 text-bp rounded-full px-2 py-1">›</button>
           </div>
           <div class="mt-4 grid grid-cols-3 gap-3 text-center">
             <div class="p-3 rounded-xl bg-bp/5">
@@ -347,6 +355,40 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Carrusel de fotos en Hero
+    const carouselImages = [
+      'https://github.com/zohan/assets/raw/main/carrousel1.jpg',
+      'https://github.com/zohan/assets/raw/main/carrousel2.jpg',
+      'https://github.com/zohan/assets/raw/main/carrousel3.jpg',
+      'https://github.com/zohan/assets/raw/main/carrousel4.jpg',
+      'https://github.com/zohan/assets/raw/main/carrousel5.jpg',
+      'https://github.com/zohan/assets/raw/main/carrousel6.jpg',
+      'https://github.com/zohan/assets/raw/main/carrousel7.jpg',
+      'https://github.com/zohan/assets/raw/main/carrousel8.jpg',
+      'https://github.com/zohan/assets/raw/main/carrousel9.jpg'
+    ];
+    let currentImg = 0;
+    const imgEl = document.getElementById('carousel-img');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    function showImg(idx) {
+      imgEl.src = carouselImages[idx];
+    }
+    prevBtn.onclick = function() {
+      currentImg = (currentImg - 1 + carouselImages.length) % carouselImages.length;
+      showImg(currentImg);
+    };
+    nextBtn.onclick = function() {
+      currentImg = (currentImg + 1) % carouselImages.length;
+      showImg(currentImg);
+    };
+    // Cambio automático cada 4 segundos
+    setInterval(function() {
+      currentImg = (currentImg + 1) % carouselImages.length;
+      showImg(currentImg);
+    }, 4000);
   </script>
 </body>
 </html>
