@@ -139,11 +139,43 @@
   <!-- Strip confianza -->
   <section class="py-10 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-80">
-        <div class="h-10 bg-bp/5 rounded-xl"></div>
-        <div class="h-10 bg-bp/5 rounded-xl"></div>
-        <div class="h-10 bg-bp/5 rounded-xl"></div>
-        <div class="h-10 bg-bp/5 rounded-xl"></div>
+      <div class="text-center mb-8">
+        <h3 class="text-xl font-semibold text-bp mb-2">Clientes que confían en nosotros</h3>
+        <p class="text-bc/70">Empresas líderes que han elegido ZOHAN para sus importaciones</p>
+      </div>
+      <div class="relative overflow-hidden">
+        <div id="logos-carousel" class="flex transition-transform duration-1000 ease-in-out">
+          <div class="flex-shrink-0 w-1/4 px-4">
+            <div class="h-16 flex items-center justify-center bg-bp/5 rounded-xl p-4">
+              <img src="https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/logocolor3-ruizsa.png" alt="Cliente 1" class="max-h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            </div>
+          </div>
+          <div class="flex-shrink-0 w-1/4 px-4">
+            <div class="h-16 flex items-center justify-center bg-bp/5 rounded-xl p-4">
+              <img src="https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/logo.png" alt="Cliente 2" class="max-h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            </div>
+          </div>
+          <div class="flex-shrink-0 w-1/4 px-4">
+            <div class="h-16 flex items-center justify-center bg-bp/5 rounded-xl p-4">
+              <img src="https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/logocolor-gr.png" alt="Cliente 3" class="max-h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            </div>
+          </div>
+          <div class="flex-shrink-0 w-1/4 px-4">
+            <div class="h-16 flex items-center justify-center bg-bp/5 rounded-xl p-4">
+              <img src="https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/logo-agsof.png" alt="Cliente 4" class="max-h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            </div>
+          </div>
+          <div class="flex-shrink-0 w-1/4 px-4">
+            <div class="h-16 flex items-center justify-center bg-bp/5 rounded-xl p-4">
+              <img src="https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/logo-paramerica.png" alt="Cliente 5" class="max-h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            </div>
+          </div>
+          <div class="flex-shrink-0 w-1/4 px-4">
+            <div class="h-16 flex items-center justify-center bg-bp/5 rounded-xl p-4">
+              <img src="https://raw.githubusercontent.com/ruizmarcos770/Zohanweb/main/assets/ZrKPt6hgJCaq9c4WQ4n8.png" alt="Cliente 6" class="max-h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -512,6 +544,24 @@
       nosotrosCurrent = (nosotrosCurrent + 1) % nosotrosImages.length;
       showNosotrosImg(nosotrosCurrent);
     }, 4000);
+
+    // Carrusel de logos de clientes
+    const logosCarousel = document.getElementById('logos-carousel');
+    let logosPosition = 0;
+    const logoWidth = 25; // 25% width (100% / 4 visible logos)
+    
+    function moveLogos() {
+      logosPosition -= logoWidth;
+      if (logosPosition <= -(logoWidth * 2)) { // Cuando se mueven 2 logos (50%), resetear
+        logosPosition = 0;
+      }
+      if (logosCarousel) {
+        logosCarousel.style.transform = `translateX(${logosPosition}%)`;
+      }
+    }
+    
+    // Mover logos cada 3 segundos
+    setInterval(moveLogos, 3000);
   </script>
 </body>
 </html>
