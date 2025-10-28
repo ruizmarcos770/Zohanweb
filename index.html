@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ZOHAN | Productos de China directo a tu casa</title>
-  <meta name="description" content="Marketplace argentino de productos seleccionados desde China. Hogar, jardín, oficina y herramientas al mejor precio. También ofrecemos servicios de importación integral para empresas." />
-  <meta property="og:title" content="ZOHAN | Productos de China a Argentina" />
-  <meta property="og:description" content="Selección inteligente de productos chinos. Calidad, diseño y precio directo a tu puerta." />
+  <title>ZOHAN | Importaciones inteligentes desde China a Argentina</title>
+  <meta name="description" content="ZOHAN conecta fábricas en China con empresas argentinas. Gestión integral: búsqueda, negociación, control de calidad, logística y aduana hasta tu puerta. Especialistas en CTIT para exportadores y en importación de maquinaria." />
+  <meta property="og:title" content="ZOHAN | Importaciones inteligentes" />
+  <meta property="og:description" content="Importaciones seguras, rentables y sin complicaciones. Especialistas en CTIT y maquinaria." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://zohan.com.ar" />
   <meta name="theme-color" content="#f4f6f8" />
@@ -47,6 +47,12 @@
       50% { transform: translateY(-10px); }
     }
     .float-animation { animation: float 3s ease-in-out infinite; }
+    
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(74, 144, 226, 0.4); }
+      50% { box-shadow: 0 0 30px rgba(74, 144, 226, 0.6); }
+    }
+    .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
   </style>
 </head>
 
@@ -69,9 +75,9 @@
         <img src="assets/logozohan.png" alt="ZOHAN" class="h-[2.7rem] w-auto rounded-md" />
       </a>
       <div class="hidden md:flex items-center gap-8 text-bc">
-        <a href="#productos" class="hover:text-bp font-medium">Productos</a>
-        <a href="#como-funciona" class="hover:text-bp">Cómo funciona</a>
-        <a href="#importadores" class="hover:text-bp">Para empresas</a>
+        <a href="#servicios" class="hover:text-bp">Servicios</a>
+        <a href="#proceso" class="hover:text-bp">Proceso</a>
+        <a href="#ctit" class="hover:text-bp">CTIT</a>
         <a href="#nosotros" class="hover:text-bp">Nosotros</a>
         <a href="#blog" class="hover:text-bp">Blog</a>
         <a href="#faq" class="hover:text-bp">FAQ</a>
@@ -101,7 +107,13 @@
             </div>
           </div>
         </div>
-        <a href="https://wa.me/543812006513" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-green-600 hover:bg-green-500 text-bp font-medium">
+        <a href="https://form.jotform.com/252968479452676" target="_blank" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-green-600 hover:bg-green-500 text-bp font-semibold pulse-glow border-2 border-green-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Consultá productos
+        </a>
+        <a href="https://wa.me/543812006513" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-ao/60 hover:bg-ao/80 text-bc hover:text-bp font-medium border border-white/10">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
@@ -121,12 +133,10 @@
             🚢 Próxima importación en tránsito
           </div>
           <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-bp">
-            Productos de China<br/>
-            <span class="text-brand-400">directo a tu casa</span>
+            Importaciones inteligentes<br/>
+            <span class="text-brand-400">seguras, rentables y sin drama</span>
           </h1>
-          <p class="mt-6 text-lg text-bc max-w-xl">
-            Seleccionamos lo mejor de las fábricas chinas: calidad, diseño y precio que no vas a encontrar en otro lado. Descubrí nuestra colección, reservá lo que te gusta y recibilo en tu puerta.
-          </p>
+          <p class="mt-6 text-lg text-bc max-w-xl">Conectamos tu negocio con fábricas en China. Buscamos, negociamos, controlamos calidad y entregamos en Argentina con todo en regla. Dominamos CTIT para exportadores y gestionamos importación productos e insumos.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <div class="relative group">
               <button class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-semibold text-bp flex items-center gap-2 text-lg shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl hover:shadow-brand-600/40">
@@ -162,27 +172,20 @@
                 </div>
               </div>
             </div>
-            <a href="#como-funciona" class="px-6 py-3 rounded-xl border border-white/20 text-bc hover:border-brand-400 hover:bg-white/5 transition-all">
-              Cómo funciona
-            </a>
+            <a href="https://form.jotform.com/252968479452676" target="_blank" class="px-6 py-3 rounded-xl bg-green-600 hover:bg-green-500 text-bp font-semibold pulse-glow border-2 border-green-400">Conseguí nuestros productos</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdakhSyCw1aSSPa7g10lf-cNvISP6RdyMts9Z_Mnh72dLzVWA/viewform?usp=dialog" target="_blank" class="px-6 py-3 rounded-xl border border-white/10 text-bc hover:border-brand-400">Empezá a importar</a>
           </div>
-          <p class="mt-4 text-bc/70 text-sm">✓ Precios finales sin sorpresas • ✓ Selección curada • ✓ Entrega door-to-door</p>
-          
-          <!-- Link secundario para importadores -->
-          <div class="mt-8 pt-6 border-t border-white/10">
-            <p class="text-bc/60 text-sm">¿Sos empresa y querés importar productos propios? <a href="#importadores" class="text-brand-400 hover:text-brand-300 font-medium underline">Ver servicios B2B →</a></p>
-          </div>
+          <p class="mt-4 text-bc/70 text-sm">Precio final transparente. Sin fees ni comisiones ocultas.</p>
         </div>
-        
         <div class="glass p-6 rounded-2xl border border-white/5">
           <div class="aspect-video rounded-xl bg-gradient-to-br from-brand-700/40 to-ao grid place-content-center text-center mb-4">
             <div>
               <p class="text-sm uppercase tracking-widest text-bc">Confianza que se demuestra</p>
-              <h3 class="text-2xl font-semibold mt-2 text-bp">4 viajes, 3 meses en China</h3>
-              <p class="text-bc mt-2">Seleccionamos productos en ferias, visitamos fábricas y controlamos calidad. Trabajo de campo, no promesas.</p>
+              <h3 class="text-2xl font-semibold mt-2 text-bp">4 viajes, 3 meses en China, alianzas reales</h3>
+              <p class="text-bc mt-2">Estamos donde pasan las cosas: ferias, fábricas, controles de calidad. Trabajo de campo, no promesas.</p>
             </div>
           </div>
-          <!-- Carrusel de fotos -->
+          <!-- Carrusel de fotos de contenedores y viajes -->
           <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-4">
             <div id="carousel" class="w-full h-full">
               <img id="carousel-img" src="/assets/carrousel2.jpg" alt="Viaje ZOHAN" class="w-full h-full object-cover rounded-xl transition-all duration-700" />
@@ -192,13 +195,13 @@
           </div>
           <div class="grid grid-cols-3 gap-3 text-center">
             <div class="p-3 rounded-xl bg-bp/5">
-              <p class="text-2xl font-bold text-bp">+16</p><p class="text-xs text-bc/70">meses construyendo<br>red de proveedores</p>
+              <p class="text-2xl font-bold text-bp">+16</p><p class="text-xs text-bc/70">meses construyendo<br>proveedores</p>
             </div>
             <div class="p-3 rounded-xl bg-bp/5">
-              <p class="text-2xl font-bold text-bp">100%</p><p class="text-xs text-bc/70">Control de<br>calidad</p>
+              <p class="text-2xl font-bold text-bp">CTIT</p><p class="text-xs text-bc/70">Dominio operativo</p>
             </div>
             <div class="p-3 rounded-xl bg-bp/5">
-              <p class="text-2xl font-bold text-bp">Door<br>to door</p><p class="text-xs text-bc/70">China → AR</p>
+              <p class="text-2xl font-bold text-bp">Door-to-door</p><p class="text-xs text-bc/70">China → AR</p>
             </div>
           </div>
         </div>
@@ -210,8 +213,8 @@
   <section class="py-10 border-t border-white/5 bg-bc/20">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-8">
-        <h3 class="text-xl font-semibold text-bp mb-2">Empresas que confían en nosotros</h3>
-        <p class="text-bc/70">Clientes que han elegido ZOHAN para sus importaciones B2B</p>
+        <h3 class="text-xl font-semibold text-bp mb-2">Clientes que confían en nosotros</h3>
+        <p class="text-bc/70">Empresas líderes que han elegido ZOHAN para sus importaciones</p>
       </div>
       <div class="relative overflow-hidden">
         <div id="logos-carousel" class="flex transition-transform duration-1000 ease-in-out">
@@ -245,7 +248,7 @@
               <img src="/assets/ZrKPt6hgJCaq9c4WQ4n8.png" alt="Agroworld" class="max-h-14 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
             </div>
           </div>
-          <!-- Duplicados para loop infinito -->
+          <!-- Duplicamos los logos para el efecto de loop infinito -->
           <div class="flex-shrink-0 w-1/6 px-2">
             <div class="h-20 flex items-center justify-center bg-bp/80 rounded-xl p-3 shadow-sm">
               <img src="/assets/logocolor3-ruizsa.png" alt="Cliente 1" class="max-h-[4.5rem] w-auto object-contain opacity-80 hover:opacity-100 transition-opacity" />
@@ -281,222 +284,116 @@
     </div>
   </section>
 
-  <!-- CÓMO FUNCIONA - Nueva sección destacada -->
-  <section id="como-funciona" class="py-20 bg-gradient-to-b from-ao to-ao/95">
+  <!-- Servicios -->
+  <section id="servicios" class="py-20">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-bp">Cómo funciona Zohan Marketplace</h2>
-        <p class="mt-3 text-bc max-w-2xl mx-auto">Selección inteligente, importación controlada y entrega directa. Así de simple.</p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-8 mb-12">
-        <div class="text-center group">
-          <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-500/20 flex items-center justify-center mb-4 group-hover:bg-brand-500/30 transition-all float-animation">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </div>
-          <div class="inline-block px-3 py-1 rounded-full bg-brand-600/20 text-brand-300 text-xs font-semibold mb-3">PASO 1</div>
-          <h3 class="text-xl font-semibold text-bp mb-2">Explorá los catálogos</h3>
-          <p class="text-bc">Navegá nuestra selección curada de cortadoras de césped, escaleras y herramientas. Cada artículo fue elegido por su calidad, diseño y precio competitivo.</p>
-        </div>
-        
-        <div class="text-center group">
-          <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-500/20 flex items-center justify-center mb-4 group-hover:bg-brand-500/30 transition-all float-animation" style="animation-delay: 0.3s;">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-          </div>
-          <div class="inline-block px-3 py-1 rounded-full bg-brand-600/20 text-brand-300 text-xs font-semibold mb-3">PASO 2</div>
-          <h3 class="text-xl font-semibold text-bp mb-2">Consultá y reservá</h3>
-          <p class="text-bc">Los productos están viajando hacia Argentina. Completá nuestro formulario de consulta para conocer disponibilidad, reservar lo que te gusta y recibir el precio final.</p>
-        </div>
-        
-        <div class="text-center group">
-          <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-500/20 flex items-center justify-center mb-4 group-hover:bg-brand-500/30 transition-all float-animation" style="animation-delay: 0.6s;">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-          </div>
-          <div class="inline-block px-3 py-1 rounded-full bg-brand-600/20 text-brand-300 text-xs font-semibold mb-3">PASO 3</div>
-          <h3 class="text-xl font-semibold text-bp mb-2">Recibilo en tu puerta</h3>
-          <p class="text-bc">Nosotros nos ocupamos de todo: aduana, logística nacional y entrega. Vos solo esperás tu producto en la comodidad de tu casa.</p>
-        </div>
-      </div>
-
-      <!-- Info box sobre estado de productos -->
-      <div class="glass p-6 rounded-2xl border border-brand-400/30 max-w-3xl mx-auto">
-        <div class="flex items-start gap-4">
-          <div class="flex-shrink-0">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div>
-            <h4 class="font-semibold text-bp mb-2">🚢 Próxima importación en camino</h4>
-            <p class="text-bc text-sm">Nuestra próxima selección de productos ya está viajando desde China hacia Argentina. Podés explorar los catálogos completos, conocer precios finales transparentes y consultarnos sobre disponibilidad. Te mantenemos informado del progreso del envío y coordinamos la entrega apenas los productos lleguen al país.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-10 flex flex-wrap gap-3 justify-center">
-        <a href="https://www.canva.com/design/DAG3AAM2qIY/vlSswitfnJjW0pepMjk4_Q/view?utm_content=DAG3AAM2qIY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6e754f249f" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-semibold text-bp shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl hover:shadow-brand-600/40">
-          🌿 Cortadoras de césped
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        </a>
-        <a href="https://www.canva.com/design/DAG27pnQwos/b-Sty8BWrOaxnZ2z0Ktvog/view?utm_content=DAG27pnQwos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he058a1c6c6" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-semibold text-bp shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl hover:shadow-brand-600/40">
-          🪜 Escaleras
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Servicios reorganizados: Marketplace primero -->
-  <section id="productos" class="py-20 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-bp">Nuestros servicios</h2>
-        <p class="mt-2 text-bc max-w-2xl mx-auto">Productos seleccionados para consumidores y servicios de importación integral para empresas.</p>
-      </div>
-      
       <div class="grid md:grid-cols-2 gap-8">
-        <!-- MARKETPLACE - Ahora primero y más destacado -->
-        <div class="p-8 rounded-2xl bg-gradient-to-br from-brand-600/20 via-brand-700/10 to-bp/0 border-2 border-brand-500/30 relative overflow-hidden">
-          <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-500 text-bp text-xs font-bold">NUEVO</div>
-          <div class="mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-bp">Marketplace Zohan</h3>
-          <p class="text-sm text-brand-300 font-medium mb-3">Para consumidores finales</p>
-          <p class="mt-2 text-bc">Marketplace argentino de productos seleccionados desde China. Cortadoras de césped, escaleras y herramientas elegidas por su calidad, diseño y precio competitivo. Próxima importación en tránsito.</p>
-          <ul class="mt-6 space-y-3">
-            <li class="flex items-start gap-3 text-bc">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Selección curada de productos de calidad</span>
-            </li>
-            <li class="flex items-start gap-3 text-bc">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Precios finales transparentes, sin sorpresas</span>
-            </li>
-            <li class="flex items-start gap-3 text-bc">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Entrega door-to-door en toda Argentina</span>
-            </li>
-            <li class="flex items-start gap-3 text-bc">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Control de calidad en origen garantizado</span>
-            </li>
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-bp/5 to-bp/0 border border-bp/10">
+          <h3 class="text-2xl font-semibold text-bp">Importadores</h3>
+          <p class="mt-2 text-bc">Ofrecemos un servicio integral que abarca desde la búsqueda de proveedores y negociación de precios hasta el control de calidad, logística y nacionalización en Argentina.</p>
+          <ul class="mt-4 space-y-2 text-bc list-disc list-inside">
+            <li>Precio final, claro y sin sorpresas</li>
+            <li>Búsqueda, negociación y control de calidad</li>
+            <li>Gestión documental y aduanera completa</li>
           </ul>
-          <div class="flex flex-wrap gap-3 mt-8">
-            <div class="relative group flex-1">
-              <button class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-bp font-semibold shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdakhSyCw1aSSPa7g10lf-cNvISP6RdyMts9Z_Mnh72dLzVWA/viewform?usp=dialog" target="_blank" class="inline-block mt-6 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-bp">Empezá a importar</a>
+        </div>
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-bp/5 to-bp/0 border border-bp/10">
+          <h3 class="text-2xl font-semibold text-bp">Linea propia de productos</h3>
+          <p class="mt-2 text-bc">Contamos con una línea propia de productos seleccionados que distribuimos directamente al consumidor final en Argentina. Nuestro objetivo es acercar la innovación y calidad del mercado chino a precios competitivos, garantizando confianza y respaldo en cada compra.</p>
+          <ul class="mt-4 space-y-2 text-bc list-disc list-inside">
+            <li>Selección de proveedores validados</li>
+            <li>Logística internacional y nacional door-to-door</li>
+            <li>Los mejores precios en el mercado Argentino</li>
+          </ul>
+          <div class="flex flex-wrap gap-3 mt-6">
+            <div class="relative group">
+              <button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-green-600 hover:bg-green-500 text-bp font-semibold pulse-glow border-2 border-green-400">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
                 Ver catálogos
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
               </button>
               <!-- Dropdown -->
-              <div class="absolute top-full left-0 mt-2 w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+              <div class="absolute top-full left-0 mt-2 w-full min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
                 <div class="bg-ao border border-white/10 rounded-xl shadow-xl overflow-hidden">
                   <a href="https://www.canva.com/design/DAG3AAM2qIY/vlSswitfnJjW0pepMjk4_Q/view?utm_content=DAG3AAM2qIY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6e754f249f" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors border-b border-white/5">
                     <p class="text-bp font-medium">🌿 Cortadoras de césped</p>
-                    <p class="text-bc/70 text-xs mt-1">Equipamiento para jardín</p>
+                    <p class="text-bc/70 text-xs mt-1">Ver catálogo</p>
                   </a>
                   <a href="https://www.canva.com/design/DAG27pnQwos/b-Sty8BWrOaxnZ2z0Ktvog/view?utm_content=DAG27pnQwos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he058a1c6c6" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors">
                     <p class="text-bp font-medium">🪜 Escaleras</p>
-                    <p class="text-bc/70 text-xs mt-1">Herramientas profesionales</p>
+                    <p class="text-bc/70 text-xs mt-1">Ver catálogo</p>
                   </a>
                 </div>
               </div>
             </div>
-            <a href="https://form.jotform.com/252968479452676" target="_blank" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-brand-400 text-brand-300 hover:bg-brand-400/10 transition-all">
+            <a href="https://form.jotform.com/252968479452676" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-2 border-brand-400 text-brand-300 hover:bg-brand-400/10 font-semibold">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
               Consultar
             </a>
           </div>
-        </div>
-
-        <!-- IMPORTADORES B2B -->
-        <div id="importadores" class="p-8 rounded-2xl bg-gradient-to-br from-bp/5 to-bp/0 border border-bp/10">
-          <div class="mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-bc" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-bp">Importación B2B</h3>
-          <p class="text-sm text-bc/70 font-medium mb-3">Para empresas e importadores</p>
-          <p class="mt-2 text-bc">Servicio integral de importación para empresas que necesitan productos específicos. Gestión completa desde búsqueda de proveedores hasta entrega en Argentina. Especialistas en regímenes de importación temporaria.</p>
-          <ul class="mt-6 space-y-3">
-            <li class="flex items-start gap-3 text-bc">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-bc flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Búsqueda y negociación con fábricas</span>
-            </li>
-            <li class="flex items-start gap-3 text-bc">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-bc flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Control de calidad en origen</span>
-            </li>
-            <li class="flex items-start gap-3 text-bc">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-bc flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Gestión documental y aduanera completa</span>
-            </li>
-            <li class="flex items-start gap-3 text-bc">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-bc flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span>Logística internacional y nacional door-to-door</span>
-            </li>
-          </ul>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdakhSyCw1aSSPa7g10lf-cNvISP6RdyMts9Z_Mnh72dLzVWA/viewform?usp=dialog" target="_blank" class="inline-flex items-center gap-2 mt-8 px-5 py-3 rounded-xl bg-bp/10 hover:bg-bp/20 text-bp font-medium border border-bp/20 transition-all">
-            Solicitar cotización
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Proceso para importadores B2B -->
-  <section id="proceso" class="py-20 border-t border-white/5 bg-bc/10">
+  <!-- Proceso -->
+  <section id="proceso" class="py-20 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-bp">Proceso de importación B2B</h2>
-      <p class="mt-2 text-bc max-w-2xl">Para empresas que necesitan importar productos específicos. Proceso integral, documentado y transparente con mejora continua (KAIZEN).</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-bp">Cómo trabajamos</h2>
+      <p class="mt-2 text-bc max-w-2xl">Proceso integral, documentado y transparente. Pequeñas mejoras constantes (KAIZEN) para que cada embarque sea mejor que el anterior.</p>
       <div class="mt-10 grid md:grid-cols-3 gap-6">
         <div class="glass p-6 rounded-2xl">
-          <div class="text-brand-400 font-bold mb-2">PASO 1-2</div>
-          <h4 class="font-semibold text-bp">Relevamiento y Marco Legal</h4>
-          <p class="text-bc mt-2">Analizamos necesidades, requisitos y factibilidad. Determinamos el régimen más conveniente según tu operación.</p>
+          <h4 class="font-semibold text-bp">1) Relevamiento</h4>
+          <p class="text-bc">Necesidad, requisitos y factibilidad.</p>
         </div>
         <div class="glass p-6 rounded-2xl">
-          <div class="text-brand-400 font-bold mb-2">PASO 3-4</div>
-          <h4 class="font-semibold text-bp">Proveedores y Cotización</h4>
-          <p class="text-bc mt-2">Selección y negociación con fábricas en China. Cotización con precio final transparente y detallado.</p>
+          <h4 class="font-semibold text-bp">2) Marco legal</h4>
+          <p class="text-bc">Régimen más conveniente (CTIT u otros).</p>
         </div>
         <div class="glass p-6 rounded-2xl">
-          <div class="text-brand-400 font-bold mb-2">PASO 5-6</div>
-          <h4 class="font-semibold text-bp">Documentación y Logística</h4>
-          <p class="text-bc mt-2">Gestión aduanera completa, compliance, transporte internacional, despacho y entrega door-to-door.</p>
+          <h4 class="font-semibold text-bp">3) Proveedores</h4>
+          <p class="text-bc">Selección y negociación en China.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold text-bp">4) Cotización</h4>
+          <p class="text-bc">Precio final transparente.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold text-bp">5) Documentación</h4>
+          <p class="text-bc">Gestión aduanera y compliance.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <h4 class="font-semibold text-bp">6) Logística</h4>
+          <p class="text-bc">Transporte, despacho y entrega.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTIT / Diferencial -->
+  <section id="ctit" class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-bp">Especialistas en CTIT</h2>
+          <p class="mt-3 text-bc">Aprovechamos el Certificado de Tipificación de Importación Temporaria para optimizar costos y tiempos en exportadores. Operación prolija, rentable y segura.</p>
+          <ul class="mt-6 grid grid-cols-1 gap-3">
+            <li class="glass p-4 rounded-xl text-bc">Asesoría integral y documentación al día</li>
+            <li class="glass p-4 rounded-xl text-bc">Control de calidad en origen</li>
+            <li class="glass p-4 rounded-xl text-bc">Relaciones directas con fábricas</li>
+          </ul>
+        </div>
+        <div class="glass p-6 rounded-2xl border border-white/5">
+          <h3 class="text-xl font-semibold text-bp">Precio final sin sorpresas</h3>
+          <p class="text-bc mt-2">Nuestro margen está incluido en el producto y la gestión integral. No cobramos fees ni comisiones aparte.</p>
+          <a href="#faq" class="inline-block mt-4 text-brand-400 hover:text-brand-300">Ver preguntas frecuentes →</a>
         </div>
       </div>
     </div>
@@ -508,26 +405,11 @@
       <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
           <h2 class="text-3xl md:text-4xl font-bold text-bp">Jóvenes, reales y solucionadores</h2>
-          <p class="mt-3 text-bc">Somos Marcos y Gonzalo: emprendimos para hacer las cosas distintas, cercanas y honestas. Viajamos, seleccionamos productos, negociamos con fábricas y documentamos el proceso para que vos te enfoques en lo tuyo.</p>
-          <ul class="mt-6 space-y-3">
-            <li class="flex items-start gap-3 text-bc">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>Historias reales: ferias, fábricas y clientes</span>
-            </li>
-            <li class="flex items-start gap-3 text-bc">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>Aprendizaje continuo: cada operación nos mejora</span>
-            </li>
-            <li class="flex items-start gap-3 text-bc">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>Win-win o nada: tu éxito es nuestro éxito</span>
-            </li>
+          <p class="mt-3 text-bc">Somos Marcos y Gonzalo: emprendimos para hacer las cosas distintas, cercanas y honestas. Viajamos, negociamos y documentamos el proceso para que vos te enfoques en hacer crecer tu negocio.</p>
+          <ul class="mt-6 space-y-2 text-bc list-disc list-inside">
+            <li>Historias reales: ferias, fábricas y clientes</li>
+            <li>Aprendizaje continuo: cada operación nos mejora</li>
+            <li>Win-win o nada</li>
           </ul>
         </div>
         <div class="grid grid-cols-2 gap-4">
@@ -544,35 +426,27 @@
   </section>
 
   <!-- Blog -->
-  <section id="blog" class="py-20 border-t border-white/5">
+  <section id="blog" class="py-20">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex items-end justify-between">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-bold text-bp">Blog educativo</h2>
-          <p class="mt-2 text-bc">Guías prácticas sobre importación, calidad y logística</p>
-        </div>
-        <a href="/blog" class="text-brand-400 hover:text-brand-300 hidden md:flex items-center gap-2">
-          Ver todos 
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
+        <h2 class="text-3xl md:text-4xl font-bold text-bp">Blog educativo</h2>
+        <a href="/blog" class="text-brand-400 hover:text-brand-300">Ver todos →</a>
       </div>
       <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <article class="glass p-5 rounded-2xl hover:border-brand-400/30 transition-all cursor-pointer">
-          <p class="text-xs uppercase tracking-wider text-bc/70">Importación</p>
-          <h3 class="mt-2 text-xl font-semibold text-bp">Guía completa de regímenes aduaneros</h3>
-          <p class="mt-2 text-bc">Todo lo que necesitás saber sobre los diferentes regímenes de importación en Argentina.</p>
+        <article class="glass p-5 rounded-2xl">
+          <p class="text-xs uppercase tracking-wider text-bc/70">CTIT</p>
+          <h3 class="mt-2 text-xl font-semibold text-bp">Qué es y cuándo conviene</h3>
+          <p class="mt-2 text-bc">Guía clara para exportadores sobre el régimen de importación temporaria.</p>
         </article>
-        <article class="glass p-5 rounded-2xl hover:border-brand-400/30 transition-all cursor-pointer">
+        <article class="glass p-5 rounded-2xl">
           <p class="text-xs uppercase tracking-wider text-bc/70">Calidad</p>
           <h3 class="mt-2 text-xl font-semibold text-bp">Checklist de control en fábrica</h3>
-          <p class="mt-2 text-bc">Los básicos para recibir lo que pediste, sin sorpresas ni decepciones.</p>
+          <p class="mt-2 text-bc">Los básicos para recibir lo que pediste, sin sorpresas.</p>
         </article>
-        <article class="glass p-5 rounded-2xl hover:border-brand-400/30 transition-all cursor-pointer">
+        <article class="glass p-5 rounded-2xl">
           <p class="text-xs uppercase tracking-wider text-bc/70">Logística</p>
           <h3 class="mt-2 text-xl font-semibold text-bp">Incoterms sin humo</h3>
-          <p class="mt-2 text-bc">FOB, CIF, DDP… cómo elegir lo que más te conviene según tu operación.</p>
+          <p class="mt-2 text-bc">FOB, CIF, DDP… cómo elegir lo que más te conviene.</p>
         </article>
       </div>
     </div>
@@ -581,101 +455,60 @@
   <!-- FAQ -->
   <section id="faq" class="py-20 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-bp mb-2">Preguntas frecuentes</h2>
-      <p class="text-bc mb-8">Todo lo que necesitás saber sobre nuestros servicios</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-bp">Preguntas frecuentes</h2>
       
       <!-- FAQ Marketplace -->
-      <div class="mb-12">
+      <div class="mt-8 mb-12">
         <h3 class="text-2xl font-bold text-brand-400 mb-6 flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
           </svg>
-          Marketplace para consumidores
+          Productos - Consumidor final
         </h3>
         <div class="grid md:grid-cols-2 gap-6">
           <div class="glass p-6 rounded-2xl">
-            <h4 class="font-semibold text-bp flex items-start gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              ¿Cómo compro productos del catálogo?
-            </h4>
-            <p class="text-bc mt-2">Explorá nuestros catálogos online, elegí lo que te interesa y completá el formulario de consulta. Te respondemos con disponibilidad, precio final y coordinamos la entrega cuando lleguen a Argentina.</p>
+            <h4 class="font-semibold text-bp">¿Cómo compro en el Marketplace Zohan?</h4>
+            <p class="text-bc mt-2">Mirá nuestros catálogos, elegí lo que te gusta y completá el formulario de consulta. Te respondemos con disponibilidad, precio final y coordinamos la entrega.</p>
           </div>
           <div class="glass p-6 rounded-2xl">
-            <h4 class="font-semibold text-bp flex items-start gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              ¿Cuánto tardan en llegar los productos?
-            </h4>
-            <p class="text-bc mt-2">Nuestra próxima importación está en tránsito. Una vez que lleguen a Argentina, coordinamos la entrega en 7-15 días dependiendo de tu ubicación.</p>
-          </div>
-          <div class="glass p-6 rounded-2xl">
-            <h4 class="font-semibold text-bp flex items-start gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              ¿Entregan en todo el país?
-            </h4>
-            <p class="text-bc mt-2">Sí, entregamos en toda Argentina. Coordinamos logística nacional para entrega door-to-door donde estés.</p>
-          </div>
-          <div class="glass p-6 rounded-2xl">
-            <h4 class="font-semibold text-bp flex items-start gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              ¿El precio incluye envío e impuestos?
-            </h4>
+            <h4 class="font-semibold text-bp">¿El precio incluye todo?</h4>
             <p class="text-bc mt-2">Sí, todos nuestros precios son finales e incluyen: producto, importación, impuestos, aduana y envío a tu domicilio. Sin sorpresas.</p>
+          </div>
+          <div class="glass p-6 rounded-2xl">
+            <h4 class="font-semibold text-bp">¿Pueden entregar en cualquier lugar?</h4>
+            <p class="text-bc mt-2">Sí, coordinamos logística nacional para entrega door-to-door en todo el país.</p>
+          </div>
+          <div class="glass p-6 rounded-2xl">
+            <h4 class="font-semibold text-bp">¿Cuándo llegan los productos?</h4>
+            <p class="text-bc mt-2">Nuestra próxima importación está en tránsito. Te avisamos apenas lleguen para coordinar la entrega.</p>
           </div>
         </div>
       </div>
 
-      <!-- FAQ B2B -->
+      <!-- FAQ Importadores -->
       <div>
         <h3 class="text-2xl font-bold text-brand-400 mb-6 flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg>
-          Servicios B2B para empresas
+          Importación - Empresas
         </h3>
         <div class="grid md:grid-cols-2 gap-6">
           <div class="glass p-6 rounded-2xl">
-            <h4 class="font-semibold text-bp flex items-start gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              ¿Cómo ganan dinero en servicios B2B?
-            </h4>
-            <p class="text-bc mt-2">Con un margen incluido en el precio final del producto y la gestión integral. No cobramos honorarios adicionales ni fees ocultos.</p>
+            <h4 class="font-semibold text-bp">¿Cómo ganan dinero?</h4>
+            <p class="text-bc mt-2">Con un margen incluido en el precio final del producto y la gestión integral. No cobramos honorarios adicionales.</p>
           </div>
           <div class="glass p-6 rounded-2xl">
-            <h4 class="font-semibold text-bp flex items-start gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              ¿Hay que estar inscripto como importador?
-            </h4>
-            <p class="text-bc mt-2">No es necesario. Zohan gestiona todo el proceso por vos, desde la compra hasta la entrega en Argentina, incluyendo registros y permisos.</p>
+            <h4 class="font-semibold text-bp">¿Hay que estar inscripto como importador previamente?</h4>
+            <p class="text-bc mt-2">No, no es necesario ser importador previamente. Zohan puede gestionar todo el proceso por vos, desde la compra hasta la entrega en Argentina.</p>
           </div>
           <div class="glass p-6 rounded-2xl">
-            <h4 class="font-semibold text-bp flex items-start gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              ¿Hacen control de calidad en China?
-            </h4>
-            <p class="text-bc mt-2">Sí, validamos proveedores, realizamos inspecciones en fábrica y documentamos el proceso para garantizar que recibas productos de calidad.</p>
+            <h4 class="font-semibold text-bp">¿Hacen control de calidad en China?</h4>
+            <p class="text-bc mt-2">Sí, validamos proveedores, realizamos inspecciones y documentamos el proceso.</p>
           </div>
           <div class="glass p-6 rounded-2xl">
-            <h4 class="font-semibold text-bp flex items-start gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              ¿Cuánto tarda una importación B2B?
-            </h4>
-            <p class="text-bc mt-2">Depende del producto y régimen. Típicamente entre 60-90 días desde la orden hasta la entrega. Te mantenemos informado en cada etapa del proceso.</p>
+            <h4 class="font-semibold text-bp">¿Cuánto tarda una importación?</h4>
+            <p class="text-bc mt-2">Típicamente entre 60-90 días desde la orden hasta la entrega. Te mantenemos informado en cada etapa.</p>
           </div>
         </div>
       </div>
@@ -683,7 +516,7 @@
   </section>
 
   <!-- Contacto con mapa y datos -->
-  <section id="contacto-mapa" class="py-20 bg-bc/40 border-t border-white/5">
+  <section id="contacto-mapa" class="py-20 bg-bc/40">
     <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
       <div class="glass p-4 rounded-2xl border border-bp/10">
         <iframe 
@@ -704,12 +537,7 @@
           </h3>
           <p class="font-semibold text-bp">ZOHAN VENTURE S.A.S.</p>
           <p class="text-bc">Av Perón, Lobo de la Vega 1793, 4107 Yerba Buena, Tucumán, Argentina</p>
-          <a href="https://maps.app.goo.gl/kGDZnvuy8kVWBXaVA" target="_blank" class="text-brand-400 hover:text-brand-300 text-sm inline-flex items-center gap-1">
-            Ver en Google Maps 
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
+          <a href="https://maps.app.goo.gl/kGDZnvuy8kVWBXaVA" target="_blank" class="text-brand-400 hover:text-brand-300 text-sm">Ver en Google Maps →</a>
           <div class="mt-4">
             <p class="font-semibold text-bp flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -759,62 +587,55 @@
   <!-- CTA final -->
   <section id="contacto" class="py-20">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="glass p-8 md:p-12 rounded-2xl border border-brand-400/20">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 class="text-3xl md:text-4xl font-bold text-bp">¿Listos para tu próxima compra?</h2>
-            <p class="mt-3 text-bc text-lg">Explorá nuestros catálogos o contanos qué necesitás importar. Te respondemos con precio final, tiempos y recomendaciones.</p>
-          </div>
-          <div class="flex flex-col gap-3">
-            <div class="relative group">
-              <button class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-semibold text-bp shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-                Ver catálogos de productos
-              </button>
-              <!-- Dropdown CTA -->
-              <div class="absolute bottom-full left-0 mb-2 w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                <div class="bg-ao border border-white/10 rounded-xl shadow-xl overflow-hidden">
-                  <a href="https://www.canva.com/design/DAG3AAM2qIY/vlSswitfnJjW0pepMjk4_Q/view?utm_content=DAG3AAM2qIY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6e754f249f" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors border-b border-white/5">
-                    <p class="text-bp font-medium">🌿 Cortadoras de césped</p>
-                    <p class="text-bc/70 text-xs mt-1">Equipamiento para jardín</p>
-                  </a>
-                  <a href="https://www.canva.com/design/DAG27pnQwos/b-Sty8BWrOaxnZ2z0Ktvog/view?utm_content=DAG27pnQwos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he058a1c6c6" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors">
-                    <p class="text-bp font-medium">🪜 Escaleras</p>
-                    <p class="text-bc/70 text-xs mt-1">Herramientas profesionales</p>
-                  </a>
-                </div>
+      <div class="glass p-8 rounded-2xl grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-bp">¿Listos para el próximo embarque?</h2>
+          <p class="mt-2 text-bc">Contanos qué necesitás y te cotizamos con precio final, tiempos y recomendaciones.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <div class="relative group">
+            <button class="px-6 py-3 rounded-xl bg-green-600 hover:bg-green-500 font-semibold text-bp flex items-center gap-2 pulse-glow border-2 border-green-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              Ver catálogos
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <!-- Dropdown -->
+            <div class="absolute bottom-full left-0 mb-2 w-full min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+              <div class="bg-ao border border-white/10 rounded-xl shadow-xl overflow-hidden">
+                <a href="https://www.canva.com/design/DAG3AAM2qIY/vlSswitfnJjW0pepMjk4_Q/view?utm_content=DAG3AAM2qIY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6e754f249f" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors border-b border-white/5">
+                  <p class="text-bp font-medium">🌿 Cortadoras de césped</p>
+                  <p class="text-bc/70 text-xs mt-1">Ver catálogo</p>
+                </a>
+                <a href="https://www.canva.com/design/DAG27pnQwos/b-Sty8BWrOaxnZ2z0Ktvog/view?utm_content=DAG27pnQwos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he058a1c6c6" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors">
+                  <p class="text-bp font-medium">🪜 Escaleras</p>
+                  <p class="text-bc/70 text-xs mt-1">Ver catálogo</p>
+                </a>
               </div>
             </div>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdakhSyCw1aSSPa7g10lf-cNvISP6RdyMts9Z_Mnh72dLzVWA/viewform?usp=dialog" target="_blank" class="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-bp/20 text-bc hover:border-brand-400 hover:bg-white/5 transition-all">
-              Solicitar importación B2B
-            </a>
-            <a href="https://wa.me/543812006513" target="_blank" class="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-bp/20 text-bc hover:border-brand-400 hover:bg-white/5 transition-all">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-              Consultar por WhatsApp
-            </a>
           </div>
+          <a href="https://form.jotform.com/252968479452676" target="_blank" class="px-5 py-3 rounded-xl border-2 border-brand-400 text-brand-300 hover:bg-brand-400/10 font-semibold">Conseguí nuestros productos</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdakhSyCw1aSSPa7g10lf-cNvISP6RdyMts9Z_Mnh72dLzVWA/viewform?usp=dialog" target="_blank" class="px-5 py-3 rounded-xl border border-bp/10 text-bc hover:border-brand-400">Empezá a importar</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-white/5 bg-ao/60">
+  <footer class="border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-4 gap-8">
       <div>
         <img src="assets/logozohan.png" alt="ZOHAN" class="h-10 w-auto rounded-md" />
-        <p class="mt-3 text-bc/80">Productos de China directo a tu casa. Importaciones inteligentes para empresas.</p>
+        <p class="mt-3 text-bc/80">China → Argentina, importaciones inteligentes.</p>
       </div>
       <div>
         <h5 class="font-semibold text-bp">Compañía</h5>
         <ul class="mt-3 space-y-2 text-bc">
           <li><a href="#nosotros" class="hover:text-bp">Nosotros</a></li>
-          <li><a href="#productos" class="hover:text-bp">Marketplace</a></li>
-          <li><a href="#importadores" class="hover:text-bp">Servicios B2B</a></li>
+          <li><a href="#servicios" class="hover:text-bp">Servicios</a></li>
           <li><a href="#blog" class="hover:text-bp">Blog</a></li>
         </ul>
       </div>
@@ -822,8 +643,8 @@
         <h5 class="font-semibold text-bp">Recursos</h5>
         <ul class="mt-3 space-y-2 text-bc">
           <li><a href="#faq" class="hover:text-bp">FAQ</a></li>
-          <li><a href="#como-funciona" class="hover:text-bp">Cómo funciona</a></li>
-          <li><a href="#proceso" class="hover:text-bp">Proceso B2B</a></li>
+          <li><a href="#proceso" class="hover:text-bp">Proceso</a></li>
+          <li><a href="#ctit" class="hover:text-bp">CTIT</a></li>
         </ul>
       </div>
       <div>
@@ -831,19 +652,16 @@
         <ul class="mt-3 space-y-2 text-bc">
           <li><a href="mailto:info@zohan.com.ar" class="hover:text-bp">info@zohan.com.ar</a></li>
           <li><a href="https://zohan.com.ar" class="hover:text-bp">zohan.com.ar</a></li>
-          <li><a href="tel:+543812006513" class="hover:text-bp">+54 381 200-6513</a></li>
         </ul>
       </div>
     </div>
-    <div class="border-t border-white/5 py-6 text-center text-bc/70 text-sm">
-      © <span id="year"></span> ZOHAN VENTURE S.A.S. | Todos los derechos reservados.
-    </div>
+    <div class="border-t border-white/5 py-6 text-center text-bc/70 text-sm">© <span id="year"></span> ZOHAN. Todos los derechos reservados.</div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Carrusel de fotos en Hero - Comenzando desde carrousel2.jpg
+    // Carrusel de fotos en Hero - SIN carrousel1.jpg
     const carouselImages = [
       '/assets/carrousel3.jpg',
       '/assets/carrousel4.jpg',
@@ -874,7 +692,6 @@
       };
     }
 
-    // Cambio automático cada 4 segundos para hero
     setInterval(function() {
       currentImg = (currentImg + 1) % carouselImages.length;
       showImg(currentImg);
@@ -912,7 +729,6 @@
       };
     }
 
-    // Cambio automático cada 4 segundos para nosotros
     setInterval(function() {
       nosotrosCurrent = (nosotrosCurrent + 1) % nosotrosImages.length;
       showNosotrosImg(nosotrosCurrent);
