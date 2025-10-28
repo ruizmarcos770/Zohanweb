@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CTIT: Qué es y cuándo conviene | Blog ZOHAN</title>
+  <meta name="description" content="Guía completa sobre el Certificado de Tipificación de Importación Temporaria (CTIT) para exportadores argentinos." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#f1f7fe',
+              100: '#e3effd',
+              200: '#c7e0fb',
+              300: '#a8d0f8',
+              400: '#7fb8f3',
+              500: '#4a90e2',
+              600: '#3f7fcb',
+              700: '#3369a8',
+              800: '#2b5689',
+              900: '#24466f'
+            },
+            ao: '#364154',
+            bc: '#f4f6f8',
+            bp: '#ffffff'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255,255,255,.08); }
+    .prose { max-width: 65ch; }
+    .prose h2 { color: #ffffff; font-size: 1.875rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .prose h3 { color: #ffffff; font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose p { color: #f4f6f8; margin-bottom: 1.25rem; line-height: 1.75; }
+    .prose ul { color: #f4f6f8; margin: 1.25rem 0; }
+    .prose li { margin-bottom: 0.5rem; }
+    .prose strong { color: #ffffff; font-weight: 600; }
+    .prose a { color: #7fb8f3; text-decoration: underline; }
+    .prose a:hover { color: #4a90e2; }
+  </style>
+</head>
+
+<body class="bg-ao text-bc antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-ao/80 backdrop-blur border-b border-white/5">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/assets/logozohan.png" alt="ZOHAN" class="h-[2.7rem] w-auto rounded-md" />
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-bc">
+        <a href="/#productos" class="hover:text-bp">Productos</a>
+        <a href="/#importadores" class="hover:text-bp">Para empresas</a>
+        <a href="/blog" class="hover:text-bp font-medium text-brand-400">Blog</a>
+        <a href="/#contacto" class="hover:text-bp">Contacto</a>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdakhSyCw1aSSPa7g10lf-cNvISP6RdyMts9Z_Mnh72dLzVWA/viewform?usp=dialog" target="_blank" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-bp font-medium">
+        Solicitar cotización
+      </a>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-4xl mx-auto px-4 py-6">
+    <div class="flex items-center gap-2 text-sm text-bc/70">
+      <a href="/" class="hover:text-brand-400">Inicio</a>
+      <span>→</span>
+      <a href="/blog" class="hover:text-brand-400">Blog</a>
+      <span>→</span>
+      <span class="text-bp">CTIT: Qué es y cuándo conviene</span>
+    </div>
+  </div>
+
+  <!-- Article Header -->
+  <article class="max-w-4xl mx-auto px-4 pb-20">
+    <header class="mb-12">
+      <p class="text-brand-400 font-semibold uppercase text-sm tracking-wide">CTIT • 8 min de lectura</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-bp mt-3">CTIT: Qué es y cuándo conviene</h1>
+      <p class="text-xl text-bc mt-4">Guía completa sobre el Certificado de Tipificación de Importación Temporaria para exportadores argentinos</p>
+      <div class="flex items-center gap-4 mt-6 text-bc/70 text-sm">
+        <span>Por ZOHAN Team</span>
+        <span>•</span>
+        <span>Última actualización: Enero 2025</span>
+      </div>
+    </header>
+
+    <div class="prose">
+      <p>Si sos exportador argentino, probablemente escuchaste hablar del CTIT pero no terminás de entender si te conviene o no. En esta guía te explicamos todo sin vueltas: qué es, cómo funciona, cuándo usarlo y cuándo no.</p>
+
+      <h2>¿Qué es el CTIT?</h2>
+      
+      <p>El <strong>CTIT (Certificado de Tipificación de Importación Temporaria)</strong> es un régimen aduanero que permite a los exportadores argentinos importar insumos, materias primas o bienes de capital <strong>sin pagar impuestos</strong>, bajo la condición de que esos productos se usen para fabricar bienes que luego se exportarán.</p>
+
+      <p>En criollo: traés cosas de afuera sin pagar impuestos, las usás para producir tu producto, y después vendés ese producto al exterior. Es una manera de mejorar tu competitividad internacional reduciendo costos.</p>
+
+      <h2>¿Cómo funciona el CTIT?</h2>
+
+      <p>El proceso tiene varios pasos clave:</p>
+
+      <h3>1. Solicitud y aprobación</h3>
+      <p>Primero, tenés que solicitar el certificado ante la AFIP. Acá tenés que demostrar que:</p>
+      <ul>
+        <li>Sos exportador habitual o tenés intención seria de serlo</li>
+        <li>Los productos que vas a importar efectivamente se van a usar en la producción de bienes de exportación</li>
+        <li>Cumplís con todos los requisitos impositivos y aduaneros</li>
+      </ul>
+
+      <h3>2. Importación</h3>
+      <p>Una vez aprobado el CTIT, importás los insumos o bienes de capital bajo este régimen. En este momento:</p>
+      <ul>
+        <li>No pagás derechos de importación</li>
+        <li>No pagás IVA</li>
+        <li>No pagás otros impuestos internos</li>
+      </ul>
+
+      <h3>3. Producción y exportación</h3>
+      <p>Usás esos insumos para producir tus bienes de exportación. Tenés un plazo (generalmente 1 año, renovable) para cumplir con la exportación del producto final.</p>
+
+      <h3>4. Cierre del régimen</h3>
+      <p>Una vez que exportaste el producto final, presentás la documentación que acredita la exportación y cerrás el circuito. Si cumpliste todo, no tenés que pagar nada.</p>
+
+      <h2>¿Cuándo conviene usar CTIT?</h2>
+
+      <p>El CTIT es especialmente útil en estos casos:</p>
+
+      <h3>✅ Sos exportador regular</h3>
+      <p>Si ya tenés un historial de exportaciones y sabés que vas a seguir haciéndolo, el CTIT es una herramienta potente para bajar costos.</p>
+
+      <h3>✅ Tus insumos vienen del exterior</h3>
+      <p>Si gran parte de tu materia prima o insumos críticos se importan, el ahorro impositivo puede ser significativo. Hablamos de ahorros del 20% al 35% o más, dependiendo del producto.</p>
+
+      <h3>✅ Tenés volumen de operación</h3>
+      <p>El CTIT tiene costos administrativos (gestoría, documentación, seguimiento). Si tu volumen de importación es considerable, estos costos se diluyen y el beneficio neto es mayor.</p>
+
+      <h3>✅ Podés predecir tus ciclos</h3>
+      <p>Necesitás cierta previsibilidad en tu operación. Si sabés cuánto vas a importar y exportar, el CTIT es más fácil de gestionar.</p>
+
+      <h2>¿Cuándo NO conviene?</h2>
+
+      <p>El CTIT no es para todos. Estos son los casos donde probablemente no valga la pena:</p>
+
+      <h3>❌ Recién empezás a exportar</h3>
+      <p>Si todavía no tenés un historial de exportaciones, puede ser difícil que te aprueben el CTIT. Además, sin volumen, el esfuerzo administrativo no justifica el ahorro.</p>
+
+      <h3>❌ Tus exportaciones son esporádicas</h3>
+      <p>Si exportás una vez cada tanto, sin regularidad, el CTIT puede complicarte más que beneficiarte. Necesitás cumplir plazos y mantener documentación estricta.</p>
+
+      <h3>❌ No tenés estructura administrativa</h3>
+      <p>El CTIT requiere llevar registros detallados, cumplir plazos, presentar documentación. Si no tenés alguien dedicado a esto, puede convertirse en un dolor de cabeza.</p>
+
+      <h3>❌ Tus márgenes son muy ajustados</h3>
+      <p>Si cualquier desvío en tiempos o costos te complica el flujo de caja, tené cuidado. Si no cumplís con la exportación en tiempo y forma, tenés que pagar todo lo que no pagaste al importar, más intereses.</p>
+
+      <h2>Requisitos principales</h2>
+
+      <p>Para acceder al CTIT necesitás:</p>
+
+      <ul>
+        <li><strong>Ser exportador inscripto:</strong> Alta en AFIP como exportador</li>
+        <li><strong>CUIT activo:</strong> Situación fiscal al día</li>
+        <li><strong>Presentar garantía:</strong> En algunos casos se requiere una garantía bancaria o de caución</li>
+        <li><strong>Domicilio fiscal:</strong> Domicilio declarado en Argentina</li>
+        <li><strong>Documentación técnica:</strong> Describir claramente el proceso productivo y la relación insumo-producto final</li>
+      </ul>
+
+      <h2>Errores comunes a evitar</h2>
+
+      <h3>1. No calcular bien los tiempos</h3>
+      <p>Muchos se olvidan de que el plazo corre desde la importación, no desde la producción. Si tu ciclo productivo es largo, podés quedarte corto de tiempo.</p>
+
+      <h3>2. Documentación incompleta</h3>
+      <p>El régimen requiere papeles en orden. Un documento faltante puede trabar todo el proceso y generarte multas.</p>
+
+      <h3>3. No renovar a tiempo</h3>
+      <p>Si necesitás más tiempo para cumplir, tenés que pedirlo antes del vencimiento. Pasado el plazo, las consecuencias son pesadas.</p>
+
+      <h3>4. Mezclar regímenes</h3>
+      <p>No confundas CTIT con otros regímenes de importación. Cada uno tiene sus reglas y no se pueden mezclar alegremente.</p>
+
+      <h2>Alternativas al CTIT</h2>
+
+      <p>Si el CTIT no es para vos, considerá estas alternativas:</p>
+
+      <ul>
+        <li><strong>Draw Back:</strong> Régimen que te devuelve impuestos después de exportar. Menos exigente que el CTIT pero el reintegro es posterior.</li>
+        <li><strong>Importación definitiva:</strong> Importás pagando todos los impuestos y listo. Más simple pero más caro.</li>
+        <li><strong>Zona Franca:</strong> En algunos casos, operar desde zona franca puede tener beneficios similares.</li>
+      </ul>
+
+      <h2>Cómo ZOHAN te puede ayudar</h2>
+
+      <p>En ZOHAN nos especializamos en gestionar importaciones bajo régimen CTIT. Nos ocupamos de:</p>
+
+      <ul>
+        <li>Análisis de viabilidad: te decimos si el CTIT te conviene o no</li>
+        <li>Gestión documental completa: presentaciones ante AFIP, seguimiento de plazos</li>
+        <li>Búsqueda y negociación con proveedores en China</li>
+        <li>Control de calidad en origen</li>
+        <li>Logística internacional y despacho a plaza</li>
+        <li>Asesoramiento continuo para que no te agarren sorpresas</li>
+      </ul>
+
+      <p>El proceso suena complejo, pero con alguien que lo maneja todos los días, se vuelve simple y rentable.</p>
+
+      <h2>Conclusión</h2>
+
+      <p>El CTIT es una herramienta poderosa para exportadores que importan insumos o bienes de capital. Puede ahorrarte entre 20% y 35% (o más) en costos de importación, mejorando significativamente tu competitividad.</p>
+
+      <p><strong>Pero no es para todos.</strong> Requiere volumen, regularidad en las exportaciones, y capacidad administrativa para cumplir con la documentación y los plazos.</p>
+
+      <p>Si estás en el perfil correcto, el CTIT puede ser un game-changer para tu negocio. Si no estás seguro, hablá con nosotros. Te decimos la verdad: si te conviene, te ayudamos a implementarlo. Si no te conviene, te recomendamos otras opciones.</p>
+
+      <p><strong>Sin humo, solo resultados.</strong></p>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 glass p-8 rounded-2xl border border-brand-400/20">
+      <h3 class="text-2xl font-bold text-bp">¿Querés saber si el CTIT es para vos?</h3>
+      <p class="mt-2 text-bc">Contanos sobre tu operación y te hacemos un análisis sin costo</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdakhSyCw1aSSPa7g10lf-cNvISP6RdyMts9Z_Mnh72dLzVWA/viewform?usp=dialog" target="_blank" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-bp font-semibold">
+          Solicitar análisis
+        </a>
+        <a href="https://wa.me/543812006513" target="_blank" class="px-6 py-3 rounded-xl border border-white/20 text-bc hover:border-brand-400">
+          Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="mt-16 pt-16 border-t border-white/5">
+      <h3 class="text-2xl font-bold text-bp mb-8">Artículos relacionados</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/blog/control-calidad-fabrica.html" class="glass p-6 rounded-xl hover:border-brand-400/30 transition-all">
+          <p class="text-xs uppercase tracking-wider text-green-400 font-semibold">CALIDAD</p>
+          <h4 class="mt-2 text-xl font-semibold text-bp">Checklist de control en fábrica</h4>
+          <p class="mt-2 text-bc text-sm">Los básicos para verificar calidad en origen</p>
+        </a>
+        <a href="/blog/incoterms-guia-practica.html" class="glass p-6 rounded-xl hover:border-brand-400/30 transition-all">
+          <p class="text-xs uppercase tracking-wider text-purple-400 font-semibold">LOGÍSTICA</p>
+          <h4 class="mt-2 text-xl font-semibold text-bp">Incoterms sin humo</h4>
+          <p class="mt-2 text-bc text-sm">FOB, CIF, DDP... cómo elegir el correcto</p>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 bg-ao/60">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-4 gap-8">
+      <div>
+        <img src="/assets/logozohan.png" alt="ZOHAN" class="h-10 w-auto rounded-md" />
+        <p class="mt-3 text-bc/80">Productos de China directo a tu casa. Importaciones inteligentes para empresas.</p>
+      </div>
+      <div>
+        <h5 class="font-semibold text-bp">Compañía</h5>
+        <ul class="mt-3 space-y-2 text-bc">
+          <li><a href="/#nosotros" class="hover:text-bp">Nosotros</a></li>
+          <li><a href="/#productos" class="hover:text-bp">Marketplace</a></li>
+          <li><a href="/#importadores" class="hover:text-bp">Servicios B2B</a></li>
+          <li><a href="/blog" class="hover:text-bp">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-semibold text-bp">Recursos</h5>
+        <ul class="mt-3 space-y-2 text-bc">
+          <li><a href="/#faq" class="hover:text-bp">FAQ</a></li>
+          <li><a href="/#como-funciona" class="hover:text-bp">Cómo funciona</a></li>
+          <li><a href="/#proceso" class="hover:text-bp">Proceso B2B</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-semibold text-bp">Contacto</h5>
+        <ul class="mt-3 space-y-2 text-bc">
+          <li><a href="mailto:info@zohan.com.ar" class="hover:text-bp">info@zohan.com.ar</a></li>
+          <li><a href="https://zohan.com.ar" class="hover:text-bp">zohan.com.ar</a></li>
+          <li><a href="tel:+543812006513" class="hover:text-bp">+54 381 200-6513</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/5 py-6 text-center text-bc/70 text-sm">
+      © 2025 ZOHAN VENTURE S.A.S. | Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+</html>
