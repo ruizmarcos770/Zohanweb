@@ -77,12 +77,30 @@
         <a href="#faq" class="hover:text-bp">FAQ</a>
       </div>
       <div class="hidden md:flex items-center gap-3">
-        <a href="https://zohan.mitiendanube.com/" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-bp font-medium shadow-lg shadow-brand-600/30">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-          </svg>
-          Ver tienda
-        </a>
+        <div class="relative group">
+          <button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-bp font-medium shadow-lg shadow-brand-600/30">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            Ver catálogos
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute top-full right-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div class="bg-ao border border-white/10 rounded-xl shadow-xl overflow-hidden">
+              <a href="https://www.canva.com/design/DAG3AAM2qIY/vlSswitfnJjW0pepMjk4_Q/view?utm_content=DAG3AAM2qIY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6e754f249f" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors border-b border-white/5">
+                <p class="text-bp font-medium">📦 Catálogo 1</p>
+                <p class="text-bc/70 text-xs mt-1">Hogar y jardín</p>
+              </a>
+              <a href="https://www.canva.com/design/DAG27pnQwos/b-Sty8BWrOaxnZ2z0Ktvog/view?utm_content=DAG27pnQwos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he058a1c6c6" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors">
+                <p class="text-bp font-medium">📦 Catálogo 2</p>
+                <p class="text-bc/70 text-xs mt-1">Herramientas y oficina</p>
+              </a>
+            </div>
+          </div>
+        </div>
         <a href="https://wa.me/543812006513" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-green-600 hover:bg-green-500 text-bp font-medium">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -110,12 +128,40 @@
             Seleccionamos lo mejor de las fábricas chinas: calidad, diseño y precio que no vas a encontrar en otro lado. Descubrí nuestra colección, reservá lo que te gusta y recibilo en tu puerta.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="https://zohan.mitiendanube.com/" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-semibold text-bp flex items-center gap-2 text-lg shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl hover:shadow-brand-600/40">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-              Explorar productos
-            </a>
+            <div class="relative group">
+              <button class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-semibold text-bp flex items-center gap-2 text-lg shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl hover:shadow-brand-600/40">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                Ver catálogos
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <!-- Dropdown Hero -->
+              <div class="absolute top-full left-0 mt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                <div class="bg-ao border border-white/10 rounded-xl shadow-xl overflow-hidden">
+                  <a href="https://www.canva.com/design/DAG3AAM2qIY/vlSswitfnJjW0pepMjk4_Q/view?utm_content=DAG3AAM2qIY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6e754f249f" target="_blank" class="block px-5 py-4 hover:bg-brand-600/20 transition-colors border-b border-white/5">
+                    <p class="text-bp font-semibold flex items-center gap-2">
+                      📦 Catálogo 1
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </p>
+                    <p class="text-bc/70 text-sm mt-1">Hogar, jardín y decoración</p>
+                  </a>
+                  <a href="https://www.canva.com/design/DAG27pnQwos/b-Sty8BWrOaxnZ2z0Ktvog/view?utm_content=DAG27pnQwos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he058a1c6c6" target="_blank" class="block px-5 py-4 hover:bg-brand-600/20 transition-colors">
+                    <p class="text-bp font-semibold flex items-center gap-2">
+                      📦 Catálogo 2
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </p>
+                    <p class="text-bc/70 text-sm mt-1">Herramientas y oficina</p>
+                  </a>
+                </div>
+              </div>
+            </div>
             <a href="#como-funciona" class="px-6 py-3 rounded-xl border border-white/20 text-bc hover:border-brand-400 hover:bg-white/5 transition-all">
               Cómo funciona
             </a>
@@ -247,23 +293,23 @@
         <div class="text-center group">
           <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-500/20 flex items-center justify-center mb-4 group-hover:bg-brand-500/30 transition-all float-animation">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
           </div>
           <div class="inline-block px-3 py-1 rounded-full bg-brand-600/20 text-brand-300 text-xs font-semibold mb-3">PASO 1</div>
-          <h3 class="text-xl font-semibold text-bp mb-2">Explorá y elegí</h3>
+          <h3 class="text-xl font-semibold text-bp mb-2">Explorá los catálogos</h3>
           <p class="text-bc">Navegá nuestra selección curada de productos para hogar, jardín, oficina y herramientas. Cada artículo fue elegido por su calidad, diseño y precio competitivo.</p>
         </div>
         
         <div class="text-center group">
           <div class="w-16 h-16 mx-auto rounded-2xl bg-brand-500/20 flex items-center justify-center mb-4 group-hover:bg-brand-500/30 transition-all float-animation" style="animation-delay: 0.3s;">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </div>
           <div class="inline-block px-3 py-1 rounded-full bg-brand-600/20 text-brand-300 text-xs font-semibold mb-3">PASO 2</div>
-          <h3 class="text-xl font-semibold text-bp mb-2">Reservá tu producto</h3>
-          <p class="text-bc">Los productos están viajando hacia Argentina. Reservalos ahora al mejor precio, asegurá tu compra y te avisamos apenas lleguen al país.</p>
+          <h3 class="text-xl font-semibold text-bp mb-2">Consultá y reservá</h3>
+          <p class="text-bc">Los productos están viajando hacia Argentina. Contactanos por WhatsApp para consultar disponibilidad, reservar lo que te gusta y conocer el precio final.</p>
         </div>
         
         <div class="text-center group">
@@ -288,16 +334,22 @@
           </div>
           <div>
             <h4 class="font-semibold text-bp mb-2">🚢 Primera importación en camino</h4>
-            <p class="text-bc text-sm">Nuestra primera selección de productos ya está viajando desde China hacia Argentina. Podés explorar el catálogo completo, conocer precios finales transparentes y reservar los artículos que más te interesan. Te mantenemos informado del progreso del envío y coordinamos la entrega apenas los productos lleguen al país.</p>
+            <p class="text-bc text-sm">Nuestra primera selección de productos ya está viajando desde China hacia Argentina. Podés explorar los catálogos completos, conocer precios finales transparentes y consultarnos por WhatsApp sobre disponibilidad. Te mantenemos informado del progreso del envío y coordinamos la entrega apenas los productos lleguen al país.</p>
           </div>
         </div>
       </div>
 
-      <div class="text-center mt-10">
-        <a href="https://zohan.mitiendanube.com/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-semibold text-bp shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl hover:shadow-brand-600/40">
-          Ver catálogo completo
+      <div class="text-center mt-10 flex flex-wrap gap-3 justify-center">
+        <a href="https://www.canva.com/design/DAG3AAM2qIY/vlSswitfnJjW0pepMjk4_Q/view?utm_content=DAG3AAM2qIY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6e754f249f" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-semibold text-bp shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl hover:shadow-brand-600/40">
+          📦 Ver Catálogo 1
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+        <a href="https://www.canva.com/design/DAG27pnQwos/b-Sty8BWrOaxnZ2z0Ktvog/view?utm_content=DAG27pnQwos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he058a1c6c6" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-semibold text-bp shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl hover:shadow-brand-600/40">
+          📦 Ver Catálogo 2
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
       </div>
@@ -318,7 +370,7 @@
           <div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-500 text-bp text-xs font-bold">NUEVO</div>
           <div class="mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
           </div>
           <h3 class="text-2xl font-bold text-bp">Marketplace Zohan</h3>
@@ -351,13 +403,28 @@
             </li>
           </ul>
           <div class="flex flex-wrap gap-3 mt-8">
-            <a href="https://zohan.mitiendanube.com/" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-bp font-semibold shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-              Ver productos
-            </a>
-            <a href="https://form.jotform.com/252968479452676" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-brand-400 text-brand-300 hover:bg-brand-400/10 transition-all">
+            <div class="relative group flex-1">
+              <button class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-bp font-semibold shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                Ver catálogos
+              </button>
+              <!-- Dropdown -->
+              <div class="absolute top-full left-0 mt-2 w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                <div class="bg-ao border border-white/10 rounded-xl shadow-xl overflow-hidden">
+                  <a href="https://www.canva.com/design/DAG3AAM2qIY/vlSswitfnJjW0pepMjk4_Q/view?utm_content=DAG3AAM2qIY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6e754f249f" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors border-b border-white/5">
+                    <p class="text-bp font-medium">📦 Catálogo 1</p>
+                    <p class="text-bc/70 text-xs mt-1">Hogar y jardín</p>
+                  </a>
+                  <a href="https://www.canva.com/design/DAG27pnQwos/b-Sty8BWrOaxnZ2z0Ktvog/view?utm_content=DAG27pnQwos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he058a1c6c6" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors">
+                    <p class="text-bp font-medium">📦 Catálogo 2</p>
+                    <p class="text-bc/70 text-xs mt-1">Herramientas y oficina</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a href="https://form.jotform.com/252968479452676" target="_blank" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-brand-400 text-brand-300 hover:bg-brand-400/10 transition-all">
               Consultar
             </a>
           </div>
@@ -564,9 +631,9 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            ¿Cómo compro en el Marketplace Zohan?
+            ¿Cómo compro productos del catálogo?
           </h4>
-          <p class="text-bc mt-2">Visitá nuestra tienda online, explorá los productos, reservá lo que te gusta y te contactamos para coordinar el pago y la entrega cuando lleguen a Argentina.</p>
+          <p class="text-bc mt-2">Explorá nuestros catálogos online, elegí lo que te interesa y contactanos por WhatsApp. Te respondemos con disponibilidad, precio final y coordinamos la entrega cuando lleguen a Argentina.</p>
         </div>
         <div class="glass p-6 rounded-2xl">
           <h4 class="font-semibold text-bp flex items-start gap-2">
@@ -698,15 +765,30 @@
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 class="text-3xl md:text-4xl font-bold text-bp">¿Listos para tu próxima compra?</h2>
-            <p class="mt-3 text-bc text-lg">Explorá nuestro catálogo o contanos qué necesitás importar. Te respondemos con precio final, tiempos y recomendaciones.</p>
+            <p class="mt-3 text-bc text-lg">Explorá nuestros catálogos o contanos qué necesitás importar. Te respondemos con precio final, tiempos y recomendaciones.</p>
           </div>
           <div class="flex flex-col gap-3">
-            <a href="https://zohan.mitiendanube.com/" class="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-semibold text-bp shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-              Ver productos del marketplace
-            </a>
+            <div class="relative group">
+              <button class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 font-semibold text-bp shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                Ver catálogos de productos
+              </button>
+              <!-- Dropdown CTA -->
+              <div class="absolute bottom-full left-0 mb-2 w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                <div class="bg-ao border border-white/10 rounded-xl shadow-xl overflow-hidden">
+                  <a href="https://www.canva.com/design/DAG3AAM2qIY/vlSswitfnJjW0pepMjk4_Q/view?utm_content=DAG3AAM2qIY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6e754f249f" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors border-b border-white/5">
+                    <p class="text-bp font-medium">📦 Catálogo 1</p>
+                    <p class="text-bc/70 text-xs mt-1">Hogar y jardín</p>
+                  </a>
+                  <a href="https://www.canva.com/design/DAG27pnQwos/b-Sty8BWrOaxnZ2z0Ktvog/view?utm_content=DAG27pnQwos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he058a1c6c6" target="_blank" class="block px-4 py-3 hover:bg-brand-600/20 transition-colors">
+                    <p class="text-bp font-medium">📦 Catálogo 2</p>
+                    <p class="text-bc/70 text-xs mt-1">Herramientas y oficina</p>
+                  </a>
+                </div>
+              </div>
+            </div>
             <a href="https://form.jotform.com/252968316175062" target="_blank" class="flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-bp/20 text-bc hover:border-brand-400 hover:bg-white/5 transition-all">
               Solicitar importación B2B
             </a>
@@ -843,7 +925,7 @@
     // Carrusel de logos de clientes
     const logosCarousel = document.getElementById('logos-carousel');
     let logosPosition = 0;
-    const logoWidth = 16.666; // 16.666% width (100% / 6 visible logos)
+    const logoWidth = 16.666;
     
     function moveLogos() {
       logosPosition -= logoWidth;
@@ -855,7 +937,6 @@
       }
     }
     
-    // Mover logos cada 3 segundos
     setInterval(moveLogos, 3000);
   </script>
 </body>
