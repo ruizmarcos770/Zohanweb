@@ -53,6 +53,31 @@
       50% { box-shadow: 0 0 30px rgba(74, 144, 226, 0.7), 0 0 60px rgba(74, 144, 226, 0.4); }
     }
     .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+    
+    /* Ticker animado */
+    .ticker-wrapper {
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .ticker-content {
+      display: flex;
+      animation: ticker 30s linear infinite;
+    }
+    
+    .ticker-item {
+      flex-shrink: 0;
+      padding: 0 3rem;
+      color: #e3effd;
+      font-size: 0.875rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
   </style>
 </head>
 
@@ -60,10 +85,31 @@
   <!-- Topbar -->
   <div class="w-full bg-ao/80 border-b border-white/5 text-sm">
     <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-      <p class="text-bc">🚢 Próxima importación en camino | Precios casi de fábrica 🔥</p>
+      <p class="text-bc">🚢 Próxima importación en camino | Precios increíbles 🔥</p>
       <div class="hidden md:flex gap-4 text-bc">
         <a href="#contacto" class="hover:text-bp">Contacto</a>
         <a href="#blog" class="hover:text-bp">Blog</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticker animado -->
+  <div class="w-full bg-brand-600/20 border-b border-brand-400/30 py-2 overflow-hidden">
+    <div class="ticker-wrapper">
+      <div class="ticker-content">
+        <span class="ticker-item">🚢 Productos ya están en camino desde China</span>
+        <span class="ticker-item">💰 Precios de China en Argentina</span>
+        <span class="ticker-item">📦 Todo incluido: producto + importación + envío</span>
+        <span class="ticker-item">🎯 Selección curada por nosotros</span>
+        <span class="ticker-item">🏠 Entrega puerta a puerta</span>
+        <span class="ticker-item">✨ Calidad controlada en origen</span>
+        <!-- Duplicado para loop continuo -->
+        <span class="ticker-item">🚢 Productos ya están en camino desde China</span>
+        <span class="ticker-item">💰 Precios de China en Argentina</span>
+        <span class="ticker-item">📦 Todo incluido: producto + importación + envío</span>
+        <span class="ticker-item">🎯 Selección curada por nosotros</span>
+        <span class="ticker-item">🏠 Entrega puerta a puerta</span>
+        <span class="ticker-item">✨ Calidad controlada en origen</span>
       </div>
     </div>
   </div>
@@ -134,7 +180,7 @@
           </div>
           <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-bp">
             Productos de China<br/>
-            <span class="text-brand-400">a precios de fábrica</span>
+            <span class="text-brand-400">a precios increíbles</span>
           </h1>
           <p class="mt-6 text-lg text-bc max-w-xl">
             Elegimos lo mejor de las fábricas chinas: calidad, diseño y precios que te sorprenden. Explorá lo que viene en camino y avisanos qué te interesa. Te contactamos cuando llegue.
@@ -178,7 +224,7 @@
               Cómo funciona
             </a>
           </div>
-          <p class="mt-4 text-bc/70 text-sm">✓ Precios casi de fábrica • ✓ Selección curada • ✓ Entrega puerta a puerta</p>
+          <p class="mt-4 text-bc/70 text-sm">✓ Precios de China en Argentina • ✓ Selección curada • ✓ Entrega puerta a puerta</p>
           
           <!-- Link secundario para importadores -->
           <div class="mt-8 pt-6 border-t border-white/10">
@@ -311,13 +357,13 @@
           </div>
           <h3 class="text-2xl font-bold text-bp">Marketplace Zohan</h3>
           <p class="text-sm text-brand-300 font-medium mb-3">Para consumidores finales</p>
-          <p class="mt-2 text-bc">Marketplace argentino con productos seleccionados desde China. Hogar, jardín, oficina y herramientas elegidos por calidad, diseño y precios casi de fábrica. Próxima importación en camino.</p>
+          <p class="mt-2 text-bc">Marketplace argentino con productos seleccionados desde China. Hogar, jardín, oficina y herramientas elegidos por calidad, diseño y precios súper competitivos. Próxima importación en camino.</p>
           <ul class="mt-6 space-y-3">
             <li class="flex items-start gap-3 text-bc">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>Precios casi de fábrica, sin intermediarios</span>
+              <span>Precios de China en Argentina, sin intermediarios</span>
             </li>
             <li class="flex items-start gap-3 text-bc">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -416,6 +462,37 @@
     </div>
   </section>
 
+  <!-- Proceso para importadores B2B -->
+  <section id="proceso" class="py-20 border-t border-white/5 bg-bc/10">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-bp">Proceso de importación B2B</h2>
+      <p class="mt-2 text-bc max-w-2xl">Para empresas que necesitan importar productos específicos. Proceso integral, documentado y transparente con mejora continua (KAIZEN).</p>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="glass p-6 rounded-2xl">
+          <div class="text-brand-400 font-bold mb-2">PASO 1-2</div>
+          <h4 class="font-semibold text-bp">Relevamiento y Marco Legal</h4>
+          <p class="text-bc mt-2">Analizamos necesidades, requisitos y factibilidad. Determinamos el régimen más conveniente (CTIT, importación definitiva u otros según tu caso).</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <div class="text-brand-400 font-bold mb-2">PASO 3-4</div>
+          <h4 class="font-semibold text-bp">Proveedores y Cotización</h4>
+          <p class="text-bc mt-2">Selección y negociación con fábricas en China. Cotización con precio final transparente.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <div class="text-brand-400 font-bold mb-2">PASO 5-6</div>
+          <h4 class="font-semibold text-bp">Documentación y Logística</h4>
+          <p class="text-bc mt-2">Gestión aduanera completa, compliance, transporte internacional, despacho y entrega door-to-door.</p>
+        </div>
+      </div>
+      
+      <!-- Info adicional sobre CTIT -->
+      <div class="mt-10 glass p-6 rounded-2xl border border-brand-400/20 max-w-3xl mx-auto">
+        <h3 class="text-xl font-semibold text-bp mb-3">💡 Especialistas en CTIT para exportadores</h3>
+        <p class="text-bc">Si sos exportador, el Certificado de Tipificación de Importación Temporaria (CTIT) puede optimizar tus costos y tiempos. Nosotros manejamos toda la documentación, compliance y logística para que tu operación sea prolija, rentable y segura. <a href="#faq" class="text-brand-400 hover:text-brand-300 font-medium">Ver más en FAQ →</a></p>
+      </div>
+    </div>
+  </section>
+
   <!-- Strip confianza -->
   <section class="py-10 border-t border-white/5 bg-bc/20">
     <div class="max-w-7xl mx-auto px-4">
@@ -487,37 +564,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Proceso para importadores B2B -->
-  <section id="proceso" class="py-20 border-t border-white/5 bg-bc/10">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-bp">Proceso de importación B2B</h2>
-      <p class="mt-2 text-bc max-w-2xl">Para empresas que necesitan importar productos específicos. Proceso integral, documentado y transparente con mejora continua (KAIZEN).</p>
-      <div class="mt-10 grid md:grid-cols-3 gap-6">
-        <div class="glass p-6 rounded-2xl">
-          <div class="text-brand-400 font-bold mb-2">PASO 1-2</div>
-          <h4 class="font-semibold text-bp">Relevamiento y Marco Legal</h4>
-          <p class="text-bc mt-2">Analizamos necesidades, requisitos y factibilidad. Determinamos el régimen más conveniente (CTIT, importación definitiva u otros según tu caso).</p>
-        </div>
-        <div class="glass p-6 rounded-2xl">
-          <div class="text-brand-400 font-bold mb-2">PASO 3-4</div>
-          <h4 class="font-semibold text-bp">Proveedores y Cotización</h4>
-          <p class="text-bc mt-2">Selección y negociación con fábricas en China. Cotización con precio final transparente.</p>
-        </div>
-        <div class="glass p-6 rounded-2xl">
-          <div class="text-brand-400 font-bold mb-2">PASO 5-6</div>
-          <h4 class="font-semibold text-bp">Documentación y Logística</h4>
-          <p class="text-bc mt-2">Gestión aduanera completa, compliance, transporte internacional, despacho y entrega door-to-door.</p>
-        </div>
-      </div>
-      
-      <!-- Info adicional sobre CTIT -->
-      <div class="mt-10 glass p-6 rounded-2xl border border-brand-400/20 max-w-3xl mx-auto">
-        <h3 class="text-xl font-semibold text-bp mb-3">💡 Especialistas en CTIT para exportadores</h3>
-        <p class="text-bc">Si sos exportador, el Certificado de Tipificación de Importación Temporaria (CTIT) puede optimizar tus costos y tiempos. Nosotros manejamos toda la documentación, compliance y logística para que tu operación sea prolija, rentable y segura. <a href="#faq" class="text-brand-400 hover:text-brand-300 font-medium">Ver más en FAQ →</a></p>
       </div>
     </div>
   </section>
@@ -651,7 +697,7 @@
               </svg>
               ¿Los precios son realmente baratos?
             </h4>
-            <p class="text-bc mt-2">Sí, son precios casi de fábrica porque compramos directo en China sin intermediarios. El precio que te damos incluye todo: producto, importación, impuestos, aduana y envío. Cero sorpresas.</p>
+            <p class="text-bc mt-2">Sí, traemos precios de China a Argentina porque compramos directo en las fábricas. El precio que te damos incluye todo: producto, importación, impuestos, aduana y envío. Cero sorpresas.</p>
           </div>
           <div class="glass p-6 rounded-2xl">
             <h4 class="font-semibold text-bp flex items-start gap-2">
@@ -870,7 +916,7 @@
     <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-4 gap-8">
       <div>
         <img src="assets/logozohan.png" alt="ZOHAN" class="h-10 w-auto rounded-md" />
-        <p class="mt-3 text-bc/80">Productos de China a precios de fábrica. Importaciones inteligentes para empresas.</p>
+        <p class="mt-3 text-bc/80">Precios de China en Argentina. Importaciones inteligentes para empresas.</p>
       </div>
       <div>
         <h5 class="font-semibold text-bp">Compañía</h5>
@@ -998,4 +1044,3 @@
   </script>
 </body>
 </html>
-
