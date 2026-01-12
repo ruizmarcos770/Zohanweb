@@ -1509,28 +1509,29 @@
         
         // Load YouTube Short
         function loadYouTubeShort(shortId, element) {
-            // Si no hay ID real, no hace nada (sin mostrar "instrucciones")
-            if (!shortId || String(shortId).includes('SHORT_ID')) return;
-            
-            // Create iframe for Short
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube.com/embed/${shortId}?rel=0&modestbranding=1&showinfo=0&autoplay=1`;
-            iframe.className = 'short-iframe';
-            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-            iframe.allowFullscreen = true;
-            
-            // Replace placeholder with iframe
-            element.parentElement.innerHTML = '';
-            element.parentElement.appendChild(iframe);
-            
-            // Track Short view
-            if (typeof fbq !== 'undefined') {
-                fbq('trackCustom', 'ShortView', {
-                    short_id: shortId,
-                    video_type: 'YouTube_Short'
-                });
-            }
-        }
+    if (!shortId || String(shortId).includes('SHORT_ID')) return;
+
+    const iframe = document.createElement('iframe');
+
+    iframe.src = `https://www.youtube.com/embed/${shortId}?rel=0&modestbranding=1&showinfo=0&playsinline=1&autoplay=1&mute=1`;
+    iframe.className = 'short-iframe';
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+
+    // Limpia placeholder y mete el iframe
+    const container = element.parentElement;
+    container.innerHTML = '';
+    container.appendChild(iframe);
+
+    // Track Short view
+    if (typeof fbq !== 'undefined') {
+      fbq('trackCustom', 'ShortView', {
+        short_id: shortId,
+        video_type: 'YouTube_Short'
+      });
+    }
+  }
         
     </script>
 </body>
