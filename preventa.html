@@ -4,8 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZOHAN - Cortadoras de Césped a Control Remoto</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // REEMPLAZA "TU_PIXEL_ID" con tu ID real del pixel
+    fbq('init', 'TU_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // REEMPLAZA 'TU_PIXEL_ID_AQUI' con tu ID real del pixel
+    fbq('init', 'TU_PIXEL_ID_AQUI');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none" 
+         src="https://www.facebook.com/tr?id=TU_PIXEL_ID_AQUI&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
     
     <style>
         /* ZOHAN Design System - Colores Más Claros */
@@ -1176,7 +1219,7 @@
                         <a href="tel:+5493812006513" class="contact-btn phone">
                             <i class="fas fa-phone"></i> Llamar Ahora
                         </a>
-                        <a href="mailto:ventas@zohan.com" class="contact-btn email">
+                        <a href="/cdn-cgi/l/email-protection#bdcbd8d3c9dccefdc7d2d5dcd393ded2d0" class="contact-btn email">
                             <i class="fas fa-envelope"></i> Enviar Email
                         </a>
                     </div>
@@ -1202,7 +1245,7 @@
                     <i class="fab fa-whatsapp"></i> +54 9381 200-6513
                 </div>
                 <div class="footer-contact">
-                    <i class="fas fa-envelope"></i> ventas@zohan.com
+                    <i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3147545f455042714b5e59505f1f525e5c">[email&#160;protected]</a>
                 </div>
                 <div class="footer-contact">
                     <i class="fas fa-map-marker-alt"></i> Argentina
@@ -1220,13 +1263,60 @@
         <i class="fab fa-whatsapp"></i>
     </div>
 
-    <script>
-        // WhatsApp Functions
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // WhatsApp Functions with Facebook Pixel tracking
         function openWhatsApp() {
+            // Track conversion event
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead'); // Evento de lead generation
+                fbq('trackCustom', 'WhatsAppClick'); // Evento personalizado
+            }
+            
             const phone = '5493812006513';
             const message = 'Hola! Me interesa información sobre las cortadoras de césped ZOHAN.';
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
         }
+
+        // Track phone clicks
+        function trackPhoneClick() {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Contact');
+                fbq('trackCustom', 'PhoneClick');
+            }
+        }
+
+        // Track email clicks  
+        function trackEmailClick() {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Contact');
+                fbq('trackCustom', 'EmailClick');
+            }
+        }
+
+        // Add event listeners for tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track all phone links
+            document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+                link.addEventListener('click', trackPhoneClick);
+            });
+            
+            // Track all email links
+            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                link.addEventListener('click', trackEmailClick);
+            });
+            
+            // Track product consultation clicks
+            document.querySelectorAll('.product-cta').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'InitiateCheckout');
+                        fbq('trackCustom', 'ProductInterest', {
+                            product_name: this.closest('.product-card').querySelector('.product-model').textContent
+                        });
+                    }
+                });
+            });
+        });
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1274,11 +1364,3 @@
             img.onerror = function() {
                 this.style.display = 'none';
                 const placeholder = document.createElement('div');
-                placeholder.className = 'gallery-placeholder';
-                placeholder.innerHTML = '<i class="fas fa-image"></i><span>Imagen no disponible</span>';
-                this.parentNode.appendChild(placeholder);
-            };
-        });
-    </script>
-</body>
-</html>
