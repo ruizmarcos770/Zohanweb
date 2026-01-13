@@ -838,14 +838,92 @@
         }
 
         .contact-visual {
-            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.95), rgba(220, 38, 38, 0.95));
             border-radius: 25px;
             aspect-ratio: 1/1;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-size: 100px;
-            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.3);
+        }
+
+        .contact-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></svg>') repeat;
+            pointer-events: none;
+        }
+
+        .counter-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--blanco);
+            width: 100%;
+        }
+
+        .counter-number {
+            font-size: 80px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        .counter-label {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .counter-text {
+            font-size: 16px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #06b6d4 100%);
+            width: 35%;
+            border-radius: 10px;
+            animation: expandWidth 1.5s ease-out forwards;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+        }
+
+        @keyframes expandWidth {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 35%;
+            }
+        }
+
+        .units-info {
+            font-size: 14px;
+            opacity: 0.85;
         }
 
         /* Footer */
@@ -1358,7 +1436,15 @@
                     </div>
                 </div>
                 <div class="contact-visual">
-                    <img src="SH800L.jpg" alt="Cortadora ZOHAN SH800L" style="width: 100%; height: 100%; object-fit: cover; border-radius: 25px;">
+                    <div class="counter-content">
+                        <div class="counter-number">20</div>
+                        <div class="counter-label">Unidades Disponibles</div>
+                        <div class="counter-text">Preventa limitada</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="units-info">7 unidades ya vendidas</div>
+                    </div>
                 </div>
             </div>
         </div>
