@@ -187,6 +187,15 @@
             margin-bottom: 30px;
             animation: pulse 2s infinite;
             box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
         }
 
         @keyframes pulse {
@@ -1031,8 +1040,10 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-badge">
-                <i class="fas fa-fire"></i>
-                🔴 PREVENTA ABIERTA - HASTA 30% OFF
+                <a href="#contacto" style="display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none;">
+                    <i class="fas fa-fire"></i>
+                    🔴 PREVENTA ABIERTA - HASTA 30% OFF
+                </a>
             </div>
             
             <h1 class="hero-title">CORTADORAS A CONTROL REMOTO</h1>
@@ -1118,10 +1129,6 @@
                                 <span class="spec-text">Ancho: <span class="spec-value">550mm</span></span>
                             </div>
                             <div class="spec-item">
-                                <i class="fas fa-weight-hanging"></i>
-                                <span class="spec-text">Peso: <span class="spec-value">165kg</span></span>
-                            </div>
-                            <div class="spec-item">
                                 <i class="fas fa-tachometer-alt"></i>
                                 <span class="spec-text">Velocidad: <span class="spec-value">0-4 km/h</span></span>
                             </div>
@@ -1158,10 +1165,6 @@
                             <div class="spec-item">
                                 <i class="fas fa-cut"></i>
                                 <span class="spec-text">Ancho: <span class="spec-value">800mm</span></span>
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-weight-hanging"></i>
-                                <span class="spec-text">Peso: <span class="spec-value">280kg</span></span>
                             </div>
                             <div class="spec-item">
                                 <i class="fas fa-tachometer-alt"></i>
@@ -1338,9 +1341,6 @@
                         <a href="tel:+5493812006513" class="contact-btn phone">
                             <i class="fas fa-phone"></i> Llamar Ahora
                         </a>
-                        <a href="/cdn-cgi/l/email-protection#d9b0b7bfb699a3b6b1b8b7f7bab6b4f7b8ab" class="contact-btn email">
-                            <i class="fas fa-envelope"></i> Enviar Email
-                        </a>
                     </div>
                 </div>
                 <div class="contact-visual">
@@ -1363,7 +1363,7 @@
                     <i class="fab fa-whatsapp"></i> +54 9381 200-6513
                 </div>
                 <div class="footer-contact">
-                    <i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a6cfc8c0c9e6dcc9cec7c888c5c9cb88c7d4">[email&#160;protected]</a>
+                    <i class="fas fa-envelope"></i> <a href="mailto:info@zohan.com.ar">info@zohan.com.ar</a>
                 </div>
                 <div class="footer-contact">
                     <i class="fas fa-map-marker-alt"></i> Argentina
@@ -1403,24 +1403,11 @@
             }
         }
 
-        // Track email clicks  
-        function trackEmailClick() {
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Contact');
-                fbq('trackCustom', 'EmailClick');
-            }
-        }
-
         // Add event listeners for tracking
         document.addEventListener('DOMContentLoaded', function() {
             // Track all phone links
             document.querySelectorAll('a[href^="tel:"]').forEach(link => {
                 link.addEventListener('click', trackPhoneClick);
-            });
-            
-            // Track all email links
-            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-                link.addEventListener('click', trackEmailClick);
             });
             
             // Track product consultation clicks
@@ -1519,3 +1506,4 @@
     </script>
 </body>
 </html>
+
