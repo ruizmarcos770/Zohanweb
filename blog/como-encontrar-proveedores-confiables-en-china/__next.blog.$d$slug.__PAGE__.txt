@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[22016,["/_next/static/chunks/3aa571471fec2c0c.js"],""]
+2:I[22016,["/_next/static/chunks/63fd982790987b40.js"],""]
 5:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 6:"$Sreact.suspense"
 3:Td37,<h2>El problema de confiar solo en plataformas online</h2>
@@ -23,6 +23,6 @@
 <p>En ZOHAN contamos con presencia directa en las principales zonas industriales de China. Nuestro equipo realiza verificaciones en fábrica, auditorías de calidad y seguimiento de producción para cada operación.</p>
 <p>Esto permite a las empresas argentinas acceder a proveedores certificados sin necesidad de viajar, reduciendo riesgos y tiempos de búsqueda. Cada proveedor que recomendamos ha pasado por un proceso de evaluación que incluye visita presencial, revisión documental y prueba de muestras.</p>
 <p>Si estás evaluando proveedores en China para tu próxima importación, podemos ayudarte a tomar una decisión informada y segura.</p>
-0:{"buildId":"fOR5WJEiWvoXqwPRs6S2Y","rsc":["$","$1","c",{"children":[["$","section",null,{"className":"bg-white","children":["$","div",null,{"className":"max-w-[720px] mx-auto px-6 py-20 md:py-24","children":[["$","$L2",null,{"href":"/blog","className":"text-sm text-primary hover:text-primary-hover transition-colors","children":"← Volver al blog"}],["$","article",null,{"className":"mt-8","children":[["$","time",null,{"className":"text-sm text-text-secondary","children":"14 de enero de 2025"}],["$","h1",null,{"className":"mt-3 text-3xl md:text-4xl font-bold text-text-main leading-tight","children":"Cómo encontrar proveedores confiables en China: guía para empresas argentinas"}],["$","div",null,{"className":"mt-10 prose","dangerouslySetInnerHTML":{"__html":"$3"}}]]}]]}]}],null,"$L4"]}],"loading":null,"isPartial":false}
+0:{"buildId":"PAyzb3uh_Of3BVrVwBFw7","rsc":["$","$1","c",{"children":[["$","section",null,{"className":"bg-white","children":["$","div",null,{"className":"max-w-[720px] mx-auto px-6 py-20 md:py-24","children":[["$","$L2",null,{"href":"/blog","className":"text-sm text-primary hover:text-primary-hover transition-colors","children":"← Volver al blog"}],["$","article",null,{"className":"mt-8","children":[["$","time",null,{"className":"text-sm text-text-secondary","children":"14 de enero de 2025"}],["$","h1",null,{"className":"mt-3 text-3xl md:text-4xl font-bold text-text-main leading-tight","children":"Cómo encontrar proveedores confiables en China: guía para empresas argentinas"}],["$","div",null,{"className":"mt-10 prose","dangerouslySetInnerHTML":{"__html":"$3"}}]]}]]}]}],null,"$L4"]}],"loading":null,"isPartial":false}
 4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
 7:null

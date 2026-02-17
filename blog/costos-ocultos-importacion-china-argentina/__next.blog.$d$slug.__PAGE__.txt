@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[22016,["/_next/static/chunks/3aa571471fec2c0c.js"],""]
+2:I[22016,["/_next/static/chunks/63fd982790987b40.js"],""]
 5:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 6:"$Sreact.suspense"
 3:T1074,<h2>El precio FOB es solo el comienzo</h2>
@@ -41,6 +41,6 @@
 <li><strong>Costos de agente de sourcing</strong> (si aplica)</li>
 </ol>
 <p>En ZOHAN ayudamos a nuestros clientes a calcular el landed cost completo antes de confirmar cualquier operación, para que cada decisión de compra se base en números reales y no en estimaciones incompletas.</p>
-0:{"buildId":"fOR5WJEiWvoXqwPRs6S2Y","rsc":["$","$1","c",{"children":[["$","section",null,{"className":"bg-white","children":["$","div",null,{"className":"max-w-[720px] mx-auto px-6 py-20 md:py-24","children":[["$","$L2",null,{"href":"/blog","className":"text-sm text-primary hover:text-primary-hover transition-colors","children":"← Volver al blog"}],["$","article",null,{"className":"mt-8","children":[["$","time",null,{"className":"text-sm text-text-secondary","children":"31 de enero de 2025"}],["$","h1",null,{"className":"mt-3 text-3xl md:text-4xl font-bold text-text-main leading-tight","children":"Los costos ocultos de importar desde China que nadie te cuenta"}],["$","div",null,{"className":"mt-10 prose","dangerouslySetInnerHTML":{"__html":"$3"}}]]}]]}]}],null,"$L4"]}],"loading":null,"isPartial":false}
+0:{"buildId":"PAyzb3uh_Of3BVrVwBFw7","rsc":["$","$1","c",{"children":[["$","section",null,{"className":"bg-white","children":["$","div",null,{"className":"max-w-[720px] mx-auto px-6 py-20 md:py-24","children":[["$","$L2",null,{"href":"/blog","className":"text-sm text-primary hover:text-primary-hover transition-colors","children":"← Volver al blog"}],["$","article",null,{"className":"mt-8","children":[["$","time",null,{"className":"text-sm text-text-secondary","children":"31 de enero de 2025"}],["$","h1",null,{"className":"mt-3 text-3xl md:text-4xl font-bold text-text-main leading-tight","children":"Los costos ocultos de importar desde China que nadie te cuenta"}],["$","div",null,{"className":"mt-10 prose","dangerouslySetInnerHTML":{"__html":"$3"}}]]}]]}]}],null,"$L4"]}],"loading":null,"isPartial":false}
 4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
 7:null
