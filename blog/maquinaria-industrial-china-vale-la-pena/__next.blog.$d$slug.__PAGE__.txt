@@ -1,0 +1,63 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/3aa571471fec2c0c.js"],""]
+5:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+3:T13e1,<h2>La manufactura china ya no es lo que era</h2>
+<p>Durante años, la etiqueta "Made in China" cargó con un estigma de baja calidad. Esa percepción, que pudo haber tenido fundamento hace dos décadas, ya no refleja la realidad del sector industrial chino actual.</p>
+<p>China invirtió masivamente en automatización, investigación y desarrollo. Hoy es el principal fabricante mundial de maquinaria CNC, equipos de inyección plástica, líneas de envasado y una amplia gama de maquinaria pesada. Marcas chinas compiten directamente con fabricantes europeos y japoneses en segmentos que antes eran exclusivos de esos orígenes.</p>
+<p>Esto no significa que toda la maquinaria china sea de alta calidad. La clave está en saber dónde buscar y qué evaluar.</p>
+<h2>Casos donde importar maquinaria desde China tiene sentido</h2>
+<p>La importación de maquinaria china es especialmente ventajosa cuando:</p>
+<ul>
+<li>
+<p><strong>El diferencial de precio es significativo</strong>: en muchos rubros, la maquinaria china equivalente a una europea cuesta entre un 40% y un 60% menos. Para empresas que están escalando producción o reemplazando equipos obsoletos, este ahorro permite renovar el parque de máquinas a una fracción del costo.</p>
+</li>
+<li>
+<p><strong>La tecnología está estandarizada</strong>: en procesos donde la tecnología es madura y los estándares de fabricación están bien definidos (corte láser, inyección plástica, envasado automático), los fabricantes chinos de primer nivel ofrecen rendimiento comparable al de marcas occidentales.</p>
+</li>
+<li>
+<p><strong>Se necesitan líneas completas</strong>: China tiene la ventaja de ofrecer líneas de producción integradas de un solo proveedor o zona industrial, simplificando la logística y la compatibilidad entre equipos.</p>
+</li>
+</ul>
+<h2>Qué preguntar antes de comprar</h2>
+<p>Antes de cerrar la compra de maquinaria industrial china, hay preguntas críticas que todo importador debe hacer:</p>
+<ol>
+<li>
+<p><strong>¿Cuál es la capacidad real de producción de la máquina?</strong> Pedir datos técnicos verificables, no solo los del catálogo. Solicitar videos de la máquina operando en condiciones reales.</p>
+</li>
+<li>
+<p><strong>¿Qué componentes críticos utiliza?</strong> Muchos fabricantes chinos de primer nivel usan componentes Siemens, Schneider, Omron o Mitsubishi en sus equipos. Verificar la marca y origen de PLC, servomotores, sensores y sistemas hidráulicos.</p>
+</li>
+<li>
+<p><strong>¿Qué certificaciones tiene el equipo?</strong> Dependiendo del destino y uso, pueden requerirse certificaciones CE, UL o normas específicas del sector. Verificar que sean auténticas y vigentes.</p>
+</li>
+<li>
+<p><strong>¿Existe servicio técnico remoto?</strong> Los buenos fabricantes ofrecen soporte técnico por videollamada, acceso remoto al PLC para diagnóstico y manuales técnicos detallados en inglés.</p>
+</li>
+<li>
+<p><strong>¿Se puede visitar la fábrica y ver equipos en funcionamiento?</strong> Un fabricante serio no solo permite la visita sino que la incentiva. Si hay resistencia a mostrar la planta, es una señal de alerta.</p>
+</li>
+</ol>
+<h2>Garantías y servicio post-venta: cómo cubrirse</h2>
+<p>La garantía estándar en maquinaria china suele ser de 12 meses desde la instalación. Sin embargo, la garantía por sí sola no alcanza. Es necesario complementarla con:</p>
+<ul>
+<li>
+<p><strong>Stock de repuestos críticos</strong>: acordar con el proveedor el envío de un kit de repuestos junto con la máquina. Esto evita paradas prolongadas por espera de piezas desde China.</p>
+</li>
+<li>
+<p><strong>Capacitación incluida</strong>: muchos fabricantes ofrecen capacitación en planta (en China) o envían técnicos para la instalación y puesta en marcha. Incluir este servicio en la negociación es fundamental.</p>
+</li>
+<li>
+<p><strong>Cláusulas contractuales claras</strong>: el contrato debe especificar tiempos de respuesta ante fallas, cobertura de piezas y disponibilidad de soporte remoto. Un contrato bien redactado en inglés, con jurisdicción definida, protege al comprador.</p>
+</li>
+<li>
+<p><strong>Inspección pre-embarque</strong>: antes de que la máquina salga de China, una inspección independiente verifica que cumple con las especificaciones acordadas y funciona correctamente.</p>
+</li>
+</ul>
+<h2>El rol de ZOHAN en la importación de maquinaria</h2>
+<p>En ZOHAN acompañamos a empresas argentinas en todo el proceso de importación de maquinaria: desde la identificación del fabricante adecuado hasta la inspección final pre-embarque.</p>
+<p>Nuestra presencia en China nos permite visitar fábricas, evaluar equipos en funcionamiento, negociar condiciones comerciales y supervisar la producción. Cada operación incluye verificación técnica y documental para que la maquinaria que llega a Argentina cumpla exactamente con lo pactado.</p>
+<p>Si estás evaluando importar maquinaria industrial, podemos ayudarte a encontrar el equipo correcto al mejor costo, con la tranquilidad de un proceso controlado de punta a punta.</p>
+0:{"buildId":"fOR5WJEiWvoXqwPRs6S2Y","rsc":["$","$1","c",{"children":[["$","section",null,{"className":"bg-white","children":["$","div",null,{"className":"max-w-[720px] mx-auto px-6 py-20 md:py-24","children":[["$","$L2",null,{"href":"/blog","className":"text-sm text-primary hover:text-primary-hover transition-colors","children":"← Volver al blog"}],["$","article",null,{"className":"mt-8","children":[["$","time",null,{"className":"text-sm text-text-secondary","children":"9 de febrero de 2025"}],["$","h1",null,{"className":"mt-3 text-3xl md:text-4xl font-bold text-text-main leading-tight","children":"¿Vale la pena importar maquinaria industrial desde China?"}],["$","div",null,{"className":"mt-10 prose","dangerouslySetInnerHTML":{"__html":"$3"}}]]}]]}]}],null,"$L4"]}],"loading":null,"isPartial":false}
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

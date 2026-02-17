@@ -1,0 +1,46 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/3aa571471fec2c0c.js"],""]
+5:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+3:T1074,<h2>El precio FOB es solo el comienzo</h2>
+<p>Cuando una empresa argentina recibe una cotización de un proveedor chino, el precio FOB (Free on Board) suele ser el número que concentra toda la atención. Sin embargo, ese valor representa apenas una fracción del costo total de la mercadería puesta en tu depósito. Ignorar los costos adicionales es uno de los errores más frecuentes —y más costosos— en operaciones de importación.</p>
+<h2>Aranceles e impuestos: la primera sorpresa</h2>
+<p>Argentina tiene una estructura arancelaria compleja. Además del derecho de importación (que varía según la posición arancelaria y puede ir del 0% al 35%), se suman:</p>
+<ul>
+<li><strong>Tasa de estadística</strong>: 3% sobre el valor CIF.</li>
+<li><strong>IVA</strong>: 21% sobre el valor CIF más los derechos de importación.</li>
+<li><strong>IVA adicional</strong>: 20% para inscriptos en IVA (10% para responsables inscriptos en determinadas condiciones).</li>
+<li><strong>Impuesto a las ganancias</strong>: percepción del 6% sobre el valor CIF.</li>
+<li><strong>Ingresos brutos</strong>: percepción variable según la jurisdicción.</li>
+</ul>
+<p>Estos impuestos se acumulan y pueden representar entre un 60% y un 80% adicional sobre el valor CIF de la mercadería. Calcularlos con precisión antes de cerrar una operación es fundamental para no llevarse sorpresas.</p>
+<h2>Costos logísticos que no aparecen en la primera cotización</h2>
+<p>El flete marítimo es el costo logístico más visible, pero existen varios gastos asociados que suelen pasarse por alto:</p>
+<ul>
+<li><strong>THC (Terminal Handling Charge)</strong>: cargo por manipulación en terminal, tanto en origen como en destino.</li>
+<li><strong>Demoras (demurrage y detention)</strong>: si el contenedor no se retira a tiempo del puerto o no se devuelve vacío en plazo, se generan costos diarios que escalan rápidamente.</li>
+<li><strong>Almacenaje en depósito fiscal</strong>: si la mercadería queda retenida en aduana por documentación incompleta o inspecciones, cada día de almacenaje tiene un costo.</li>
+<li><strong>Gastos de despacho</strong>: honorarios del despachante de aduana, trámites ante AFIP, certificaciones y legalizaciones.</li>
+<li><strong>Flete interno</strong>: transporte desde el puerto hasta tu depósito o planta.</li>
+</ul>
+<p>En conjunto, estos costos logísticos pueden representar entre un 15% y un 25% del valor de la mercadería, dependiendo del tipo de producto y la complejidad de la operación.</p>
+<h2>El costo invisible de no tener un agente en China</h2>
+<p>Operar sin representación local en China genera costos difíciles de medir pero muy reales: demoras por malentendidos en las especificaciones del producto, defectos de calidad detectados recién al abrir el contenedor en Argentina, o proveedores que modifican materiales sin aviso para reducir sus propios costos.</p>
+<p>Un agente de sourcing en origen actúa como los ojos y oídos del importador. Supervisa la producción, realiza inspecciones pre-embarque y resuelve problemas antes de que la mercadería salga de China. El costo de este servicio es marginal comparado con el costo de recibir un contenedor con mercadería defectuosa.</p>
+<h2>Cómo calcular el landed cost real</h2>
+<p>El landed cost (costo total de importación puesto en destino) es el único número que importa al evaluar si una operación es rentable. Para calcularlo correctamente hay que sumar:</p>
+<ol>
+<li><strong>Precio FOB</strong> del producto</li>
+<li><strong>Flete internacional</strong> (marítimo o aéreo)</li>
+<li><strong>Seguro de carga</strong></li>
+<li><strong>Derechos de importación y tasas</strong></li>
+<li><strong>Impuestos internos</strong> (IVA, ganancias, IIBB)</li>
+<li><strong>Gastos portuarios y de terminal</strong></li>
+<li><strong>Honorarios de despachante</strong></li>
+<li><strong>Flete interno hasta destino final</strong></li>
+<li><strong>Costos de agente de sourcing</strong> (si aplica)</li>
+</ol>
+<p>En ZOHAN ayudamos a nuestros clientes a calcular el landed cost completo antes de confirmar cualquier operación, para que cada decisión de compra se base en números reales y no en estimaciones incompletas.</p>
+0:{"buildId":"fOR5WJEiWvoXqwPRs6S2Y","rsc":["$","$1","c",{"children":[["$","section",null,{"className":"bg-white","children":["$","div",null,{"className":"max-w-[720px] mx-auto px-6 py-20 md:py-24","children":[["$","$L2",null,{"href":"/blog","className":"text-sm text-primary hover:text-primary-hover transition-colors","children":"← Volver al blog"}],["$","article",null,{"className":"mt-8","children":[["$","time",null,{"className":"text-sm text-text-secondary","children":"31 de enero de 2025"}],["$","h1",null,{"className":"mt-3 text-3xl md:text-4xl font-bold text-text-main leading-tight","children":"Los costos ocultos de importar desde China que nadie te cuenta"}],["$","div",null,{"className":"mt-10 prose","dangerouslySetInnerHTML":{"__html":"$3"}}]]}]]}]}],null,"$L4"]}],"loading":null,"isPartial":false}
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

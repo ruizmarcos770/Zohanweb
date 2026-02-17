@@ -1,0 +1,28 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/3aa571471fec2c0c.js"],""]
+5:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+3:Td37,<h2>El problema de confiar solo en plataformas online</h2>
+<p>Muchas empresas argentinas comienzan su búsqueda de proveedores chinos en plataformas como Alibaba, Made-in-China o Global Sources. Si bien estas herramientas son útiles como punto de partida, confiar exclusivamente en ellas es un error frecuente que puede costar caro.</p>
+<p>Los perfiles en estas plataformas son vitrinas comerciales. Un proveedor puede mostrar fotos de productos que no fabrica, certificaciones vencidas o capacidades de producción exageradas. Sin una verificación presencial, no hay forma de confirmar si lo que se muestra online refleja la realidad de la fábrica.</p>
+<h2>La verificación en fábrica: un paso que no se puede saltear</h2>
+<p>La inspección directa en planta es el método más confiable para evaluar a un proveedor. Durante una visita de verificación se evalúan aspectos que ninguna plataforma digital puede garantizar: el estado real de la maquinaria, la organización de la línea de producción, las condiciones laborales y la capacidad instalada efectiva.</p>
+<p>Un proveedor que acepta auditorías sin objeciones suele ser más confiable que uno que pone trabas o demoras. La transparencia en esta etapa es un indicador directo de la seriedad del fabricante.</p>
+<h2>Certificaciones clave según el rubro</h2>
+<p>Dependiendo del sector, existen certificaciones que todo proveedor serio debería tener:</p>
+<ul>
+<li><strong>Muebles y decoración</strong>: FSC (madera certificada), BIFMA (resistencia y durabilidad), certificaciones de materiales libres de formaldehído.</li>
+<li><strong>Insumos y envases</strong>: ISO 9001 (gestión de calidad), certificaciones de contacto alimentario (FDA, EU), BRC para envases de exportación.</li>
+<li><strong>Maquinaria industrial</strong>: ISO 9001, certificación CE para mercados europeos, informes de ensayo de componentes eléctricos (UL, TÜV).</li>
+</ul>
+<p>Es fundamental no solo pedir los certificados sino verificar su vigencia y autenticidad contactando directamente al organismo emisor cuando sea posible.</p>
+<h2>Más allá del precio: evaluar la relación comercial completa</h2>
+<p>Un error habitual es seleccionar al proveedor más barato sin considerar otros factores determinantes. Los tiempos de entrega, la flexibilidad ante cambios en el pedido, la comunicación en idioma inglés (o español, cuando es posible) y la disposición a enviar muestras son aspectos que definen la calidad de la relación comercial a largo plazo.</p>
+<p>Un proveedor ligeramente más caro pero con mejor servicio post-venta y comunicación fluida puede generar un ahorro neto mayor al evitar reprocesos, demoras y malentendidos.</p>
+<h2>Cómo ZOHAN facilita este proceso</h2>
+<p>En ZOHAN contamos con presencia directa en las principales zonas industriales de China. Nuestro equipo realiza verificaciones en fábrica, auditorías de calidad y seguimiento de producción para cada operación.</p>
+<p>Esto permite a las empresas argentinas acceder a proveedores certificados sin necesidad de viajar, reduciendo riesgos y tiempos de búsqueda. Cada proveedor que recomendamos ha pasado por un proceso de evaluación que incluye visita presencial, revisión documental y prueba de muestras.</p>
+<p>Si estás evaluando proveedores en China para tu próxima importación, podemos ayudarte a tomar una decisión informada y segura.</p>
+0:{"buildId":"fOR5WJEiWvoXqwPRs6S2Y","rsc":["$","$1","c",{"children":[["$","section",null,{"className":"bg-white","children":["$","div",null,{"className":"max-w-[720px] mx-auto px-6 py-20 md:py-24","children":[["$","$L2",null,{"href":"/blog","className":"text-sm text-primary hover:text-primary-hover transition-colors","children":"← Volver al blog"}],["$","article",null,{"className":"mt-8","children":[["$","time",null,{"className":"text-sm text-text-secondary","children":"14 de enero de 2025"}],["$","h1",null,{"className":"mt-3 text-3xl md:text-4xl font-bold text-text-main leading-tight","children":"Cómo encontrar proveedores confiables en China: guía para empresas argentinas"}],["$","div",null,{"className":"mt-10 prose","dangerouslySetInnerHTML":{"__html":"$3"}}]]}]]}]}],null,"$L4"]}],"loading":null,"isPartial":false}
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null
