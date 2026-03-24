@@ -1,0 +1,268 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// ============ STAFF ============
+model Staff {
+  id            String    @id @default(cuid())
+  nombre        String
+  apellido      String
+  email         String    @unique
+  telefono      String?
+  rol           String    // ADMIN, MEDICO, PSICOLOGO, ENFERMERO, TERAPEUTA, ADMINISTRATIVO
+  especialidad  String?
+  licencia      String?
+  activo        Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  sesiones           Sesion[]
+  notasEvolucion     NotaEvolucion[]
+  prescripciones     Prescripcion[]
+  administracionMed  AdministracionMedicamento[]
+  ingresos           Ingreso[]
+  gastos             Gasto[]
+}
+
+// ============ PACIENTES ============
+model Paciente {
+  id                    String    @id @default(cuid())
+  nombre                String
+  apellido              String
+  dni                   String    @unique
+  fechaNacimiento       DateTime
+  sexo                  String
+  telefono              String?
+  email                 String?
+  direccion             String?
+  ciudad                String?
+  provincia             String?
+  contactoEmergNombre   String?
+  contactoEmergTel      String?
+  contactoEmergRelacion String?
+  tipoTratamiento       String    // RESIDENCIAL, AMBULATORIO
+  tipoAdiccion          String    // ALCOHOL, DROGAS, MULTIPLE, OTRO
+  sustanciasPrincipales String?
+  fechaIngreso          DateTime  @default(now())
+  fechaEgreso           DateTime?
+  motivoEgreso          String?
+  estado                String    @default("ACTIVO")
+  grupoSanguineo        String?
+  alergias              String?
+  antecedentesMedicos   String?
+  medicacionPrevia      String?
+  obraSocial            String?
+  nroAfiliado           String?
+  habitacionId          String?
+  habitacion            Habitacion? @relation(fields: [habitacionId], references: [id])
+  cuentaCorriente       CuentaPaciente?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  sesiones              Sesion[]
+  prescripciones        Prescripcion[]
+  notasEvolucion        NotaEvolucion[]
+  admisionesGrupo       SesionGrupoParticipante[]
+  ingresos              Ingreso[]
+}
+
+// ============ HABITACIONES ============
+model Habitacion {
+  id          String    @id @default(cuid())
+  numero      String    @unique
+  nombre      String?
+  tipo        String    // INDIVIDUAL, DOBLE, MULTIPLE
+  capacidad   Int
+  piso        Int       @default(1)
+  descripcion String?
+  activa      Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+
+  pacientes   Paciente[]
+}
+
+// ============ SESIONES DE TERAPIA ============
+model Sesion {
+  id            String    @id @default(cuid())
+  tipo          String    // INDIVIDUAL, GRUPAL
+  subtipo       String?   // PSICOLOGICA, PSIQUIATRICA, GRUPAL_TERAPEUTICA, FAMILIAR, OTRO
+  fecha         DateTime
+  duracion      Int       @default(60)
+  estado        String    @default("PROGRAMADA")
+  notas         String?
+  pacienteId    String?
+  paciente      Paciente? @relation(fields: [pacienteId], references: [id])
+  sesionGrupoId String?
+  sesionGrupo   SesionGrupo? @relation(fields: [sesionGrupoId], references: [id])
+  staffId       String?
+  staff         Staff?    @relation(fields: [staffId], references: [id])
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model SesionGrupo {
+  id          String    @id @default(cuid())
+  nombre      String
+  tipo        String
+  descripcion String?
+  activa      Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+
+  sesiones      Sesion[]
+  participantes SesionGrupoParticipante[]
+}
+
+model SesionGrupoParticipante {
+  id            String      @id @default(cuid())
+  sesionGrupoId String
+  sesionGrupo   SesionGrupo @relation(fields: [sesionGrupoId], references: [id])
+  pacienteId    String
+  paciente      Paciente    @relation(fields: [pacienteId], references: [id])
+  activo        Boolean     @default(true)
+
+  @@unique([sesionGrupoId, pacienteId])
+}
+
+// ============ NOTAS DE EVOLUCIÓN ============
+model NotaEvolucion {
+  id          String    @id @default(cuid())
+  pacienteId  String
+  paciente    Paciente  @relation(fields: [pacienteId], references: [id])
+  staffId     String?
+  staff       Staff?    @relation(fields: [staffId], references: [id])
+  fecha       DateTime  @default(now())
+  tipo        String    // MEDICA, PSICOLOGICA, ENFERMERIA, GENERAL
+  contenido   String
+  createdAt   DateTime  @default(now())
+}
+
+// ============ MEDICAMENTOS Y PRESCRIPCIONES ============
+model Medicamento {
+  id              String    @id @default(cuid())
+  nombre          String
+  principioActivo String?
+  presentacion    String?
+  concentracion   String?
+  stock           Int       @default(0)
+  stockMinimo     Int       @default(10)
+  unidad          String    @default("unidades")
+  precioUnitario  Float?
+  laboratorio     String?
+  activo          Boolean   @default(true)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  prescripciones  Prescripcion[]
+  movimientos     MovimientoStock[]
+}
+
+model Prescripcion {
+  id              String    @id @default(cuid())
+  pacienteId      String
+  paciente        Paciente  @relation(fields: [pacienteId], references: [id])
+  medicamentoId   String
+  medicamento     Medicamento @relation(fields: [medicamentoId], references: [id])
+  staffId         String?
+  staff           Staff?    @relation(fields: [staffId], references: [id])
+  dosis           String
+  frecuencia      String
+  via             String    @default("ORAL")
+  fechaInicio     DateTime
+  fechaFin        DateTime?
+  activa          Boolean   @default(true)
+  indicaciones    String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  administraciones AdministracionMedicamento[]
+}
+
+model AdministracionMedicamento {
+  id              String      @id @default(cuid())
+  prescripcionId  String
+  prescripcion    Prescripcion @relation(fields: [prescripcionId], references: [id])
+  staffId         String?
+  staff           Staff?      @relation(fields: [staffId], references: [id])
+  fechaHora       DateTime    @default(now())
+  dosis           String
+  administrado    Boolean     @default(true)
+  notas           String?
+  createdAt       DateTime    @default(now())
+}
+
+model MovimientoStock {
+  id              String      @id @default(cuid())
+  medicamentoId   String
+  medicamento     Medicamento @relation(fields: [medicamentoId], references: [id])
+  tipo            String      // INGRESO, EGRESO, AJUSTE
+  cantidad        Int
+  motivo          String?
+  fecha           DateTime    @default(now())
+  createdAt       DateTime    @default(now())
+}
+
+// ============ FINANZAS ============
+model CuentaPaciente {
+  id          String    @id @default(cuid())
+  pacienteId  String    @unique
+  paciente    Paciente  @relation(fields: [pacienteId], references: [id])
+  saldo       Float     @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  ingresos    Ingreso[]
+}
+
+model Ingreso {
+  id               String          @id @default(cuid())
+  fecha            DateTime        @default(now())
+  concepto         String
+  monto            Float
+  tipo             String          // HONORARIOS, CUOTA_MENSUAL, OBRA_SOCIAL, DONACION, SUBSIDIO, OTRO
+  metodo           String          @default("EFECTIVO")
+  pacienteId       String?
+  paciente         Paciente?       @relation(fields: [pacienteId], references: [id])
+  cuentaPacienteId String?
+  cuentaPaciente   CuentaPaciente? @relation(fields: [cuentaPacienteId], references: [id])
+  staffId          String?
+  staff            Staff?          @relation(fields: [staffId], references: [id])
+  comprobante      String?
+  notas            String?
+  createdAt        DateTime        @default(now())
+}
+
+model Gasto {
+  id          String    @id @default(cuid())
+  fecha       DateTime  @default(now())
+  concepto    String
+  monto       Float
+  categoria   String    // PERSONAL, MEDICAMENTOS, INSUMOS, SERVICIOS, MANTENIMIENTO, ALQUILER, ALIMENTACION, OTRO
+  proveedor   String?
+  factura     String?
+  metodo      String    @default("TRANSFERENCIA")
+  staffId     String?
+  staff       Staff?    @relation(fields: [staffId], references: [id])
+  notas       String?
+  createdAt   DateTime  @default(now())
+}
+
+model PresupuestoMensual {
+  id          String    @id @default(cuid())
+  anio        Int
+  mes         Int
+  categoria   String
+  monto       Float
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@unique([anio, mes, categoria])
+}
