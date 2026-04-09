@@ -1,20 +1,10 @@
-import { createContext, useContext, useReducer, useEffect } from 'react'
+import { createContext, useContext, useReducer, useEffect, useRef, useCallback } from 'react'
+import { hasDB } from '../lib/supabase'
+import * as db from '../lib/db'
 
 const AppContext = createContext(null)
 
-// ── Initial demo data ────────────────────────────────────────────────────────
-const DEMO_VENDEDORES = [
-  { id: 'v1', nombre: 'Lucas Pérez', email: 'lucas@empresa.com', telefono: '351-111-2222', comision: 5 },
-  { id: 'v2', nombre: 'Sofía García', email: 'sofia@empresa.com', telefono: '351-333-4444', comision: 7 },
-]
-
-const DEMO_PRODUCTOS = [
-  { id: 'p1', codigo: 'EQ-001', nombre: 'Mancuernas 10kg par', descripcion: 'Par de mancuernas de hierro fundido', precioCompra: 8000, precioVenta: 15000, stock: 20, stockMinimo: 5, categoria: 'Equipamiento' },
-  { id: 'p2', codigo: 'EQ-002', nombre: 'Bicicleta estática', descripcion: 'Bicicleta fija con resistencia magnética', precioCompra: 45000, precioVenta: 89000, stock: 4, stockMinimo: 2, categoria: 'Equipamiento' },
-  { id: 'p3', codigo: 'EQ-003', nombre: 'Banda elástica fuerte', descripcion: 'Banda de resistencia alta intensidad', precioCompra: 1500, precioVenta: 3500, stock: 50, stockMinimo: 10, categoria: 'Accesorios' },
-  { id: 'p4', codigo: 'EQ-004', nombre: 'Colchoneta yoga', descripcion: 'Colchoneta antideslizante 6mm', precioCompra: 3000, precioVenta: 6500, stock: 3, stockMinimo: 5, categoria: 'Accesorios' },
-]
-
+// ── Categorías por defecto (usadas en modo offline) ───────────────────────────
 const INITIAL_CATS_PRODUCTO = [
   'Estribos', 'Enganches', 'Cobertor', 'Barra antivuelco', 'Tapa rígida',
   'Lona', 'Defensa', 'Amortiguador de portón', 'Polarizado', 'Cubrealfombras',
@@ -26,21 +16,36 @@ const INITIAL_CATS_GASTO = [
   'Mantenimiento', 'Impuestos', 'Logística', 'Colocación', 'Otros',
 ]
 
-// ── Reducer ──────────────────────────────────────────────────────────────────
+const INITIAL_STATE = {
+  loading: true,
+  error: null,
+  productos: [],
+  vendedores: [],
+  ventas: [],
+  gastos: [],
+  categoriasProducto: INITIAL_CATS_PRODUCTO,
+  categoriasGasto: INITIAL_CATS_GASTO,
+}
+
+// ── Reducer (maneja estado local) ─────────────────────────────────────────────
 function reducer(state, action) {
   switch (action.type) {
 
-    // Categorías
-    case 'ADD_CATEGORIA_PRODUCTO':
-      if (state.categoriasProducto.includes(action.payload)) return state
-      return { ...state, categoriasProducto: [...state.categoriasProducto, action.payload] }
-    case 'DELETE_CATEGORIA_PRODUCTO':
-      return { ...state, categoriasProducto: state.categoriasProducto.filter(c => c !== action.payload) }
-    case 'ADD_CATEGORIA_GASTO':
-      if (state.categoriasGasto.includes(action.payload)) return state
-      return { ...state, categoriasGasto: [...state.categoriasGasto, action.payload] }
-    case 'DELETE_CATEGORIA_GASTO':
-      return { ...state, categoriasGasto: state.categoriasGasto.filter(c => c !== action.payload) }
+    case 'LOAD_ALL':
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        productos: action.payload.productos,
+        vendedores: action.payload.vendedores,
+        ventas: action.payload.ventas,
+        gastos: action.payload.gastos,
+        categoriasProducto: action.payload.categoriasProducto,
+        categoriasGasto: action.payload.categoriasGasto,
+      }
+
+    case 'SET_ERROR':
+      return { ...state, loading: false, error: action.payload }
 
     // Productos
     case 'ADD_PRODUCTO':
@@ -60,7 +65,6 @@ function reducer(state, action) {
 
     // Ventas
     case 'ADD_VENTA': {
-      // Descontar stock
       const updatedProductos = state.productos.map(prod => {
         const item = action.payload.items.find(i => i.productoId === prod.id)
         if (item) return { ...prod, stock: prod.stock - item.cantidad }
@@ -75,7 +79,6 @@ function reducer(state, action) {
     case 'CANCEL_VENTA': {
       const venta = state.ventas.find(v => v.id === action.payload)
       if (!venta || venta.estado === 'cancelada') return state
-      // Reponer stock
       const updatedProductos = state.productos.map(prod => {
         const item = venta.items.find(i => i.productoId === prod.id)
         if (item) return { ...prod, stock: prod.stock + item.cantidad }
@@ -96,7 +99,7 @@ function reducer(state, action) {
     case 'DELETE_GASTO':
       return { ...state, gastos: state.gastos.filter(g => g.id !== action.payload) }
 
-    // Comisiones: marcar pagada
+    // Comisiones
     case 'PAGAR_COMISION':
       return {
         ...state,
@@ -107,6 +110,18 @@ function reducer(state, action) {
         ),
       }
 
+    // Categorías
+    case 'ADD_CATEGORIA_PRODUCTO':
+      if (state.categoriasProducto.includes(action.payload)) return state
+      return { ...state, categoriasProducto: [...state.categoriasProducto, action.payload] }
+    case 'DELETE_CATEGORIA_PRODUCTO':
+      return { ...state, categoriasProducto: state.categoriasProducto.filter(c => c !== action.payload) }
+    case 'ADD_CATEGORIA_GASTO':
+      if (state.categoriasGasto.includes(action.payload)) return state
+      return { ...state, categoriasGasto: [...state.categoriasGasto, action.payload] }
+    case 'DELETE_CATEGORIA_GASTO':
+      return { ...state, categoriasGasto: state.categoriasGasto.filter(c => c !== action.payload) }
+
     default:
       return state
   }
@@ -114,25 +129,167 @@ function reducer(state, action) {
 
 // ── Provider ──────────────────────────────────────────────────────────────────
 export function AppProvider({ children }) {
-  const [state, dispatch] = useReducer(reducer, null, () => {
+  const [state, localDispatch] = useReducer(reducer, INITIAL_STATE)
+  const stateRef = useRef(state)
+  useEffect(() => { stateRef.current = state }, [state])
+
+  // ── Carga inicial ────────────────────────────────────────────────────────────
+  useEffect(() => {
+    if (hasDB) {
+      loadFromSupabase()
+    } else {
+      loadFromLocalStorage()
+    }
+  }, [])
+
+  async function loadFromSupabase() {
+    try {
+      const [productos, vendedores, ventas, gastos, categorias] = await Promise.all([
+        db.getProductos(),
+        db.getVendedores(),
+        db.getVentas(),
+        db.getGastos(),
+        db.getCategorias(),
+      ])
+      localDispatch({
+        type: 'LOAD_ALL',
+        payload: {
+          productos, vendedores, ventas, gastos,
+          categoriasProducto: categorias.producto.length ? categorias.producto : INITIAL_CATS_PRODUCTO,
+          categoriasGasto: categorias.gasto.length ? categorias.gasto : INITIAL_CATS_GASTO,
+        },
+      })
+    } catch (err) {
+      console.error('Error cargando datos:', err)
+      localDispatch({ type: 'SET_ERROR', payload: 'No se pudo conectar con la base de datos.' })
+    }
+  }
+
+  function loadFromLocalStorage() {
     try {
       const saved = localStorage.getItem('gestion_data')
-      if (saved) return JSON.parse(saved)
-    } catch { /* ignore */ }
-    return {
-      productos: DEMO_PRODUCTOS,
-      vendedores: DEMO_VENDEDORES,
-      ventas: [],
-      gastos: [],
-      categoriasProducto: INITIAL_CATS_PRODUCTO,
-      categoriasGasto: INITIAL_CATS_GASTO,
+      if (saved) {
+        const parsed = JSON.parse(saved)
+        localDispatch({
+          type: 'LOAD_ALL',
+          payload: {
+            productos: parsed.productos || [],
+            vendedores: parsed.vendedores || [],
+            ventas: parsed.ventas || [],
+            gastos: parsed.gastos || [],
+            categoriasProducto: parsed.categoriasProducto || INITIAL_CATS_PRODUCTO,
+            categoriasGasto: parsed.categoriasGasto || INITIAL_CATS_GASTO,
+          },
+        })
+      } else {
+        localDispatch({
+          type: 'LOAD_ALL',
+          payload: {
+            productos: [], vendedores: [], ventas: [], gastos: [],
+            categoriasProducto: INITIAL_CATS_PRODUCTO,
+            categoriasGasto: INITIAL_CATS_GASTO,
+          },
+        })
+      }
+    } catch {
+      localDispatch({ type: 'SET_ERROR', payload: 'Error al cargar datos locales.' })
     }
-  })
+  }
 
-  // Persist on every change
+  // ── Persistencia offline (localStorage) ──────────────────────────────────────
   useEffect(() => {
-    localStorage.setItem('gestion_data', JSON.stringify(state))
+    if (!hasDB && !state.loading) {
+      const { loading, error, ...data } = state
+      localStorage.setItem('gestion_data', JSON.stringify(data))
+    }
   }, [state])
+
+  // ── Sync a Supabase (optimistic: actualiza local primero, luego sincroniza) ──
+  const syncToSupabase = useCallback(async (action) => {
+    if (!hasDB) return
+    const s = stateRef.current
+    try {
+      switch (action.type) {
+
+        case 'ADD_PRODUCTO':
+        case 'UPDATE_PRODUCTO':
+          await db.upsertProducto(action.payload)
+          break
+        case 'DELETE_PRODUCTO':
+          await db.deleteProducto(action.payload)
+          break
+
+        case 'ADD_VENDEDOR':
+        case 'UPDATE_VENDEDOR':
+          await db.upsertVendedor(action.payload)
+          break
+        case 'DELETE_VENDEDOR':
+          await db.deleteVendedor(action.payload)
+          break
+
+        case 'ADD_VENTA': {
+          await db.upsertVenta(action.payload)
+          // Sincronizar stock actualizado de productos
+          const updatedProds = s.productos.filter(p =>
+            action.payload.items.some(i => i.productoId === p.id)
+          )
+          await Promise.all(updatedProds.map(p => db.upsertProducto(p)))
+          break
+        }
+        case 'CANCEL_VENTA': {
+          const venta = s.ventas.find(v => v.id === action.payload)
+          if (venta) await db.upsertVenta({ ...venta, estado: 'cancelada' })
+          // Reponer stock en DB
+          const reposProds = s.productos.filter(p =>
+            venta?.items.some(i => i.productoId === p.id)
+          )
+          await Promise.all(reposProds.map(p => db.upsertProducto(p)))
+          break
+        }
+
+        case 'ADD_GASTO':
+        case 'UPDATE_GASTO':
+          await db.upsertGasto(action.payload)
+          break
+        case 'DELETE_GASTO':
+          await db.deleteGasto(action.payload)
+          break
+
+        case 'PAGAR_COMISION': {
+          const venta = s.ventas.find(v => v.id === action.payload)
+          if (venta) {
+            await db.upsertVenta({
+              ...venta,
+              comisionPagada: true,
+              comisionFechaPago: new Date().toISOString(),
+            })
+          }
+          break
+        }
+
+        case 'ADD_CATEGORIA_PRODUCTO':
+          await db.addCategoria('producto', action.payload)
+          break
+        case 'DELETE_CATEGORIA_PRODUCTO':
+          await db.deleteCategoria('producto', action.payload)
+          break
+        case 'ADD_CATEGORIA_GASTO':
+          await db.addCategoria('gasto', action.payload)
+          break
+        case 'DELETE_CATEGORIA_GASTO':
+          await db.deleteCategoria('gasto', action.payload)
+          break
+      }
+    } catch (err) {
+      console.error('Error sincronizando:', action.type, err)
+    }
+  }, [])
+
+  // dispatch unificado: actualiza local + sincroniza DB
+  const dispatch = useCallback((action) => {
+    localDispatch(action)
+    syncToSupabase(action)
+  }, [syncToSupabase])
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
@@ -166,4 +323,3 @@ export const METODOS_PAGO = [
   { value: 'tarjeta_credito', label: 'Tarjeta crédito' },
   { value: 'transferencia', label: 'Transferencia' },
 ]
-

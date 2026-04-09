@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { AppProvider } from './context/AppContext'
+import { AppProvider, useApp } from './context/AppContext'
+import { hasDB } from './lib/supabase'
 import Layout from './components/Layout'
 import Dashboard from './components/Dashboard'
 import Inventario from './components/Inventario'
@@ -8,6 +9,7 @@ import Vendedores from './components/Vendedores'
 import Comisiones from './components/Comisiones'
 import Gastos from './components/Gastos'
 import Reportes from './components/Reportes'
+import LoadingScreen from './components/LoadingScreen'
 
 function Pages({ page, setPage }) {
   switch (page) {
@@ -22,14 +24,24 @@ function Pages({ page, setPage }) {
   }
 }
 
-export default function App() {
+function AppContent() {
+  const { state } = useApp()
   const [page, setPage] = useState('dashboard')
 
+  if (state.loading) return <LoadingScreen />
+  if (state.error)   return <LoadingScreen error={state.error} />
+
+  return (
+    <Layout page={page} setPage={setPage} dbMode={hasDB}>
+      <Pages page={page} setPage={setPage} />
+    </Layout>
+  )
+}
+
+export default function App() {
   return (
     <AppProvider>
-      <Layout page={page} setPage={setPage}>
-        <Pages page={page} setPage={setPage} />
-      </Layout>
+      <AppContent />
     </AppProvider>
   )
 }

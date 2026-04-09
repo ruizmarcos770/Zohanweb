@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { id: 'reportes', label: 'Reportes', icon: '📈' },
 ]
 
-export default function Layout({ page, setPage, children }) {
+export default function Layout({ page, setPage, dbMode, children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
@@ -49,8 +49,9 @@ export default function Layout({ page, setPage, children }) {
           ))}
         </nav>
 
-        <div className="px-4 py-3 border-t border-gray-700 text-xs text-gray-500">
-          Datos guardados localmente
+        <div className="px-4 py-3 border-t border-gray-700 text-xs flex items-center gap-1.5">
+          <span className={`w-2 h-2 rounded-full ${dbMode ? 'bg-green-400' : 'bg-yellow-400'}`} />
+          <span className="text-gray-400">{dbMode ? 'Base de datos activa' : 'Modo offline'}</span>
         </div>
       </aside>
 
