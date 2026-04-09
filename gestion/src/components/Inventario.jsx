@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import { useApp, newId, formatCurrency } from '../context/AppContext'
-
-const CATEGORIAS = ['Equipamiento', 'Accesorios', 'Ropa', 'Suplementos', 'Otros']
+import SelectConNueva from './SelectConNueva'
 
 const EMPTY = {
   codigo: '', nombre: '', descripcion: '',
   precioCompra: '', precioVenta: '', stock: '', stockMinimo: '',
-  categoria: 'Otros',
+  categoria: '',
 }
 
 function Modal({ title, onClose, children }) {
@@ -23,7 +22,7 @@ function Modal({ title, onClose, children }) {
   )
 }
 
-function ProductoForm({ initial, onSave, onClose }) {
+function ProductoForm({ initial, categorias, onAddCategoria, onSave, onClose }) {
   const [form, setForm] = useState(initial)
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
 
@@ -48,10 +47,12 @@ function ProductoForm({ initial, onSave, onClose }) {
         </div>
         <div>
           <label className="block text-xs font-medium text-gray-600 mb-1">Categoría</label>
-          <select value={form.categoria} onChange={e => set('categoria', e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-            {CATEGORIAS.map(c => <option key={c} value={c}>{c}</option>)}
-          </select>
+          <SelectConNueva
+            value={form.categoria}
+            onChange={v => set('categoria', v)}
+            options={categorias}
+            onAddOption={onAddCategoria}
+          />
         </div>
       </div>
 
@@ -109,10 +110,12 @@ function ProductoForm({ initial, onSave, onClose }) {
 
 export default function Inventario() {
   const { state, dispatch } = useApp()
-  const [modal, setModal] = useState(null) // null | 'nuevo' | {producto}
+  const [modal, setModal] = useState(null)
   const [busqueda, setBusqueda] = useState('')
   const [filtroCategoria, setFiltroCategoria] = useState('')
   const [confirmDelete, setConfirmDelete] = useState(null)
+
+  const categorias = state.categoriasProducto || []
 
   const productos = state.productos.filter(p => {
     const q = busqueda.toLowerCase()
@@ -168,7 +171,7 @@ export default function Inventario() {
           className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">Todas las categorías</option>
-          {CATEGORIAS.map(c => <option key={c} value={c}>{c}</option>)}
+          {categorias.map(c => <option key={c} value={c}>{c}</option>)}
         </select>
       </div>
 
@@ -214,18 +217,10 @@ export default function Inventario() {
                       </td>
                       <td className="px-4 py-3 hidden md:table-cell">
                         <div className="flex gap-2 justify-end">
-                          <button
-                            onClick={() => setModal(p)}
-                            className="text-xs text-blue-600 hover:text-blue-800 font-medium"
-                          >
-                            Editar
-                          </button>
-                          <button
-                            onClick={() => setConfirmDelete(p.id)}
-                            className="text-xs text-red-500 hover:text-red-700 font-medium"
-                          >
-                            Eliminar
-                          </button>
+                          <button onClick={() => setModal(p)}
+                            className="text-xs text-blue-600 hover:text-blue-800 font-medium">Editar</button>
+                          <button onClick={() => setConfirmDelete(p.id)}
+                            className="text-xs text-red-500 hover:text-red-700 font-medium">Eliminar</button>
                         </div>
                       </td>
                     </tr>
@@ -237,14 +232,15 @@ export default function Inventario() {
         )}
       </div>
 
-      {/* Modal nuevo/editar */}
       {modal && (
         <Modal
           title={modal === 'nuevo' ? 'Nuevo producto' : 'Editar producto'}
           onClose={() => setModal(null)}
         >
           <ProductoForm
-            initial={modal === 'nuevo' ? EMPTY : {
+            categorias={categorias}
+            onAddCategoria={cat => dispatch({ type: 'ADD_CATEGORIA_PRODUCTO', payload: cat })}
+            initial={modal === 'nuevo' ? { ...EMPTY, categoria: categorias[0] || '' } : {
               ...modal,
               precioCompra: modal.precioCompra.toString(),
               precioVenta: modal.precioVenta.toString(),
@@ -257,19 +253,14 @@ export default function Inventario() {
         </Modal>
       )}
 
-      {/* Confirm delete */}
       {confirmDelete && (
         <Modal title="Confirmar eliminación" onClose={() => setConfirmDelete(null)}>
           <p className="text-sm text-gray-600 mb-4">¿Estás seguro de que querés eliminar este producto?</p>
           <div className="flex gap-2">
             <button onClick={() => setConfirmDelete(null)}
-              className="flex-1 border border-gray-300 text-gray-700 rounded-lg py-2 text-sm hover:bg-gray-50">
-              Cancelar
-            </button>
+              className="flex-1 border border-gray-300 text-gray-700 rounded-lg py-2 text-sm hover:bg-gray-50">Cancelar</button>
             <button onClick={() => handleDelete(confirmDelete)}
-              className="flex-1 bg-red-600 text-white rounded-lg py-2 text-sm font-medium hover:bg-red-700">
-              Eliminar
-            </button>
+              className="flex-1 bg-red-600 text-white rounded-lg py-2 text-sm font-medium hover:bg-red-700">Eliminar</button>
           </div>
         </Modal>
       )}

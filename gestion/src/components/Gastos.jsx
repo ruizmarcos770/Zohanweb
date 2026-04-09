@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { useApp, newId, formatCurrency, formatDate, METODOS_PAGO, CATEGORIAS_GASTO } from '../context/AppContext'
+import { useApp, newId, formatCurrency, formatDate, METODOS_PAGO } from '../context/AppContext'
+import SelectConNueva from './SelectConNueva'
 
 const metodoBadge = {
   efectivo: 'bg-green-100 text-green-700',
@@ -8,10 +9,10 @@ const metodoBadge = {
   transferencia: 'bg-yellow-100 text-yellow-700',
 }
 
-const EMPTY = {
-  descripcion: '', categoria: 'Otros', monto: '', metodoPago: 'efectivo',
+const makeEmpty = (cats) => ({
+  descripcion: '', categoria: cats[0] || '', monto: '', metodoPago: 'efectivo',
   fecha: new Date().toISOString().split('T')[0], notas: '',
-}
+})
 
 function Modal({ title, onClose, children }) {
   return (
@@ -27,7 +28,7 @@ function Modal({ title, onClose, children }) {
   )
 }
 
-function GastoForm({ initial, onSave, onClose }) {
+function GastoForm({ initial, categorias, onAddCategoria, onSave, onClose }) {
   const [form, setForm] = useState(initial)
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
 
@@ -47,10 +48,12 @@ function GastoForm({ initial, onSave, onClose }) {
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="block text-xs font-medium text-gray-600 mb-1">Categoría</label>
-          <select value={form.categoria} onChange={e => set('categoria', e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-            {CATEGORIAS_GASTO.map(c => <option key={c} value={c}>{c}</option>)}
-          </select>
+          <SelectConNueva
+            value={form.categoria}
+            onChange={v => set('categoria', v)}
+            options={categorias}
+            onAddOption={onAddCategoria}
+          />
         </div>
         <div>
           <label className="block text-xs font-medium text-gray-600 mb-1">Monto *</label>
@@ -97,6 +100,7 @@ function GastoForm({ initial, onSave, onClose }) {
 
 export default function Gastos() {
   const { state, dispatch } = useApp()
+  const categorias = state.categoriasGasto || []
   const [modal, setModal] = useState(null)
   const [filtroCategoria, setFiltroCategoria] = useState('')
   const [filtroMetodo, setFiltroMetodo] = useState('')
@@ -174,7 +178,7 @@ export default function Gastos() {
         <select value={filtroCategoria} onChange={e => setFiltroCategoria(e.target.value)}
           className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
           <option value="">Todas las categorías</option>
-          {CATEGORIAS_GASTO.map(c => <option key={c} value={c}>{c}</option>)}
+          {categorias.map(c => <option key={c} value={c}>{c}</option>)}
         </select>
         <select value={filtroMetodo} onChange={e => setFiltroMetodo(e.target.value)}
           className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -273,7 +277,9 @@ export default function Gastos() {
           onClose={() => setModal(null)}
         >
           <GastoForm
-            initial={modal === 'nuevo' ? EMPTY : modal}
+            initial={modal === 'nuevo' ? makeEmpty(categorias) : modal}
+            categorias={categorias}
+            onAddCategoria={cat => dispatch({ type: 'ADD_CATEGORIA_GASTO', payload: cat })}
             onSave={handleSave}
             onClose={() => setModal(null)}
           />

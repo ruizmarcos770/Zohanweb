@@ -15,9 +15,32 @@ const DEMO_PRODUCTOS = [
   { id: 'p4', codigo: 'EQ-004', nombre: 'Colchoneta yoga', descripcion: 'Colchoneta antideslizante 6mm', precioCompra: 3000, precioVenta: 6500, stock: 3, stockMinimo: 5, categoria: 'Accesorios' },
 ]
 
+const INITIAL_CATS_PRODUCTO = [
+  'Estribos', 'Enganches', 'Cobertor', 'Barra antivuelco', 'Tapa rígida',
+  'Lona', 'Defensa', 'Amortiguador de portón', 'Polarizado', 'Cubrealfombras',
+  'Barras y baúles portaequipaje', 'Fundas',
+]
+
+const INITIAL_CATS_GASTO = [
+  'Alquiler', 'Servicios', 'Sueldos', 'Proveedores', 'Marketing',
+  'Mantenimiento', 'Impuestos', 'Logística', 'Colocación', 'Otros',
+]
+
 // ── Reducer ──────────────────────────────────────────────────────────────────
 function reducer(state, action) {
   switch (action.type) {
+
+    // Categorías
+    case 'ADD_CATEGORIA_PRODUCTO':
+      if (state.categoriasProducto.includes(action.payload)) return state
+      return { ...state, categoriasProducto: [...state.categoriasProducto, action.payload] }
+    case 'DELETE_CATEGORIA_PRODUCTO':
+      return { ...state, categoriasProducto: state.categoriasProducto.filter(c => c !== action.payload) }
+    case 'ADD_CATEGORIA_GASTO':
+      if (state.categoriasGasto.includes(action.payload)) return state
+      return { ...state, categoriasGasto: [...state.categoriasGasto, action.payload] }
+    case 'DELETE_CATEGORIA_GASTO':
+      return { ...state, categoriasGasto: state.categoriasGasto.filter(c => c !== action.payload) }
 
     // Productos
     case 'ADD_PRODUCTO':
@@ -101,6 +124,8 @@ export function AppProvider({ children }) {
       vendedores: DEMO_VENDEDORES,
       ventas: [],
       gastos: [],
+      categoriasProducto: INITIAL_CATS_PRODUCTO,
+      categoriasGasto: INITIAL_CATS_GASTO,
     }
   })
 
@@ -142,7 +167,3 @@ export const METODOS_PAGO = [
   { value: 'transferencia', label: 'Transferencia' },
 ]
 
-export const CATEGORIAS_GASTO = [
-  'Alquiler', 'Servicios', 'Sueldos', 'Proveedores', 'Marketing',
-  'Mantenimiento', 'Impuestos', 'Logística', 'Otros',
-]
